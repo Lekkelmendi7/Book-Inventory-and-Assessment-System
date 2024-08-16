@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lkelmendi.PC-PR05\\source\\repos\\BookInventory\\BookInventory\\BookInventory.csproj": {}
+    "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BookInventory.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lkelmendi.PC-PR05\\source\\repos\\BookInventory\\BookInventory\\BookInventory.csproj": {
+    "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BookInventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lkelmendi.PC-PR05\\source\\repos\\BookInventory\\BookInventory\\BookInventory.csproj",
+        "projectUniqueName": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BookInventory.csproj",
         "projectName": "BookInventory",
-        "projectPath": "C:\\Users\\lkelmendi.PC-PR05\\source\\repos\\BookInventory\\BookInventory\\BookInventory.csproj",
+        "projectPath": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BookInventory.csproj",
         "packagesPath": "C:\\Users\\lkelmendi.PC-PR05\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lkelmendi.PC-PR05\\source\\repos\\BookInventory\\BookInventory\\obj\\",
+        "outputPath": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lkelmendi.PC-PR05\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -45,9 +45,65 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Analyzers": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[6.4.0, )"
+              "version": "[6.7.0, )"
+            },
+            "Swashbuckle.AspNetCore.Filters": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            },
+            "Swashbuckle.AspNetCore.Newtonsoft": {
+              "target": "Package",
+              "version": "[6.7.0, )"
+            },
+            "System.Runtime.Serialization.Json": {
+              "target": "Package",
+              "version": "[4.3.0, )"
             }
           },
           "imports": [
