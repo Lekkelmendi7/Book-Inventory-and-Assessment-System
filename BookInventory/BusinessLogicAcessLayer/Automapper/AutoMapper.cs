@@ -1,8 +1,9 @@
 ﻿using AutoMapper;
 using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.AuthorModels;
+using BookInventory.LogicAcessLayer.Models.BookModels;
 
-namespace BookInventory.InfrastructureLayer.Automapper
+namespace BookInventory.LogicAcessLayer.Automapper
 {
     public class AutoMapper : Profile
     {
@@ -13,6 +14,11 @@ namespace BookInventory.InfrastructureLayer.Automapper
             CreateMap<Author, AuthorGetModel>();
             CreateMap<AuthorCreateModel, Author>();
             CreateMap<AuthorUpdateModel, Author>();
+
+            //Mapping Book entity to models and vice versa!
+            CreateMap<Book, BookGetModel>();
+            CreateMap<BookCreateModel, Book>();
+            CreateMap<BookUpdateModel, Book>();
 
 
         }

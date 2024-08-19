@@ -30,8 +30,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="LogicAcessLayer\Models\BookModels\" />
-    <Folder Include="LogicAcessLayer\Models\RatingModels\" />
+    <Folder Include="BusinessLogicAcessLayer\Models\RatingModels\" />
   </ItemGroup>
 
 </Project>
