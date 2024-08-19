@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace BookInventory.Controllers
+namespace BookInventory.APIAccessLayer.Controllers
 {
     [ApiController]
     [Route("[controller]")]
