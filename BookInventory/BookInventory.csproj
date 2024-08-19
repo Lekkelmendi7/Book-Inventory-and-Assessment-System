@@ -29,4 +29,8 @@
     <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="InfrastructureLayer\" />
+  </ItemGroup>
+
 </Project>
