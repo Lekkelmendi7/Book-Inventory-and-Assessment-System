@@ -10,7 +10,6 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
         Task<AuthorGetModel> GetAuthorById(int id);
         Task CreateAuthor(AuthorCreateModel authorCreateModel);
         Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel);
-        Task DeleteAuthor (int id); 
-
+        Task<bool> DeleteAuthor(int id);
     }
 }

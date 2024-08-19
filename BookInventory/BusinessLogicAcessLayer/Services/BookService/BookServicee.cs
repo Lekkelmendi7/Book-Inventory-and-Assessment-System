@@ -19,9 +19,15 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 
         public async Task<IEnumerable<BookGetModel>> GetAllBooks()
         {
-            var books = await _context.Books.Include(a => a.Author).ToListAsync();
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
-            return mappedBooks;
+            try
+            {
+                var books = await _context.Books.Include(a => a.Author).ToListAsync();
+                var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
+                return mappedBooks;
+            } catch(Exception ex)
+            {
+                throw new Exception("An error occuredd while trying to fetch books.", ex);
+            }
         }
 
         public async Task<BookGetModel> GetBookById(int id)
@@ -29,29 +35,35 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             var book = await _context.Books.Include(a => a.Author).FirstOrDefaultAsync(x => x.Id == id);
             if(book == null)
             {
-                return null;
+                throw new KeyNotFoundException($"Book with ID {id} not found!");
             }
             var mappedBook = _mapper.Map<BookGetModel>(book);
             return mappedBook;
         }
         public async Task CreateBook(BookCreateModel bookModel)
         {
-            var bookEntity = new Book
+            try
             {
-                Title = bookModel.Title,    
-                PublicationYear = bookModel.PublicationYear,
-                Genres = bookModel.Genres,  
-                Language = bookModel.Language,
-                PageCount = bookModel.PageCount,
-                Price = bookModel.Price,
-                Stock = bookModel.Stock,
-                Edition = bookModel.Edition,
-                Format = bookModel.Format,
-                AuthorId = bookModel.AuthorId,  
-            };
+                var bookEntity = new Book
+                {
+                    Title = bookModel.Title,
+                    PublicationYear = bookModel.PublicationYear,
+                    Genres = bookModel.Genres,
+                    Language = bookModel.Language,
+                    PageCount = bookModel.PageCount,
+                    Price = bookModel.Price,
+                    Stock = bookModel.Stock,
+                    Edition = bookModel.Edition,
+                    Format = bookModel.Format,
+                    AuthorId = bookModel.AuthorId,
+                };
 
-            _context.Books.Add(bookEntity);
-            await _context.SaveChangesAsync();
+                _context.Books.Add(bookEntity);
+                await _context.SaveChangesAsync();
+            } catch(Exception ex)
+            {
+                throw new Exception("Error while trying to create a book", ex);
+            }
         }
 
 
@@ -61,7 +73,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 
             if(newBook == null)
             {
-                return;
+                throw new KeyNotFoundException($"Book with ID {id} not found!");
             }
             
             newBook.Title = bookModel.Title;    
@@ -80,16 +92,18 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 
         }
 
-        public async Task DeleteBook(int id)
+        public async Task<bool> DeleteBook(int id)
         {
-            var book = _context.Books.Find(id);
-            if(book == null)
+            var book = await _context.Books.FindAsync(id);
+
+            if (book == null)
             {
-                return;
+                throw new KeyNotFoundException($"Book with ID {id} not found!");
             }
 
             _context.Books.Remove(book);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
+            return true;
         }
 
     }

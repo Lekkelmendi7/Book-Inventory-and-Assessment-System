@@ -11,18 +11,32 @@ namespace BookInventory.APIAccessLayer.Controllers
     {
         private readonly IAuthorService _service;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AuthorsController"/> class.
+        /// </summary>
+        /// <param name="service">The author service.</param>
+
         public AuthorsController(IAuthorService service) 
         {
             _service = service;
         }
-
-        [HttpGet]
+        /// <summary>
+        /// Gets all authors.
+        /// </summary>
+        /// <returns>A list of authors.</returns>
+        /// 
+        [HttpGet("getAllAuthors")]
         public async Task<IActionResult> GetAllAuthors()
         {
            var authors = await _service.GetAllAuthors();
             return Ok(authors); 
         }
 
+        /// <summary>
+        /// Gets a single author by identifier.
+        /// </summary>
+        /// <param name="id">The identifier of the author.</param>
+        /// <returns>The author with the specified identifier.</returns>
         [HttpGet("findById/{id}")]
         public async Task<IActionResult> GetAuthorById(int id)
         {
@@ -34,13 +48,24 @@ namespace BookInventory.APIAccessLayer.Controllers
             return Ok(author);  
         }
 
-        [HttpPost]
+        /// <summary>
+        /// Adds a new author.
+        /// </summary>
+        /// <param name="model">The author model.</param>
+        /// <returns>The created author.</returns>
+        [HttpPost("addAuthor")]
         public async Task<IActionResult> AddAuthor(AuthorCreateModel model)
         {
             await _service.CreateAuthor(model); 
             return Ok("Author added successfully!");
         }
 
+        /// <summary>
+        /// Updates an existing author.
+        /// </summary>
+        /// <param name="id">The identifier of the author to update.</param>
+        /// <param name="author">The author model with updated data.</param>
+        /// <returns>A success message if the author was updated successfully.</returns>
         [HttpPut("updateAuthor/{id}")]
         public async Task<IActionResult> UpdateAuthor(AuthorUpdateModel author,int id)
         {
@@ -48,16 +73,23 @@ namespace BookInventory.APIAccessLayer.Controllers
             return Ok(author);  
         }
 
+        /// <summary>
+        /// Deletes a single author by identifier.
+        /// </summary>
+        /// <param name="id">The identifier of the author to delete.</param>
+        /// <returns>A success message if the author was deleted successfully.</returns>
+
         [HttpDelete("deleteAuthor/{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
-            var author = _service.DeleteAuthor(id); 
-            if(author == null)
-            {
-                return BadRequest("Author not found!");
-            }
-            return Ok("Author deleted!");  
-        }
+            var isDeleted = await _service.DeleteAuthor(id);
 
+            if (!isDeleted)
+            {
+                return NotFound("Author not found!");
+            }
+
+            return Ok("Author deleted!");
+        }
     }
 }

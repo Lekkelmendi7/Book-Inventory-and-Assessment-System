@@ -7,7 +7,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
         Task<IEnumerable<BookGetModel>> GetAllBooks();
         Task<BookGetModel> GetBookById(int id); 
         Task CreateBook(BookCreateModel bookModel);
-        Task UpdateBook(int id, BookUpdateModel bookModel); 
-        Task DeleteBook(int id);    
+        Task UpdateBook(int id, BookUpdateModel bookModel);
+        Task<bool> DeleteBook(int id);
     }
 }

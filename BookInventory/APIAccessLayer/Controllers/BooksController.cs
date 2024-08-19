@@ -50,16 +50,17 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpDelete("deleteBook/{id}")]
-        public async Task<IActionResult> DeleteBook(int id)
+        public async Task<IActionResult> DeleteAuthor(int id)
         {
-            var book = _service.DeleteBook(id);
-            if(book == null)
+            var isDeleted = await _service.DeleteBook(id);
+
+            if (!isDeleted)
             {
-                return BadRequest();    
+                return NotFound("Book not found!");
             }
+
             return Ok("Book deleted!");
         }
-
 
     }
 }
