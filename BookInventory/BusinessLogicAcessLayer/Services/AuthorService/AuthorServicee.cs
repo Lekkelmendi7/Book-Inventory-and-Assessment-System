@@ -23,7 +23,8 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
             {
                 var authors = await _context.Authors.ToListAsync();
                 return _mapper.Map<IEnumerable<AuthorGetModel>>(authors);
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("An error occurred while fetching authors", ex);
             }
@@ -31,24 +32,24 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
 
         public async Task<AuthorGetModel> GetAuthorById(int id)
         {
-                var author = await _context.Authors.FindAsync(id);
+            var author = await _context.Authors.FindAsync(id);
 
-                if (author == null)
-                {
-                    throw new KeyNotFoundException($"Author with id {id} not found!");
-                }
+            if (author == null)
+            {
+                throw new KeyNotFoundException($"Author with id {id} not found!");
+            }
 
-                var authorGetModel = new AuthorGetModel
-                {
-                    Id = author.Id,
-                    Name = author.Name,
-                    DateOfBirth = author.DateOfBirth,
-                    Nationality = author.Nationality,
-                    EmailAddress = author.EmailAddress,
-                    ImageUrl = author.ImageUrl,
-                };
+            var authorGetModel = new AuthorGetModel
+            {
+                Id = author.Id,
+                Name = author.Name,
+                DateOfBirth = author.DateOfBirth,
+                Nationality = author.Nationality,
+                EmailAddress = author.EmailAddress,
+                ImageUrl = author.ImageUrl,
+            };
 
-                return authorGetModel;
+            return authorGetModel;
         }
 
         public async Task CreateAuthor(AuthorCreateModel authorCreateModel)
@@ -65,7 +66,8 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
                 };
                 _context.Authors.Add(newAuthor);
                 await _context.SaveChangesAsync();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 throw new Exception("An error occurred while creating the author", ex);
             }
@@ -73,34 +75,34 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
 
         public async Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel)
         {
-                var author = await _context.Authors.FindAsync(id);
+            var author = await _context.Authors.FindAsync(id);
 
-                if (author == null)
-                {
-                    throw new KeyNotFoundException($"Author with id {id} not found!");
-                }
-                author.Name = authorUpdateModel.Name;
-                author.DateOfBirth = authorUpdateModel.DateOfBirth;
-                author.Nationality = authorUpdateModel.Nationality;
-                author.EmailAddress = authorUpdateModel.EmailAddress;
-                author.ImageUrl = authorUpdateModel.ImageUrl;
+            if (author == null)
+            {
+                throw new KeyNotFoundException($"Author with id {id} not found!");
+            }
+            author.Name = authorUpdateModel.Name;
+            author.DateOfBirth = authorUpdateModel.DateOfBirth;
+            author.Nationality = authorUpdateModel.Nationality;
+            author.EmailAddress = authorUpdateModel.EmailAddress;
+            author.ImageUrl = authorUpdateModel.ImageUrl;
 
-                _context.Authors.Update(author);
-                _context.SaveChanges();
+            _context.Authors.Update(author);
+            _context.SaveChanges();
         }
 
         public async Task<bool> DeleteAuthor(int id)
         {
-                var author = await _context.Authors.FindAsync(id);
+            var author = await _context.Authors.FindAsync(id);
 
-                if (author == null)
-                {
-                    throw new KeyNotFoundException($"Author with ID {id} not found.");
-                }
+            if (author == null)
+            {
+                throw new KeyNotFoundException($"Author with ID {id} not found.");
+            }
 
-                _context.Authors.Remove(author);
-                await _context.SaveChangesAsync();
-                return true;
+            _context.Authors.Remove(author);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

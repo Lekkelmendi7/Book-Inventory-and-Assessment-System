@@ -16,7 +16,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// </summary>
         /// <param name="service">The author service.</param>
 
-        public AuthorsController(IAuthorService service) 
+        public AuthorsController(IAuthorService service)
         {
             _service = service;
         }
@@ -28,8 +28,14 @@ namespace BookInventory.APIAccessLayer.Controllers
         [HttpGet("getAllAuthors")]
         public async Task<IActionResult> GetAllAuthors()
         {
-           var authors = await _service.GetAllAuthors();
-            return Ok(authors); 
+            try
+            {
+                var authors = await _service.GetAllAuthors();
+                return Ok(authors);
+            }catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         /// <summary>
@@ -40,12 +46,19 @@ namespace BookInventory.APIAccessLayer.Controllers
         [HttpGet("findById/{id}")]
         public async Task<IActionResult> GetAuthorById(int id)
         {
-            var author = await _service.GetAuthorById(id);
-            if(author == null)
+            try
             {
-                return BadRequest("Author not found!");
+                var author = await _service.GetAuthorById(id);
+                return Ok(author);
             }
-            return Ok(author);  
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         /// <summary>
@@ -56,8 +69,14 @@ namespace BookInventory.APIAccessLayer.Controllers
         [HttpPost("addAuthor")]
         public async Task<IActionResult> AddAuthor(AuthorCreateModel model)
         {
-            await _service.CreateAuthor(model); 
-            return Ok("Author added successfully!");
+            try
+            {
+                await _service.CreateAuthor(model);
+                return Ok("Author added successfully!");
+            }catch(Exception ex)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         /// <summary>
@@ -67,10 +86,21 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <param name="author">The author model with updated data.</param>
         /// <returns>A success message if the author was updated successfully.</returns>
         [HttpPut("updateAuthor/{id}")]
-        public async Task<IActionResult> UpdateAuthor(AuthorUpdateModel author,int id)
+        public async Task<IActionResult> UpdateAuthor(int id, AuthorUpdateModel author)
         {
-            await _service.UpdateAuthor(id, author);
-            return Ok(author);  
+            try
+            {
+                await _service.UpdateAuthor(id, author);
+                return Ok("Author updated successfully!");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
 
         /// <summary>
@@ -82,14 +112,20 @@ namespace BookInventory.APIAccessLayer.Controllers
         [HttpDelete("deleteAuthor/{id}")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
-            var isDeleted = await _service.DeleteAuthor(id);
-
-            if (!isDeleted)
+            try
             {
-                return NotFound("Author not found!");
-            }
+                var isDeleted = await _service.DeleteAuthor(id);
 
-            return Ok("Author deleted!");
+                return Ok("Author deleted successfully!");
+            }
+            catch (KeyNotFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "An unexpected error occurred.");
+            }
         }
     }
 }
