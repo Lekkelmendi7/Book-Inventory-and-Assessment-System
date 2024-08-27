@@ -1,4 +1,5 @@
-﻿using BookInventory.DataAccess.Entities;
+﻿using BookInventory.BusinessLogicAcessLayer.Models.PulisherModels;
+using BookInventory.DataAccess.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace BookInventory.LogicAcessLayer.Models.AuthorModels
@@ -17,5 +18,7 @@ namespace BookInventory.LogicAcessLayer.Models.AuthorModels
         [EmailAddress]
         public string EmailAddress { get; set; } = null!;
         public string ImageUrl { get; set; } = null!;
+        [Required]
+        public PublisherCreateModel Publisher { get; set; }
     }
 }

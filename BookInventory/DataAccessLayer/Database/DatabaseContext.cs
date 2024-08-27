@@ -1,4 +1,5 @@
 ﻿using BookInventory.DataAccess.Entities;
+using BookInventory.DataAccessLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookInventory.DataAccess.Database
@@ -17,13 +18,20 @@ namespace BookInventory.DataAccess.Database
             modelBuilder.Entity<Author>()
                 .HasMany(a => a.Books)
                 .WithOne(a => a.Author)
-                .OnDelete(DeleteBehavior.Restrict);   
+                .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Author>()
+                .HasOne(e => e.Publisher)
+                .WithOne(e => e.Author)
+                .HasForeignKey<Publisher>(e => e.AuthorId)
+                .IsRequired();
 
         }
 
 
         public DbSet<Book> Books { get; set;}
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Publisher> Publishers { get; set; }
 
         
     }

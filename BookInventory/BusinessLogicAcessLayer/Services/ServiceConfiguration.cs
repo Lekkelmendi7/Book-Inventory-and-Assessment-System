@@ -1,4 +1,5 @@
-﻿using BookInventory.LogicAcessLayer.Services.AuthorService;
+﻿using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
+using BookInventory.LogicAcessLayer.Services.AuthorService;
 using BookInventory.LogicAcessLayer.Services.BookService;
 using System.Runtime.CompilerServices;
 
@@ -10,6 +11,7 @@ namespace BookInventory.LogicAcessLayer.Services
         {
             services.AddScoped<IAuthorService, AuthorServicee>();
             services.AddScoped<IBookService, BookServicee>();
+            services.AddScoped<IPublisherService, PublisherServicee>();
         }
     }
 }

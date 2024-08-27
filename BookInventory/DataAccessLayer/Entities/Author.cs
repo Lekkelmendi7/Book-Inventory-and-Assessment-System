@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BookInventory.DataAccessLayer.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace BookInventory.DataAccess.Entities
 {
@@ -18,6 +19,7 @@ namespace BookInventory.DataAccess.Entities
         public string EmailAddress { get; set; } = null!;
         public string ImageUrl { get; set; } = null!;
         public IEnumerable<Book> Books { get; set; } = null!;
+        public Publisher? Publisher { get; set; }
 
     }
 }
