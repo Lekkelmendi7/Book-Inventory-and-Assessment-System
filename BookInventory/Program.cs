@@ -1,6 +1,8 @@
 using BookInventory.DataAccess.Database;
 using BookInventory.LogicAcessLayer.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Events;
 
@@ -36,6 +38,25 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+           .AddJwtBearer(options =>
+           {
+               options.TokenValidationParameters = new TokenValidationParameters
+               {
+                   ValidateIssuerSigningKey = true,
+                   IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8
+                       .GetBytes(builder.Configuration.GetSection("AppSettings:Token").Value!)),
+                   ValidateIssuer = false,
+                   ValidateAudience = false
+               };
+           });
+
+// Configure policies and register policy services using PolicyConfiguration
+PolicyConfiguration.ConfigurePolicies(builder.Services);
+
+// Register IHttpContextAccessor
+builder.Services.AddHttpContextAccessor();
+
 builder.Services.ConfigureServices();
 builder.Services.AddSwaggerGen();
 
@@ -49,7 +70,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

@@ -10,7 +10,7 @@ using System.Security.Claims;
 
 namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
 {
-    public class AuthServicee : IAuthServicee
+    public class AuthServicee : IAuthService
     {
         private readonly DatabaseContext _context;
         private readonly IConfiguration _configuration;
@@ -327,7 +327,7 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
             user.PasswordResetToken = null;
-            user.ResetTokenExpires = null;
+            user.PasswordResetToken = null;
 
             await _context.SaveChangesAsync();
 
