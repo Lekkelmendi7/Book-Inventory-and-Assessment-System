@@ -42,18 +42,14 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
             var existingPublisher = await _context.Publishers
                 .FirstOrDefaultAsync(c => c.AuthorId == model.AuthorId);
 
-            if(existingPublisher != null)
+            if (existingPublisher != null)
             {
                 throw new InvalidOperationException("This publisher has an associated author!");
             }
 
-            var publisherEntity = new Publisher
-            {
-                Name = model.Name,  
-                Address = model.Address,
-                Website = model.Website,    
-                AuthorId = model.AuthorId,  
-            };
+            // Use AutoMapper to map the PublisherCreateModel to the Publisher entity
+            var publisherEntity = _mapper.Map<Publisher>(model);
+
             _context.Publishers.Add(publisherEntity);
             await _context.SaveChangesAsync();
         }
@@ -62,26 +58,25 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
         public async Task UpdatePublisher(int id, PublisherUpdateModel model)
         {
             var result = await _context.Publishers.FirstOrDefaultAsync(x => x.Id == id);
-            if(result == null)
+            if (result == null)
             {
-                throw new InvalidOperationException("This publisher has an associated author!");
+                throw new KeyNotFoundException($"Publisher with ID {id} not found!");
             }
 
             var existingPublisher = await _context.Publishers.FirstOrDefaultAsync(x => x.AuthorId == model.AuthorId && x.Id != id);
 
-            if(existingPublisher != null)
+            if (existingPublisher != null)
             {
                 throw new InvalidOperationException("This publisher is already associated with this author");
             }
 
-            result.Name = model.Name;
-            result.Address = model.Address; 
-            result.Website = model.Website; 
-            result.AuthorId = model.AuthorId;   
+            // Use AutoMapper to map the updated fields from PublisherUpdateModel to the existing Publisher entity
+            _mapper.Map(model, result);
 
             _context.Publishers.Update(result);
-            await _context.SaveChangesAsync();  
+            await _context.SaveChangesAsync();
         }
+
 
         public async Task<bool> DeletePublisher(int id)
         {

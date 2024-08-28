@@ -146,3 +146,12 @@ C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\obj\Debug\net8.0\
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\obj\Debug\net8.0\BookInventory.pdb
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\obj\Debug\net8.0\BookInventory.genruntimeconfig.cache
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\obj\Debug\net8.0\ref\BookInventory.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.AspNetCore.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Extensions.Hosting.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Extensions.Logging.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Formatting.Compact.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Settings.Configuration.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.Console.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.File.dll

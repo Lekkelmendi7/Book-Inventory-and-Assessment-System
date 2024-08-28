@@ -1,0 +1,673 @@
+2024-08-28 10:08:27.679 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-08-28 10:08:27.827 +02:00 [DBG] Hosting starting
+2024-08-28 10:08:28.220 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 10:08:28.220 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 10:08:28.220 +02:00 [DBG] Loaded hosting startup assembly BookInventory
+2024-08-28 10:08:28.220 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-08-28 10:08:28.220 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-08-28 10:08:28.221 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 10:08:28.221 +02:00 [INF] Hosting environment: Development
+2024-08-28 10:08:28.221 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 10:08:28.221 +02:00 [DBG] Hosting started
+2024-08-28 10:08:28.377 +02:00 [DBG] Connection id "0HN6772CKOEOH" accepted.
+2024-08-28 10:08:28.378 +02:00 [DBG] Connection id "0HN6772CKOEOH" started.
+2024-08-28 10:08:28.407 +02:00 [DBG] Connection id "0HN6772CKOEOI" accepted.
+2024-08-28 10:08:28.408 +02:00 [DBG] Connection id "0HN6772CKOEOI" started.
+2024-08-28 10:08:29.339 +02:00 [DBG] Connection id "0HN6772CKOEOJ" accepted.
+2024-08-28 10:08:29.340 +02:00 [DBG] Connection id "0HN6772CKOEOJ" started.
+2024-08-28 10:08:29.481 +02:00 [DBG] Connection 0HN6772CKOEOJ established using the following protocol: "Tls12"
+2024-08-28 10:08:29.635 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 10:08:29.841 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-08-28 10:08:29.866 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2024-08-28 10:08:29.867 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:08:29.998 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2024-08-28 10:08:29.999 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2024-08-28 10:08:30.008 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2024-08-28 10:08:30.011 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2024-08-28 10:08:30.016 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 387.7412ms
+2024-08-28 10:08:30.043 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 10:08:30.066 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 10:08:30.066 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 10:08:30.067 +02:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2024-08-28 10:08:30.067 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:08:30.070 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 4.4077ms
+2024-08-28 10:08:30.098 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 54.3016ms
+2024-08-28 10:08:30.215 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 149.3436ms
+2024-08-28 10:08:30.292 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 10:08:30.293 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2024-08-28 10:08:30.293 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:08:30.607 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 314.6087ms
+2024-08-28 10:08:36.436 +02:00 [DBG] Connection id "0HN6772CKOEOJ" received FIN.
+2024-08-28 10:08:36.443 +02:00 [DBG] The connection queue processing loop for 0HN6772CKOEOJ completed.
+2024-08-28 10:08:36.445 +02:00 [DBG] Connection id "0HN6772CKOEOJ" is closed. The last processed stream ID was 9.
+2024-08-28 10:08:36.447 +02:00 [DBG] Connection id "0HN6772CKOEOJ" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:08:36.453 +02:00 [DBG] Connection id "0HN6772CKOEOJ" stopped.
+2024-08-28 10:08:37.220 +02:00 [DBG] Connection id "0HN6772CKOEOK" accepted.
+2024-08-28 10:08:37.221 +02:00 [DBG] Connection id "0HN6772CKOEOK" started.
+2024-08-28 10:08:37.225 +02:00 [DBG] Connection 0HN6772CKOEOK established using the following protocol: "Tls12"
+2024-08-28 10:08:37.229 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/55555 - null null
+2024-08-28 10:08:37.232 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Authors/deleteAuthor/55555'
+2024-08-28 10:08:37.234 +02:00 [DBG] Endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)' with route pattern 'api/Authors/deleteAuthor/{id}' is valid for the request path '/api/Authors/deleteAuthor/55555'
+2024-08-28 10:08:37.234 +02:00 [DBG] Request matched endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:08:37.236 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-08-28 10:08:37.240 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:08:37.277 +02:00 [INF] Route matched with {action = "DeleteAuthor", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAuthor(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:08:37.279 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-08-28 10:08:37.279 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-08-28 10:08:37.279 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-08-28 10:08:37.279 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-08-28 10:08:37.279 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-08-28 10:08:37.281 +02:00 [DBG] Executing controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:08:37.522 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-08-28 10:08:37.635 +02:00 [DBG] Executed controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:08:37.652 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:08:37.653 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-08-28 10:08:37.655 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:08:37.655 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:08:37.656 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:08:37.657 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-08-28 10:08:37.661 +02:00 [INF] API call to delete author with ID 55555 started.
+2024-08-28 10:08:37.663 +02:00 [INF] Trying to delete the author!
+2024-08-28 10:08:38.374 +02:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2024-08-28 10:08:38.375 +02:00 [DBG] The index {'UserId'} was not created on entity type 'RoleUser' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2024-08-28 10:08:38.413 +02:00 [DBG] Authentication of the HTTPS connection timed out.
+2024-08-28 10:08:38.413 +02:00 [DBG] Connection id "0HN6772CKOEOH" stopped.
+2024-08-28 10:08:38.413 +02:00 [DBG] Authentication of the HTTPS connection timed out.
+2024-08-28 10:08:38.414 +02:00 [DBG] Connection id "0HN6772CKOEOI" stopped.
+2024-08-28 10:08:38.414 +02:00 [DBG] Connection id "0HN6772CKOEOH" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:08:38.415 +02:00 [DBG] Connection id "0HN6772CKOEOI" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:08:38.677 +02:00 [DBG] Entity Framework Core 8.0.8 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.8' with options: None
+2024-08-28 10:08:38.797 +02:00 [DBG] Compiling query expression: 
+'DbSet<Author>()
+    .Include(a => a.Publisher)
+    .FirstOrDefault(a => a.Id == __id_0)'
+2024-08-28 10:08:38.854 +02:00 [DBG] Including navigation: 'Author.Publisher'.
+2024-08-28 10:08:39.078 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Author>(
+    asyncEnumerable: new SingleQueryingEnumerable<Author>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Author.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Author.DateOfBirth (DateOnly) Required, 1], [Property: Author.EmailAddress (string) Required, 2], [Property: Author.ImageUrl (string) Required, 3], [Property: Author.Name (string) Required MaxLength(70), 4], [Property: Author.Nationality (string) Required MaxLength(70), 5] }
+                1 -> Dictionary<IProperty, int> { [Property: Publisher.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: Publisher.Address (string) Required MaxLength(150), 7], [Property: Publisher.AuthorId (int) Required FK Index, 8], [Property: Publisher.Name (string) Required MaxLength(100), 9], [Property: Publisher.Website (string) Required MaxLength(150), 10] }
+            SELECT TOP(1) a.Id, a.DateOfBirth, a.EmailAddress, a.ImageUrl, a.Name, a.Nationality, p.Id, p.Address, p.AuthorId, p.Name, p.Website
+            FROM Authors AS a
+            LEFT JOIN Publishers AS p ON a.Id == p.AuthorId
+            WHERE a.Id == @__id_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Author>, 
+        BookInventory.DataAccess.Database.DatabaseContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-08-28 10:08:39.122 +02:00 [DBG] Creating DbConnection.
+2024-08-28 10:08:39.149 +02:00 [DBG] Created DbConnection. (27ms).
+2024-08-28 10:08:39.152 +02:00 [DBG] Opening connection to database 'BookInventory' on server '.'.
+2024-08-28 10:08:39.576 +02:00 [DBG] Opened connection to database 'BookInventory' on server '.'.
+2024-08-28 10:08:39.579 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-08-28 10:08:39.584 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2024-08-28 10:08:39.593 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (14ms).
+2024-08-28 10:08:39.601 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:08:39.736 +02:00 [INF] Executed DbCommand (135ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:08:39.750 +02:00 [DBG] Closing data reader to 'BookInventory' on server '.'.
+2024-08-28 10:08:39.760 +02:00 [DBG] A data reader for 'BookInventory' on server '.' is being disposed after spending 18ms reading results.
+2024-08-28 10:08:39.763 +02:00 [DBG] Closing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:08:39.768 +02:00 [DBG] Closed connection to database 'BookInventory' on server '.' (5ms).
+2024-08-28 10:08:39.769 +02:00 [INF] Author with ID 55555 not found.
+2024-08-28 10:08:39.908 +02:00 [WRN] Author with ID 55555 not found.
+2024-08-28 10:08:39.912 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-08-28 10:08:39.914 +02:00 [DBG] No information found on request to perform content negotiation.
+2024-08-28 10:08:39.914 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-08-28 10:08:39.914 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-08-28 10:08:39.914 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2024-08-28 10:08:39.914 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-08-28 10:08:39.918 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory) in 2636.2322ms
+2024-08-28 10:08:39.919 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:08:39.921 +02:00 [DBG] 'DatabaseContext' disposed.
+2024-08-28 10:08:39.925 +02:00 [DBG] Disposing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:08:39.926 +02:00 [DBG] Disposed connection to database '' on server '' (1ms).
+2024-08-28 10:08:39.926 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/55555 - 404 null text/plain; charset=utf-8 2697.8866ms
+2024-08-28 10:08:46.443 +02:00 [DBG] Connection id "0HN6772CKOEOK" received FIN.
+2024-08-28 10:08:46.444 +02:00 [DBG] Connection id "0HN6772CKOEOK" is closed. The last processed stream ID was 1.
+2024-08-28 10:08:46.444 +02:00 [DBG] Connection id "0HN6772CKOEOK" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:08:46.444 +02:00 [DBG] The connection queue processing loop for 0HN6772CKOEOK completed.
+2024-08-28 10:08:46.444 +02:00 [DBG] Connection id "0HN6772CKOEOK" stopped.
+2024-08-28 10:10:06.662 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-08-28 10:10:06.793 +02:00 [DBG] Hosting starting
+2024-08-28 10:10:07.073 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 10:10:07.074 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 10:10:07.074 +02:00 [DBG] Loaded hosting startup assembly BookInventory
+2024-08-28 10:10:07.075 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-08-28 10:10:07.075 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-08-28 10:10:07.076 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 10:10:07.076 +02:00 [INF] Hosting environment: Development
+2024-08-28 10:10:07.078 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 10:10:07.078 +02:00 [DBG] Hosting started
+2024-08-28 10:10:07.344 +02:00 [DBG] Connection id "0HN6773A4ID2U" accepted.
+2024-08-28 10:10:07.345 +02:00 [DBG] Connection id "0HN6773A4ID2V" accepted.
+2024-08-28 10:10:07.348 +02:00 [DBG] Connection id "0HN6773A4ID2U" started.
+2024-08-28 10:10:07.349 +02:00 [DBG] Connection id "0HN6773A4ID2V" started.
+2024-08-28 10:10:07.365 +02:00 [DBG] Connection id "0HN6773A4ID2V" received FIN.
+2024-08-28 10:10:07.365 +02:00 [DBG] Connection id "0HN6773A4ID2U" received FIN.
+2024-08-28 10:10:07.379 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:10:07.379 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:10:07.431 +02:00 [DBG] Connection id "0HN6773A4ID2V" stopped.
+2024-08-28 10:10:07.431 +02:00 [DBG] Connection id "0HN6773A4ID2U" stopped.
+2024-08-28 10:10:07.436 +02:00 [DBG] Connection id "0HN6773A4ID2U" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:10:07.436 +02:00 [DBG] Connection id "0HN6773A4ID2V" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:10:07.514 +02:00 [DBG] Connection id "0HN6773A4ID30" accepted.
+2024-08-28 10:10:07.521 +02:00 [DBG] Connection id "0HN6773A4ID30" started.
+2024-08-28 10:10:07.685 +02:00 [DBG] Connection 0HN6773A4ID30 established using the following protocol: "Tls12"
+2024-08-28 10:10:07.791 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 10:10:07.930 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-08-28 10:10:07.947 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2024-08-28 10:10:07.949 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:10:08.059 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2024-08-28 10:10:08.061 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2024-08-28 10:10:08.073 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2024-08-28 10:10:08.075 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2024-08-28 10:10:08.085 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 297.5304ms
+2024-08-28 10:10:08.114 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 10:10:08.117 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 10:10:08.117 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 10:10:08.127 +02:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2024-08-28 10:10:08.129 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:10:08.133 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 16.6974ms
+2024-08-28 10:10:08.154 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 41.2618ms
+2024-08-28 10:10:08.189 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 72.1954ms
+2024-08-28 10:10:08.259 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 10:10:08.264 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2024-08-28 10:10:08.284 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:10:08.501 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 248.6487ms
+2024-08-28 10:10:14.005 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/api/Authors/findById/5555555555 - null null
+2024-08-28 10:10:14.015 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Authors/findById/5555555555'
+2024-08-28 10:10:14.026 +02:00 [DBG] Endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)' with route pattern 'api/Authors/findById/{id}' is valid for the request path '/api/Authors/findById/5555555555'
+2024-08-28 10:10:14.028 +02:00 [DBG] Request matched endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:14.032 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-08-28 10:10:14.040 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:14.077 +02:00 [INF] Route matched with {action = "GetAuthorById", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAuthorById(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:10:14.081 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-08-28 10:10:14.083 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-08-28 10:10:14.087 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-08-28 10:10:14.090 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-08-28 10:10:14.091 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-08-28 10:10:14.095 +02:00 [DBG] Executing controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:10:14.238 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-08-28 10:10:14.344 +02:00 [DBG] Executed controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:10:14.362 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:10:14.365 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-08-28 10:10:14.375 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:14.377 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:14.378 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:10:14.381 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:14.384 +02:00 [DBG] The request has model state errors, returning an error response.
+2024-08-28 10:10:14.387 +02:00 [DBG] Request was short circuited at action filter 'Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter'.
+2024-08-28 10:10:14.391 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-08-28 10:10:14.394 +02:00 [DBG] No information found on request to perform content negotiation.
+2024-08-28 10:10:14.396 +02:00 [DBG] Attempting to select the first output formatter in the output formatters list which supports a content type from the explicitly specified content types '["application/problem+json","application/problem+xml","application/problem+json","application/problem+xml"]'.
+2024-08-28 10:10:14.400 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter' and content type 'application/problem+json' to write the response.
+2024-08-28 10:10:14.403 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-08-28 10:10:14.547 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory) in 449.8447ms
+2024-08-28 10:10:14.550 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:14.554 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/api/Authors/findById/5555555555 - 400 249 application/problem+json; charset=utf-8 549.1588ms
+2024-08-28 10:10:16.602 +02:00 [DBG] Connection id "0HN6773A4ID30" received FIN.
+2024-08-28 10:10:16.605 +02:00 [DBG] The connection queue processing loop for 0HN6773A4ID30 completed.
+2024-08-28 10:10:16.608 +02:00 [DBG] Connection id "0HN6773A4ID30" is closed. The last processed stream ID was 11.
+2024-08-28 10:10:16.611 +02:00 [DBG] Connection id "0HN6773A4ID30" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:10:16.618 +02:00 [DBG] Connection id "0HN6773A4ID30" stopped.
+2024-08-28 10:10:22.120 +02:00 [DBG] Connection id "0HN6773A4ID31" accepted.
+2024-08-28 10:10:22.128 +02:00 [DBG] Connection id "0HN6773A4ID31" started.
+2024-08-28 10:10:22.133 +02:00 [DBG] Connection 0HN6773A4ID31 established using the following protocol: "Tls12"
+2024-08-28 10:10:22.135 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/api/Authors/findById/9 - null null
+2024-08-28 10:10:22.143 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Authors/findById/9'
+2024-08-28 10:10:22.144 +02:00 [DBG] Endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)' with route pattern 'api/Authors/findById/{id}' is valid for the request path '/api/Authors/findById/9'
+2024-08-28 10:10:22.146 +02:00 [DBG] Request matched endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:22.147 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-08-28 10:10:22.148 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:22.149 +02:00 [INF] Route matched with {action = "GetAuthorById", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAuthorById(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:10:22.151 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-08-28 10:10:22.153 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-08-28 10:10:22.155 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-08-28 10:10:22.157 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-08-28 10:10:22.158 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-08-28 10:10:22.160 +02:00 [DBG] Executing controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:10:22.168 +02:00 [DBG] Executed controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:10:22.172 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:10:22.173 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-08-28 10:10:22.175 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:22.176 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:22.177 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:10:22.179 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-08-28 10:10:22.182 +02:00 [INF] Displaying author with id 9!
+2024-08-28 10:10:22.185 +02:00 [INF] Fetching the author with the id: 9
+2024-08-28 10:10:22.650 +02:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2024-08-28 10:10:22.654 +02:00 [DBG] The index {'UserId'} was not created on entity type 'RoleUser' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2024-08-28 10:10:22.992 +02:00 [DBG] Entity Framework Core 8.0.8 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.8' with options: None
+2024-08-28 10:10:23.086 +02:00 [DBG] Compiling query expression: 
+'DbSet<Author>()
+    .Include(a => a.Publisher)
+    .FirstOrDefault(x => x.Id == __id_0)'
+2024-08-28 10:10:23.161 +02:00 [DBG] Including navigation: 'Author.Publisher'.
+2024-08-28 10:10:23.370 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Author>(
+    asyncEnumerable: new SingleQueryingEnumerable<Author>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Author.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Author.DateOfBirth (DateOnly) Required, 1], [Property: Author.EmailAddress (string) Required, 2], [Property: Author.ImageUrl (string) Required, 3], [Property: Author.Name (string) Required MaxLength(70), 4], [Property: Author.Nationality (string) Required MaxLength(70), 5] }
+                1 -> Dictionary<IProperty, int> { [Property: Publisher.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: Publisher.Address (string) Required MaxLength(150), 7], [Property: Publisher.AuthorId (int) Required FK Index, 8], [Property: Publisher.Name (string) Required MaxLength(100), 9], [Property: Publisher.Website (string) Required MaxLength(150), 10] }
+            SELECT TOP(1) a.Id, a.DateOfBirth, a.EmailAddress, a.ImageUrl, a.Name, a.Nationality, p.Id, p.Address, p.AuthorId, p.Name, p.Website
+            FROM Authors AS a
+            LEFT JOIN Publishers AS p ON a.Id == p.AuthorId
+            WHERE a.Id == @__id_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Author>, 
+        BookInventory.DataAccess.Database.DatabaseContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-08-28 10:10:23.410 +02:00 [DBG] Creating DbConnection.
+2024-08-28 10:10:23.429 +02:00 [DBG] Created DbConnection. (17ms).
+2024-08-28 10:10:23.433 +02:00 [DBG] Opening connection to database 'BookInventory' on server '.'.
+2024-08-28 10:10:23.741 +02:00 [DBG] Opened connection to database 'BookInventory' on server '.'.
+2024-08-28 10:10:23.745 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-08-28 10:10:23.750 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2024-08-28 10:10:23.760 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+2024-08-28 10:10:23.771 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:10:23.840 +02:00 [INF] Executed DbCommand (72ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:10:23.858 +02:00 [DBG] Closing data reader to 'BookInventory' on server '.'.
+2024-08-28 10:10:23.867 +02:00 [DBG] A data reader for 'BookInventory' on server '.' is being disposed after spending 19ms reading results.
+2024-08-28 10:10:23.872 +02:00 [DBG] Closing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:10:23.879 +02:00 [DBG] Closed connection to database 'BookInventory' on server '.' (6ms).
+2024-08-28 10:10:23.881 +02:00 [WRN] Author with id 9 not found!
+2024-08-28 10:10:23.983 +02:00 [WRN] Author not found!
+2024-08-28 10:10:23.987 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-08-28 10:10:23.989 +02:00 [DBG] No information found on request to perform content negotiation.
+2024-08-28 10:10:23.990 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-08-28 10:10:23.991 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-08-28 10:10:23.992 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2024-08-28 10:10:23.993 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-08-28 10:10:23.994 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory) in 1834.6342ms
+2024-08-28 10:10:23.996 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.GetAuthorById (BookInventory)'
+2024-08-28 10:10:23.998 +02:00 [DBG] 'DatabaseContext' disposed.
+2024-08-28 10:10:24.004 +02:00 [DBG] Disposing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:10:24.007 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2024-08-28 10:10:24.009 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/api/Authors/findById/9 - 404 null text/plain; charset=utf-8 1874.0733ms
+2024-08-28 10:10:26.606 +02:00 [DBG] Connection id "0HN6773A4ID31" received FIN.
+2024-08-28 10:10:26.609 +02:00 [DBG] Connection id "0HN6773A4ID31" is closed. The last processed stream ID was 1.
+2024-08-28 10:10:26.609 +02:00 [DBG] The connection queue processing loop for 0HN6773A4ID31 completed.
+2024-08-28 10:10:26.611 +02:00 [DBG] Connection id "0HN6773A4ID31" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:10:26.618 +02:00 [DBG] Connection id "0HN6773A4ID31" stopped.
+2024-08-28 10:12:04.361 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-08-28 10:12:04.502 +02:00 [DBG] Hosting starting
+2024-08-28 10:12:04.760 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 10:12:04.761 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 10:12:04.762 +02:00 [DBG] Loaded hosting startup assembly BookInventory
+2024-08-28 10:12:04.764 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-08-28 10:12:04.764 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-08-28 10:12:04.766 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 10:12:04.768 +02:00 [INF] Hosting environment: Development
+2024-08-28 10:12:04.769 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 10:12:04.770 +02:00 [DBG] Hosting started
+2024-08-28 10:12:04.999 +02:00 [DBG] Connection id "0HN6774D6K3SR" accepted.
+2024-08-28 10:12:04.999 +02:00 [DBG] Connection id "0HN6774D6K3SS" accepted.
+2024-08-28 10:12:05.001 +02:00 [DBG] Connection id "0HN6774D6K3SR" started.
+2024-08-28 10:12:05.001 +02:00 [DBG] Connection id "0HN6774D6K3SS" started.
+2024-08-28 10:12:05.017 +02:00 [DBG] Connection id "0HN6774D6K3SS" received FIN.
+2024-08-28 10:12:05.017 +02:00 [DBG] Connection id "0HN6774D6K3SR" received FIN.
+2024-08-28 10:12:05.034 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:12:05.033 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:12:05.080 +02:00 [DBG] Connection id "0HN6774D6K3SR" stopped.
+2024-08-28 10:12:05.080 +02:00 [DBG] Connection id "0HN6774D6K3SS" stopped.
+2024-08-28 10:12:05.084 +02:00 [DBG] Connection id "0HN6774D6K3SS" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:05.084 +02:00 [DBG] Connection id "0HN6774D6K3SR" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:05.156 +02:00 [DBG] Connection id "0HN6774D6K3ST" accepted.
+2024-08-28 10:12:05.171 +02:00 [DBG] Connection id "0HN6774D6K3ST" started.
+2024-08-28 10:12:05.275 +02:00 [DBG] Connection 0HN6774D6K3ST established using the following protocol: "Tls12"
+2024-08-28 10:12:05.356 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 10:12:05.503 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-08-28 10:12:05.521 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2024-08-28 10:12:05.522 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:05.626 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2024-08-28 10:12:05.628 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2024-08-28 10:12:05.640 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2024-08-28 10:12:05.642 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2024-08-28 10:12:05.646 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 297.9446ms
+2024-08-28 10:12:05.676 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 10:12:05.676 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 10:12:05.676 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 10:12:05.685 +02:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2024-08-28 10:12:05.688 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:05.692 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 17.0303ms
+2024-08-28 10:12:05.712 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 38.0737ms
+2024-08-28 10:12:05.840 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 163.8301ms
+2024-08-28 10:12:05.954 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 10:12:05.981 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2024-08-28 10:12:05.982 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:06.131 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 182.4986ms
+2024-08-28 10:12:06.785 +02:00 [DBG] Connection id "0HN6774D6K3ST" received FIN.
+2024-08-28 10:12:06.792 +02:00 [DBG] The connection queue processing loop for 0HN6774D6K3ST completed.
+2024-08-28 10:12:06.793 +02:00 [DBG] Connection id "0HN6774D6K3ST" is closed. The last processed stream ID was 9.
+2024-08-28 10:12:06.795 +02:00 [DBG] Connection id "0HN6774D6K3ST" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:06.804 +02:00 [DBG] Connection id "0HN6774D6K3ST" stopped.
+2024-08-28 10:12:09.920 +02:00 [DBG] Connection id "0HN6774D6K3SU" accepted.
+2024-08-28 10:12:09.923 +02:00 [DBG] Connection id "0HN6774D6K3SU" started.
+2024-08-28 10:12:09.929 +02:00 [DBG] Connection 0HN6774D6K3SU established using the following protocol: "Tls12"
+2024-08-28 10:12:09.934 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/555 - null null
+2024-08-28 10:12:09.940 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Authors/deleteAuthor/555'
+2024-08-28 10:12:09.944 +02:00 [DBG] Endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)' with route pattern 'api/Authors/deleteAuthor/{id}' is valid for the request path '/api/Authors/deleteAuthor/555'
+2024-08-28 10:12:09.947 +02:00 [DBG] Request matched endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:09.949 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-08-28 10:12:09.954 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:09.978 +02:00 [INF] Route matched with {action = "DeleteAuthor", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAuthor(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:12:09.982 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-08-28 10:12:09.986 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-08-28 10:12:09.989 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-08-28 10:12:09.992 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-08-28 10:12:09.994 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-08-28 10:12:09.997 +02:00 [DBG] Executing controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:12:10.175 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-08-28 10:12:10.297 +02:00 [DBG] Executed controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:12:10.311 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:12:10.314 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-08-28 10:12:10.317 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:10.319 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:10.320 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:12:10.322 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:10.326 +02:00 [INF] API call to delete author with ID 555 started.
+2024-08-28 10:12:10.329 +02:00 [INF] Trying to delete the author!
+2024-08-28 10:12:10.751 +02:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2024-08-28 10:12:10.754 +02:00 [DBG] The index {'UserId'} was not created on entity type 'RoleUser' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2024-08-28 10:12:11.117 +02:00 [DBG] Entity Framework Core 8.0.8 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.8' with options: None
+2024-08-28 10:12:11.195 +02:00 [DBG] Compiling query expression: 
+'DbSet<Author>()
+    .Include(a => a.Publisher)
+    .FirstOrDefault(a => a.Id == __id_0)'
+2024-08-28 10:12:11.248 +02:00 [DBG] Including navigation: 'Author.Publisher'.
+2024-08-28 10:12:11.427 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Author>(
+    asyncEnumerable: new SingleQueryingEnumerable<Author>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Author.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Author.DateOfBirth (DateOnly) Required, 1], [Property: Author.EmailAddress (string) Required, 2], [Property: Author.ImageUrl (string) Required, 3], [Property: Author.Name (string) Required MaxLength(70), 4], [Property: Author.Nationality (string) Required MaxLength(70), 5] }
+                1 -> Dictionary<IProperty, int> { [Property: Publisher.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: Publisher.Address (string) Required MaxLength(150), 7], [Property: Publisher.AuthorId (int) Required FK Index, 8], [Property: Publisher.Name (string) Required MaxLength(100), 9], [Property: Publisher.Website (string) Required MaxLength(150), 10] }
+            SELECT TOP(1) a.Id, a.DateOfBirth, a.EmailAddress, a.ImageUrl, a.Name, a.Nationality, p.Id, p.Address, p.AuthorId, p.Name, p.Website
+            FROM Authors AS a
+            LEFT JOIN Publishers AS p ON a.Id == p.AuthorId
+            WHERE a.Id == @__id_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Author>, 
+        BookInventory.DataAccess.Database.DatabaseContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-08-28 10:12:11.469 +02:00 [DBG] Creating DbConnection.
+2024-08-28 10:12:11.489 +02:00 [DBG] Created DbConnection. (17ms).
+2024-08-28 10:12:11.494 +02:00 [DBG] Opening connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:11.814 +02:00 [DBG] Opened connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:11.818 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-08-28 10:12:11.823 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2024-08-28 10:12:11.832 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (13ms).
+2024-08-28 10:12:11.842 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:12:11.900 +02:00 [INF] Executed DbCommand (60ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:12:11.915 +02:00 [DBG] Closing data reader to 'BookInventory' on server '.'.
+2024-08-28 10:12:11.923 +02:00 [DBG] A data reader for 'BookInventory' on server '.' is being disposed after spending 15ms reading results.
+2024-08-28 10:12:11.928 +02:00 [DBG] Closing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:11.935 +02:00 [DBG] Closed connection to database 'BookInventory' on server '.' (6ms).
+2024-08-28 10:12:11.936 +02:00 [INF] Author with ID 555 not found.
+2024-08-28 10:12:12.048 +02:00 [WRN] Author with ID 555 not found.
+2024-08-28 10:12:12.053 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-08-28 10:12:12.057 +02:00 [DBG] No information found on request to perform content negotiation.
+2024-08-28 10:12:12.058 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-08-28 10:12:12.059 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-08-28 10:12:12.060 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2024-08-28 10:12:12.062 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-08-28 10:12:12.068 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory) in 2068.3799ms
+2024-08-28 10:12:12.070 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:12.074 +02:00 [DBG] 'DatabaseContext' disposed.
+2024-08-28 10:12:12.079 +02:00 [DBG] Disposing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:12.081 +02:00 [DBG] Disposed connection to database '' on server '' (2ms).
+2024-08-28 10:12:12.084 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/555 - 404 null text/plain; charset=utf-8 2150.8032ms
+2024-08-28 10:12:16.804 +02:00 [DBG] Connection id "0HN6774D6K3SU" received FIN.
+2024-08-28 10:12:16.807 +02:00 [DBG] Connection id "0HN6774D6K3SU" is closed. The last processed stream ID was 1.
+2024-08-28 10:12:16.807 +02:00 [DBG] The connection queue processing loop for 0HN6774D6K3SU completed.
+2024-08-28 10:12:16.809 +02:00 [DBG] Connection id "0HN6774D6K3SU" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:16.818 +02:00 [DBG] Connection id "0HN6774D6K3SU" stopped.
+2024-08-28 10:12:44.985 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.TryParseModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2024-08-28 10:12:45.127 +02:00 [DBG] Hosting starting
+2024-08-28 10:12:45.386 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 10:12:45.387 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 10:12:45.387 +02:00 [DBG] Loaded hosting startup assembly BookInventory
+2024-08-28 10:12:45.388 +02:00 [DBG] Loaded hosting startup assembly Microsoft.AspNetCore.Watch.BrowserRefresh
+2024-08-28 10:12:45.389 +02:00 [DBG] Loaded hosting startup assembly Microsoft.WebTools.BrowserLink.Net
+2024-08-28 10:12:45.390 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 10:12:45.391 +02:00 [INF] Hosting environment: Development
+2024-08-28 10:12:45.392 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 10:12:45.394 +02:00 [DBG] Hosting started
+2024-08-28 10:12:45.494 +02:00 [DBG] Connection id "0HN6774P8Q548" accepted.
+2024-08-28 10:12:45.494 +02:00 [DBG] Connection id "0HN6774P8Q547" accepted.
+2024-08-28 10:12:45.496 +02:00 [DBG] Connection id "0HN6774P8Q547" started.
+2024-08-28 10:12:45.496 +02:00 [DBG] Connection id "0HN6774P8Q548" started.
+2024-08-28 10:12:45.516 +02:00 [DBG] Connection id "0HN6774P8Q548" received FIN.
+2024-08-28 10:12:45.516 +02:00 [DBG] Connection id "0HN6774P8Q547" received FIN.
+2024-08-28 10:12:45.525 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:12:45.525 +02:00 [DBG] Failed to authenticate HTTPS connection.
+System.IO.IOException: Received an unexpected EOF or 0 bytes from the transport stream.
+   at System.Net.Security.SslStream.ReceiveHandshakeFrameAsync[TIOAdapter](CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ForceAuthenticationAsync[TIOAdapter](Boolean receiveFirst, Byte[] reAuthenticationData, CancellationToken cancellationToken)
+   at System.Net.Security.SslStream.ProcessAuthenticationWithTelemetryAsync(Boolean isAsync, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionMiddleware.OnConnectionAsync(ConnectionContext context)
+2024-08-28 10:12:45.574 +02:00 [DBG] Connection id "0HN6774P8Q548" stopped.
+2024-08-28 10:12:45.574 +02:00 [DBG] Connection id "0HN6774P8Q547" stopped.
+2024-08-28 10:12:45.580 +02:00 [DBG] Connection id "0HN6774P8Q548" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:45.580 +02:00 [DBG] Connection id "0HN6774P8Q547" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:45.649 +02:00 [DBG] Connection id "0HN6774P8Q549" accepted.
+2024-08-28 10:12:45.670 +02:00 [DBG] Connection id "0HN6774P8Q549" started.
+2024-08-28 10:12:45.808 +02:00 [DBG] Connection 0HN6774P8Q549 established using the following protocol: "Tls12"
+2024-08-28 10:12:45.953 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 10:12:46.090 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2024-08-28 10:12:46.113 +02:00 [DBG] No candidates found for the request path '/swagger/index.html'
+2024-08-28 10:12:46.114 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:46.263 +02:00 [DBG] Response markup is scheduled to include Browser Link script injection.
+2024-08-28 10:12:46.270 +02:00 [DBG] Response markup is scheduled to include browser refresh script injection.
+2024-08-28 10:12:46.285 +02:00 [DBG] Response markup was updated to include Browser Link script injection.
+2024-08-28 10:12:46.288 +02:00 [DBG] Response markup was updated to include browser refresh script injection.
+2024-08-28 10:12:46.293 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 346.786ms
+2024-08-28 10:12:46.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 10:12:46.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 10:12:46.340 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 10:12:46.362 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 22.0096ms
+2024-08-28 10:12:46.366 +02:00 [DBG] No candidates found for the request path '/swagger/index.js'
+2024-08-28 10:12:46.373 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:46.380 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 39.5254ms
+2024-08-28 10:12:46.497 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 156.6485ms
+2024-08-28 10:12:46.575 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 10:12:46.587 +02:00 [DBG] No candidates found for the request path '/swagger/v1/swagger.json'
+2024-08-28 10:12:46.591 +02:00 [DBG] Request did not match any endpoints
+2024-08-28 10:12:46.761 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 186.002ms
+2024-08-28 10:12:46.835 +02:00 [DBG] Connection id "0HN6774P8Q549" received FIN.
+2024-08-28 10:12:46.839 +02:00 [DBG] The connection queue processing loop for 0HN6774P8Q549 completed.
+2024-08-28 10:12:46.842 +02:00 [DBG] Connection id "0HN6774P8Q549" is closed. The last processed stream ID was 9.
+2024-08-28 10:12:46.843 +02:00 [DBG] Connection id "0HN6774P8Q549" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:12:46.860 +02:00 [DBG] Connection id "0HN6774P8Q549" stopped.
+2024-08-28 10:12:55.255 +02:00 [DBG] Connection id "0HN6774P8Q54A" accepted.
+2024-08-28 10:12:55.259 +02:00 [DBG] Connection id "0HN6774P8Q54A" started.
+2024-08-28 10:12:55.264 +02:00 [DBG] Connection 0HN6774P8Q54A established using the following protocol: "Tls12"
+2024-08-28 10:12:55.272 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/555 - null null
+2024-08-28 10:12:55.278 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Authors/deleteAuthor/555'
+2024-08-28 10:12:55.284 +02:00 [DBG] Endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)' with route pattern 'api/Authors/deleteAuthor/{id}' is valid for the request path '/api/Authors/deleteAuthor/555'
+2024-08-28 10:12:55.287 +02:00 [DBG] Request matched endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:55.290 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2024-08-28 10:12:55.293 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:55.323 +02:00 [INF] Route matched with {action = "DeleteAuthor", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAuthor(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:12:55.326 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2024-08-28 10:12:55.328 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2024-08-28 10:12:55.329 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2024-08-28 10:12:55.331 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2024-08-28 10:12:55.334 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2024-08-28 10:12:55.337 +02:00 [DBG] Executing controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:12:55.463 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2024-08-28 10:12:55.582 +02:00 [DBG] Executed controller factory for controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory)
+2024-08-28 10:12:55.597 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:12:55.602 +02:00 [DBG] Attempting to bind parameter 'id' of type 'System.Int32' using the name 'id' in request data ...
+2024-08-28 10:12:55.605 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:55.607 +02:00 [DBG] Done attempting to bind parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:55.608 +02:00 [DBG] Attempting to validate the bound parameter 'id' of type 'System.Int32' ...
+2024-08-28 10:12:55.611 +02:00 [DBG] Done attempting to validate the bound parameter 'id' of type 'System.Int32'.
+2024-08-28 10:12:55.616 +02:00 [INF] API call to delete author with ID 555 started.
+2024-08-28 10:12:55.620 +02:00 [INF] Trying to delete the author!
+2024-08-28 10:12:56.121 +02:00 [DBG] The index {'RoleId'} was not created on entity type 'RolePermission' as the properties are already covered by the index {'RoleId', 'PermissionId'}.
+2024-08-28 10:12:56.124 +02:00 [DBG] The index {'UserId'} was not created on entity type 'RoleUser' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2024-08-28 10:12:56.437 +02:00 [DBG] Entity Framework Core 8.0.8 initialized 'DatabaseContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:8.0.8' with options: None
+2024-08-28 10:12:56.520 +02:00 [DBG] Compiling query expression: 
+'DbSet<Author>()
+    .Include(a => a.Publisher)
+    .FirstOrDefault(a => a.Id == __id_0)'
+2024-08-28 10:12:56.571 +02:00 [DBG] Including navigation: 'Author.Publisher'.
+2024-08-28 10:12:56.744 +02:00 [DBG] Generated query execution expression: 
+'queryContext => ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync<Author>(
+    asyncEnumerable: new SingleQueryingEnumerable<Author>(
+        (RelationalQueryContext)queryContext, 
+        RelationalCommandCache.QueryExpression(
+            Client Projections:
+                0 -> Dictionary<IProperty, int> { [Property: Author.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Author.DateOfBirth (DateOnly) Required, 1], [Property: Author.EmailAddress (string) Required, 2], [Property: Author.ImageUrl (string) Required, 3], [Property: Author.Name (string) Required MaxLength(70), 4], [Property: Author.Nationality (string) Required MaxLength(70), 5] }
+                1 -> Dictionary<IProperty, int> { [Property: Publisher.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 6], [Property: Publisher.Address (string) Required MaxLength(150), 7], [Property: Publisher.AuthorId (int) Required FK Index, 8], [Property: Publisher.Name (string) Required MaxLength(100), 9], [Property: Publisher.Website (string) Required MaxLength(150), 10] }
+            SELECT TOP(1) a.Id, a.DateOfBirth, a.EmailAddress, a.ImageUrl, a.Name, a.Nationality, p.Id, p.Address, p.AuthorId, p.Name, p.Website
+            FROM Authors AS a
+            LEFT JOIN Publishers AS p ON a.Id == p.AuthorId
+            WHERE a.Id == @__id_0), 
+        null, 
+        Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Author>, 
+        BookInventory.DataAccess.Database.DatabaseContext, 
+        False, 
+        False, 
+        True
+    ), 
+    cancellationToken: queryContext.CancellationToken)'
+2024-08-28 10:12:56.792 +02:00 [DBG] Creating DbConnection.
+2024-08-28 10:12:56.815 +02:00 [DBG] Created DbConnection. (20ms).
+2024-08-28 10:12:56.820 +02:00 [DBG] Opening connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:57.158 +02:00 [DBG] Opened connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:57.164 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2024-08-28 10:12:57.170 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (5ms).
+2024-08-28 10:12:57.179 +02:00 [DBG] Initialized DbCommand for 'ExecuteReader' (15ms).
+2024-08-28 10:12:57.191 +02:00 [DBG] Executing DbCommand [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:12:57.248 +02:00 [INF] Executed DbCommand (59ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:12:57.266 +02:00 [DBG] Closing data reader to 'BookInventory' on server '.'.
+2024-08-28 10:12:57.275 +02:00 [DBG] A data reader for 'BookInventory' on server '.' is being disposed after spending 17ms reading results.
+2024-08-28 10:12:57.283 +02:00 [DBG] Closing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:57.291 +02:00 [DBG] Closed connection to database 'BookInventory' on server '.' (8ms).
+2024-08-28 10:12:57.294 +02:00 [INF] Author with ID 555 not found.
+2024-08-28 10:12:57.422 +02:00 [WRN] Author with ID 555 not found.
+2024-08-28 10:12:57.427 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonOutputFormatter"]
+2024-08-28 10:12:57.430 +02:00 [DBG] No information found on request to perform content negotiation.
+2024-08-28 10:12:57.430 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2024-08-28 10:12:57.432 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2024-08-28 10:12:57.434 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter' and content type 'text/plain' to write the response.
+2024-08-28 10:12:57.436 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-08-28 10:12:57.442 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory) in 2104.3253ms
+2024-08-28 10:12:57.444 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:12:57.447 +02:00 [DBG] 'DatabaseContext' disposed.
+2024-08-28 10:12:57.453 +02:00 [DBG] Disposing connection to database 'BookInventory' on server '.'.
+2024-08-28 10:12:57.456 +02:00 [DBG] Disposed connection to database '' on server '' (3ms).
+2024-08-28 10:12:57.459 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/555 - 404 null text/plain; charset=utf-8 2187.1554ms
+2024-08-28 10:13:06.869 +02:00 [DBG] Connection id "0HN6774P8Q54A" received FIN.
+2024-08-28 10:13:06.877 +02:00 [DBG] Connection id "0HN6774P8Q54A" is closed. The last processed stream ID was 1.
+2024-08-28 10:13:06.877 +02:00 [DBG] The connection queue processing loop for 0HN6774P8Q54A completed.
+2024-08-28 10:13:06.879 +02:00 [DBG] Connection id "0HN6774P8Q54A" sending FIN because: "The Socket transport's send loop completed gracefully."
+2024-08-28 10:13:06.896 +02:00 [DBG] Connection id "0HN6774P8Q54A" stopped.
+2024-08-28 10:15:01.174 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 10:15:01.209 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 10:15:01.214 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 10:15:01.215 +02:00 [INF] Hosting environment: Development
+2024-08-28 10:15:01.220 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 10:15:01.839 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 10:15:02.136 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 294.8467ms
+2024-08-28 10:15:02.157 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 10:15:02.168 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 10:15:02.157 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 10:15:02.181 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 23.5453ms
+2024-08-28 10:15:02.185 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 28.0024ms
+2024-08-28 10:15:02.243 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.6653ms
+2024-08-28 10:15:02.375 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 10:15:02.660 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 285.1204ms
+2024-08-28 10:15:09.102 +02:00 [INF] Request starting HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/666 - null null
+2024-08-28 10:15:09.138 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:15:09.170 +02:00 [INF] Route matched with {action = "DeleteAuthor", controller = "Authors"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteAuthor(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthorsController (BookInventory).
+2024-08-28 10:15:09.570 +02:00 [INF] API call to delete author with ID 666 started.
+2024-08-28 10:15:09.572 +02:00 [INF] Trying to delete the author!
+2024-08-28 10:15:11.456 +02:00 [INF] Executed DbCommand (70ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality], [p].[Id], [p].[Address], [p].[AuthorId], [p].[Name], [p].[Website]
+FROM [Authors] AS [a]
+LEFT JOIN [Publishers] AS [p] ON [a].[Id] = [p].[AuthorId]
+WHERE [a].[Id] = @__id_0
+2024-08-28 10:15:11.506 +02:00 [INF] Author with ID 666 not found.
+2024-08-28 10:15:11.672 +02:00 [WRN] Author with ID 666 not found.
+2024-08-28 10:15:11.691 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-08-28 10:15:11.698 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory) in 2508.288ms
+2024-08-28 10:15:11.701 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthorsController.DeleteAuthor (BookInventory)'
+2024-08-28 10:15:11.717 +02:00 [INF] Request finished HTTP/2 DELETE https://localhost:7126/api/Authors/deleteAuthor/666 - 404 null text/plain; charset=utf-8 2615.1068ms

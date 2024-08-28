@@ -68,58 +68,40 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             try
             {
                 _logger.LogInformation("Creating a new book in the database.");
-                var bookEntity = new Book
-                {
-                    Title = bookModel.Title,
-                    PublicationYear = bookModel.PublicationYear,
-                    Genres = bookModel.Genres,
-                    Language = bookModel.Language,
-                    PageCount = bookModel.PageCount,
-                    Price = bookModel.Price,
-                    Stock = bookModel.Stock,
-                    Edition = bookModel.Edition,
-                    Format = bookModel.Format,
-                    AuthorId = bookModel.AuthorId,
-                };
+
+                // Use AutoMapper to map from BookCreateModel to Book entity
+                var bookEntity = _mapper.Map<Book>(bookModel);
 
                 _context.Books.Add(bookEntity);
                 await _context.SaveChangesAsync();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "Error occurred while trying to create a book.");
                 throw new Exception("Error while trying to create a book", ex);
             }
         }
 
-
         public async Task UpdateBook(int id, BookUpdateModel bookModel)
         {
             _logger.LogInformation($"Updating book with ID {id}.");
-            var newBook = await _context.Books.FirstOrDefaultAsync(_ => _.Id == id);
+            var bookEntity = await _context.Books.FirstOrDefaultAsync(_ => _.Id == id);
 
-            if(newBook == null)
+            if (bookEntity == null)
             {
                 _logger.LogWarning($"Book with ID {id} not found.");
                 throw new KeyNotFoundException($"Book with ID {id} not found!");
             }
-            
-            newBook.Title = bookModel.Title;    
-            newBook.PublicationYear = bookModel.PublicationYear;
-            newBook.Genres = bookModel.Genres;
-            newBook.Language = bookModel.Language;
-            newBook.PageCount = bookModel.PageCount;
-            newBook.Price = bookModel.Price;
-            newBook.Stock = bookModel.Stock;
-            newBook.Edition = bookModel.Edition;
-            newBook.Format = bookModel.Format;
-            newBook.AuthorId = bookModel.AuthorId;  
 
-            _context.Books.Update(newBook);
+            // Use AutoMapper to map the updated fields from BookUpdateModel to the existing Book entity
+            _mapper.Map(bookModel, bookEntity);
+
+            _context.Books.Update(bookEntity);
             await _context.SaveChangesAsync();
 
             _logger.LogInformation($"Book with ID {id} updated successfully.");
-
         }
+
 
         public async Task<bool> DeleteBook(int id)
         {
