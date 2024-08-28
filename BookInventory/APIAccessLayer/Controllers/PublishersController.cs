@@ -1,10 +1,11 @@
-﻿using BookInventory.BusinessLogicAcessLayer.Models.PulisherModels;
-using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Identity.Client.Extensibility;
+using BookInventory.BusinessLogicAcessLayer.Models.PulisherModels;
+using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
 
-namespace BookInventory.APIAccessLayer.Controllers
+namespace PublisherInventory.APIAccessLayer.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -20,6 +21,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpGet("getAllPublishers")]
+        [Authorize(Policy = "Publisher_Read")]
         public async Task<IActionResult> GetAllPublishers()
         {
             try
@@ -37,6 +39,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpGet("getPublisherById/{id}")]
+        [Authorize(Policy = "Publisher_Read")]
         public async Task<IActionResult> GetPublisherById(int id)
         {
             try
@@ -59,6 +62,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpPost("addPublisher")]
+        [Authorize(Policy = "Publisher_Create")]
         public async Task<IActionResult> AddPublisher(PublisherCreateModel model)
         {
             try
@@ -76,6 +80,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpPut("updatePublisher/{id}")]
+        [Authorize(Policy = "Publisher_Edit")]
         public async Task<IActionResult> UpdatePublisher(int id, PublisherUpdateModel model)
         {
             try
@@ -94,6 +99,7 @@ namespace BookInventory.APIAccessLayer.Controllers
 
 
         [HttpDelete("deletePublisher/{id}")]
+        [Authorize(Policy = "Publisher_Delete")]
         public async Task<IActionResult> DeletePublisher(int id)
         {
             try

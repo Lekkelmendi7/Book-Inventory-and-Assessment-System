@@ -1,6 +1,7 @@
 ﻿using BookInventory.BusinessLogicAcessLayer.Services.AuthService;
 using BookInventory.BusinessLogicAcessLayer.Services.PermissionService;
 using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
+using BookInventory.BusinessLogicAcessLayer.Services.RoleService;
 using BookInventory.LogicAcessLayer.Services.AuthorService;
 using BookInventory.LogicAcessLayer.Services.BookService;
 using System.Runtime.CompilerServices;
@@ -16,7 +17,7 @@ namespace BookInventory.LogicAcessLayer.Services
             services.AddScoped<IPublisherService, PublisherServicee>();
             services.AddScoped<IAuthService, AuthServicee>();
             services.AddScoped<IPermissionService, PermissionService>();
-            services.AddScoped<>
+            services.AddScoped<IRoleService, RoleService>();
         }
     }
 }

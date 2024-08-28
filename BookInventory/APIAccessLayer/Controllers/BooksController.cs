@@ -1,6 +1,7 @@
 ﻿using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.BookModels;
 using BookInventory.LogicAcessLayer.Services.BookService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -38,6 +39,7 @@ namespace BookInventory.APIAccessLayer.Controllers
              }
          }*/
         [HttpGet("getAllBooks")]
+        [Authorize(Policy = "Book_Read")]
         public async Task<IActionResult> GetAllBooks()
         {
             try
@@ -55,6 +57,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpGet("getSingleBook/{id}")]
+        [Authorize(Policy = "Book_Read")]
         public async Task<IActionResult> GetSingleBook(int id)
         {
             try
@@ -76,6 +79,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpPost("addBook")]
+        [Authorize(Policy = "Book_Create")]
         public async Task<IActionResult> AddBook(BookCreateModel model)
         {
             try
@@ -91,6 +95,7 @@ namespace BookInventory.APIAccessLayer.Controllers
             }
         }
         [HttpPut("updateBook/{id}")]
+        [Authorize(Policy = "Book_Edit")]
         public async Task<IActionResult> UpdateBook(int id, BookUpdateModel model)
         {
             try
@@ -112,6 +117,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         }
 
         [HttpDelete("deleteBook/{id}")]
+        [Authorize(Policy = "Book_Delete")]
         public async Task<IActionResult> DeleteBook(int id)
         {
             try

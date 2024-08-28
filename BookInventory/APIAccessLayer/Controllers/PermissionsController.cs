@@ -1,4 +1,5 @@
 ﻿using BookInventory.BusinessLogicAcessLayer.Models.PermissionModels;
+using BookInventory.BusinessLogicAcessLayer.Services.PermissionService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
