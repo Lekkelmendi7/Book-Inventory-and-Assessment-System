@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\authservice\\authservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\authservice\\authservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -38,11 +42,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "AuthServicee.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "ViewState": "AQIAADIBAAAAAAAAAAArwD4BAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-28T09:59:30.218Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "AutoMapper.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Automapper\\AutoMapper.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Automapper\\AutoMapper.cs",
@@ -50,12 +67,11 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Automapper\\AutoMapper.cs",
               "ViewState": "AQIAAD8AAAAAAAAAAAAIwGwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:39:18.018Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:39:18.018Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "RoleUpdateModel.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleUpdateModel.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleUpdateModel.cs",
@@ -63,12 +79,11 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleUpdateModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:38:08.673Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:38:08.673Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "RoleGetModel.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleGetModel.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleGetModel.cs",
@@ -76,25 +91,24 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleGetModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:37:57.518Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:37:57.518Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\Program.cs",
               "RelativeDocumentMoniker": "BookInventory\\Program.cs",
               "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\Program.cs",
               "RelativeToolTip": "BookInventory\\Program.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-28T09:32:39.533Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "PermissionCreateModel.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionCreateModel.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionCreateModel.cs",
@@ -102,12 +116,11 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionCreateModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:31:04.644Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:31:04.644Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "PermissionGetModel.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionGetModel.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionGetModel.cs",
@@ -115,12 +128,11 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Models\\PermissionModels\\PermissionGetModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:30:38.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:30:38.436Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "RoleCreateModel.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleCreateModel.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleCreateModel.cs",
@@ -128,8 +140,7 @@
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Models\\RoleModel\\RoleCreateModel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-28T09:24:32.446Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-08-28T09:24:32.446Z"
             }
           ]
         }
