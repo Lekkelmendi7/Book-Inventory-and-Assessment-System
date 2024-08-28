@@ -1,5 +1,6 @@
 ﻿using BookInventory.LogicAcessLayer.Models.AuthorModels;
 using BookInventory.LogicAcessLayer.Services.AuthorService;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -28,6 +29,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <returns>A list of authors.</returns>
         /// 
         [HttpGet("getAllAuthors")]
+        [Authorize(Policy = "Author_Read")]
         public async Task<IActionResult> GetAllAuthors()
         {
             try
@@ -49,6 +51,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <param name="id">The identifier of the author.</param>
         /// <returns>The author with the specified identifier.</returns>
         [HttpGet("findById/{id}")]
+        [Authorize(Policy = "Author_Read")]
         public async Task<IActionResult> GetAuthorById(int id)
         {
             try
@@ -75,6 +78,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <param name="model">The author model.</param>
         /// <returns>The created author.</returns>
         [HttpPost("addAuthor")]
+        [Authorize(Policy = "Author_Create")]
         public async Task<IActionResult> AddAuthor(AuthorCreateModel model)
         {
             try
@@ -96,6 +100,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <param name="author">The author model with updated data.</param>
         /// <returns>A success message if the author was updated successfully.</returns>
         [HttpPut("updateAuthor/{id}")]
+        [Authorize(Policy = "Author_Update")]
         public async Task<IActionResult> UpdateAuthor(int id, AuthorUpdateModel author)
         {
             try
@@ -123,6 +128,7 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// <returns>A success message if the author was deleted successfully.</returns>
 
         [HttpDelete("deleteAuthor/{id}")]
+        [Authorize(Policy = "Author_Delete")]
         public async Task<IActionResult> DeleteAuthor(int id)
         {
             try
