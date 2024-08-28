@@ -1,3 +1,4 @@
+using BookInventory.BusinessLogicAcessLayer.Configurations;
 using BookInventory.DataAccess.Database;
 using BookInventory.LogicAcessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
