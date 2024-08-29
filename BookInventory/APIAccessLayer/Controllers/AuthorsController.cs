@@ -31,12 +31,12 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// 
         [HttpGet("getAllAuthors")]
         [Authorize(Policy = "Author_Read")]
-        public async Task<IActionResult> GetAllAuthors()
+        public async Task<IActionResult> GetAllAuthors([FromQuery] int page, [FromQuery] int size)
         {
             try
             {
                 _logger.LogInformation("Displaying all authors!");
-                var authors = await _service.GetAllAuthors();
+                var authors = await _service.GetAllAuthors(page, size);
                 _logger.LogInformation("All authors displayed!");
                 return Ok(authors);
             }catch (Exception ex)

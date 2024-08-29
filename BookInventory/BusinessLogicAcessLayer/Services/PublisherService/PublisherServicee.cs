@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.BusinessLogicAcessLayer.Models.PulisherModels;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Entities;
@@ -18,23 +20,60 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
             _mapper = mapper;
         }
 
-        public async Task<IEnumerable<PublisherGetModel>> GetPublishers()
+
+        public async Task<PaginatedResult<PublisherGetModel>> GetPublishers(int page, int size)
         {
-            var publishers = await _context.Publishers.Include(a => a.Author).ToListAsync();
-            return _mapper.Map<IEnumerable<PublisherGetModel>>(publishers);  
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
+
+            try
+            {
+                
+
+                // Define the query
+                var queryable = _context.Publishers
+                    .Include(p => p.Author)
+                    .AsQueryable();
+
+                // Apply pagination
+                var paginatedPublishers = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedPublishers = _mapper.Map<IEnumerable<PublisherGetModel>>(paginatedPublishers.Items);
+
+                
+
+                return new PaginatedResult<PublisherGetModel>
+                {
+                    TotalItems = paginatedPublishers.TotalItems,
+                    Items = mappedPublishers,
+                    TotalPages = paginatedPublishers.TotalPages,
+                    CurrentPage = paginatedPublishers.CurrentPage,
+                    HasPreviousPage = paginatedPublishers.HasPreviousPage,
+                    HasNextPage = paginatedPublishers.HasNextPage,
+                    FirstPage = paginatedPublishers.FirstPage,
+                    LastPage = paginatedPublishers.LastPage
+                };
+            }
+            catch (Exception ex)
+            {
+               
+                throw new Exception("An error occurred while trying to fetch publishers.", ex);
+            }
         }
 
         public async Task<PublisherGetModel> GetPublisher(int id)
         {
             var publisher = await _context.Publishers.Include(a => a.Author).FirstOrDefaultAsync(a => a.Id == id);
-            if(publisher == null)
+            if (publisher == null)
             {
                 return null;
             }
 
             return _mapper.Map<PublisherGetModel>(publisher);
         }
-
 
 
         public async Task AddPublisher(PublisherCreateModel model)

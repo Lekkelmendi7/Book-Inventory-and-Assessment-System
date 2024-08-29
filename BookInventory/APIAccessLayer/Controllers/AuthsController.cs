@@ -19,9 +19,9 @@ namespace BookInventory.APIAccessLayer.Controllers
 
         [HttpGet("users")]
         [Authorize(Policy = "User_Read")]
-        public async Task<IActionResult> GetUsers()
+        public async Task<IActionResult> GetUsers([FromQuery] int page, [FromQuery] int size)
         {
-            var users = await _authService.GetUsers();
+            var users = await _authService.GetUsers(page, size);
             return Ok(users);
         }
 

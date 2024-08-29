@@ -19,9 +19,9 @@ namespace BookInventory.APIAccessLayer.Controllers
 
         [HttpGet("all")]
         [Authorize(Policy = "Permission_Read")]
-        public async Task<IActionResult> GetPermissions()
+        public async Task<IActionResult> GetPermissions([FromQuery] int page, [FromQuery] int size)
         {
-            var permissions = await _service.GetAllPermissions();
+            var permissions = await _service.GetAllPermissions(page, size);
             return Ok(permissions);
         }
 

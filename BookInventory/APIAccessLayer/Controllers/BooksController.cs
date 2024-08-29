@@ -41,13 +41,13 @@ namespace BookInventory.APIAccessLayer.Controllers
          }*/
         [HttpGet("getAllBooks")]
         [Authorize(Policy = "Book_Read")]
-        public async Task<IActionResult> GetAllBooks()
+        public async Task<IActionResult> GetAllBooks([FromQuery] int page, [FromQuery] int size)
         {
             try
             {
                 _logger.LogInformation("API call to get all books started.");
-                var books = await _service.GetAllBooks();
-                _logger.LogInformation("API call to get all books completed successfully with {Count} books returned.", books.Count());
+                var books = await _service.GetAllBooks(page, size);
+                _logger.LogInformation("API call to get all books completed successfully!");
                 return Ok(books);
             }
             catch (Exception ex)

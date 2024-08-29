@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.BusinessLogicAcessLayer.Models.AccountModels;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Entities;
@@ -81,11 +83,50 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
             return response;
         }
 
-        public async Task<IEnumerable<UserGetModel>> GetUsers()
+        public async Task<PaginatedResult<UserGetModel>> GetUsers(int page, int size)
         {
-            var users = await _context.Users.Include(s => s.RoleUsers).ThenInclude(ru => ru.Role).ToListAsync();
-            return _mapper.Map<IEnumerable<UserGetModel>>(users);
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
+
+            try
+            {
+               
+
+                // Define the query
+                var queryable = _context.Users
+                    .Include(s => s.RoleUsers)
+                    .ThenInclude(ru => ru.Role)
+                    .AsQueryable();
+
+                // Apply pagination
+                var paginatedUsers = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedUsers = _mapper.Map<IEnumerable<UserGetModel>>(paginatedUsers.Items);
+
+              
+
+                return new PaginatedResult<UserGetModel>
+                {
+                    TotalItems = paginatedUsers.TotalItems,
+                    Items = mappedUsers,
+                    TotalPages = paginatedUsers.TotalPages,
+                    CurrentPage = paginatedUsers.CurrentPage,
+                    HasPreviousPage = paginatedUsers.HasPreviousPage,
+                    HasNextPage = paginatedUsers.HasNextPage,
+                    FirstPage = paginatedUsers.FirstPage,
+                    LastPage = paginatedUsers.LastPage
+                };
+            }
+            catch (Exception ex)
+            {
+              
+                throw new Exception("An error occurred while trying to fetch users.", ex);
+            }
         }
+
 
         public async Task<bool> UserExists(string username)
         {

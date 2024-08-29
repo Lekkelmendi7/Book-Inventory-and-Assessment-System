@@ -1,4 +1,5 @@
-﻿using BookInventory.LogicAcessLayer.Models.AuthorModels;
+﻿using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.LogicAcessLayer.Models.AuthorModels;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +7,7 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
 {
     public interface IAuthorService
     {
-        Task<IEnumerable<AuthorGetModel>> GetAllAuthors();
+        Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size);
         Task<AuthorGetModel> GetAuthorById(int id);
         Task CreateAuthor(AuthorCreateModel authorCreateModel);
         Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel);

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.AuthorModels;
@@ -19,20 +21,47 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
             _logger = logger;
         }
 
-        public async Task<IEnumerable<AuthorGetModel>> GetAllAuthors()
+        public async Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size)
         {
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
+
             try
             {
-                _logger.LogInformation("Fetching all authors!");
-                var authors = await _context.Authors.Include(a => a.Publisher).ToListAsync();
-                return _mapper.Map<IEnumerable<AuthorGetModel>>(authors);
+                _logger.LogInformation("Fetching authors from the database with pagination.");
+
+                // Define the query
+                var queryable = _context.Authors.Include(a => a.Publisher).AsQueryable();
+
+                // Apply pagination
+                var paginatedAuthors = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedAuthors = _mapper.Map<IEnumerable<AuthorGetModel>>(paginatedAuthors.Items);
+
+                _logger.LogInformation("Exiting GetAllAuthors method with {Count} authors fetched.", mappedAuthors.Count());
+
+                return new PaginatedResult<AuthorGetModel>
+                {
+                    TotalItems = paginatedAuthors.TotalItems,
+                    Items = mappedAuthors,
+                    TotalPages = paginatedAuthors.TotalPages,
+                    CurrentPage = paginatedAuthors.CurrentPage,
+                    HasPreviousPage = paginatedAuthors.HasPreviousPage,
+                    HasNextPage = paginatedAuthors.HasNextPage,
+                    FirstPage = paginatedAuthors.FirstPage,
+                    LastPage = paginatedAuthors.LastPage
+                };
             }
             catch (Exception ex)
             {
-                _logger.LogError("An error occurred whilke trying to fetch all authors!");
-                throw new Exception("An error occurred while fetching authors", ex);
+                _logger.LogError(ex, "An error occurred while trying to fetch authors.");
+                throw new Exception("An error occurred while trying to fetch authors.", ex);
             }
         }
+
 
         public async Task<AuthorGetModel> GetAuthorById(int id)
         {

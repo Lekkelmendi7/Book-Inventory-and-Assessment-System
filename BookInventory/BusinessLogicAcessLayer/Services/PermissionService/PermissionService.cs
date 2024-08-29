@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.BusinessLogicAcessLayer.Models.PermissionModels;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Entities;
@@ -60,11 +62,50 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PermissionService
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<PermissionGetModel>> GetAllPermissions()
+        public async Task<PaginatedResult<PermissionGetModel>> GetAllPermissions(int page, int size)
         {
-            var permissions = await _context.Permissions.Include(r => r.RolePermissions).ThenInclude(pr => pr.Role).ToListAsync();
-            return _mapper.Map<IEnumerable<PermissionGetModel>>(permissions);
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
+
+            try
+            {
+               
+
+                // Define the query
+                var queryable = _context.Permissions
+                    .Include(p => p.RolePermissions)
+                    .ThenInclude(rp => rp.Role)
+                    .AsQueryable();
+
+                // Apply pagination
+                var paginatedPermissions = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedPermissions = _mapper.Map<IEnumerable<PermissionGetModel>>(paginatedPermissions.Items);
+
+               
+
+                return new PaginatedResult<PermissionGetModel>
+                {
+                    TotalItems = paginatedPermissions.TotalItems,
+                    Items = mappedPermissions,
+                    TotalPages = paginatedPermissions.TotalPages,
+                    CurrentPage = paginatedPermissions.CurrentPage,
+                    HasPreviousPage = paginatedPermissions.HasPreviousPage,
+                    HasNextPage = paginatedPermissions.HasNextPage,
+                    FirstPage = paginatedPermissions.FirstPage,
+                    LastPage = paginatedPermissions.LastPage
+                };
+            }
+            catch (Exception ex)
+            {
+               
+                throw new Exception("An error occurred while trying to fetch permissions.", ex);
+            }
         }
+
 
         public async Task UpdatePermission(int id, PermissionUpdateModel permission)
         {

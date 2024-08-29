@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.BusinessLogicAcessLayer.Models.RoleModel;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Entities;
@@ -72,12 +74,49 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.RoleService
             return _mapper.Map<RoleGetModel>(role);
         }
 
-        public async Task<IEnumerable<RoleGetModel>> GetRoles()
+        public async Task<PaginatedResult<RoleGetModel>> GetRoles(int page, int size)
         {
-            var roles = await _context.Roles.Include(p => p.RolePermissions).ThenInclude(rp => rp.Permission).ToListAsync();
-            return _mapper.Map<IEnumerable<RoleGetModel>>(roles);
-        }
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
 
+            try
+            {
+               
+
+                // Define the query
+                var queryable = _context.Roles
+                    .Include(r => r.RolePermissions)
+                    .ThenInclude(rp => rp.Permission)
+                    .AsQueryable();
+
+                // Apply pagination
+                var paginatedRoles = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedRoles = _mapper.Map<IEnumerable<RoleGetModel>>(paginatedRoles.Items);
+
+               
+
+                return new PaginatedResult<RoleGetModel>
+                {
+                    TotalItems = paginatedRoles.TotalItems,
+                    Items = mappedRoles,
+                    TotalPages = paginatedRoles.TotalPages,
+                    CurrentPage = paginatedRoles.CurrentPage,
+                    HasPreviousPage = paginatedRoles.HasPreviousPage,
+                    HasNextPage = paginatedRoles.HasNextPage,
+                    FirstPage = paginatedRoles.FirstPage,
+                    LastPage = paginatedRoles.LastPage
+                };
+            }
+            catch (Exception ex)
+            {
+               
+                throw new Exception("An error occurred while trying to fetch roles.", ex);
+            }
+        }
         public async Task UpdateRole(int id, RoleUpdateModel model)
         {
             var roleModel = await _context.Roles

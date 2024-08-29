@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.BookModels;
@@ -35,15 +37,39 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
            }
          */
 
-        public async Task<IEnumerable<BookGetModel>> GetAllBooks()
+        public async Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size)
         {
+            if (size > PaginationModel.MaxPageSize)
+            {
+                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
+            }
+
             try
             {
-                _logger.LogInformation("Fetching all books from the database.");
-                var books = await _context.Books.Include(a => a.Author).ToListAsync();
-                var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
+                _logger.LogInformation("Fetching books from the database with pagination.");
+
+                // Define the query
+                var queryable = _context.Books.Include(b => b.Author).AsQueryable();
+
+                // Apply pagination
+                var paginatedBooks = queryable.Paginate(page, size);
+
+                // Map the results
+                var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(paginatedBooks.Items);
+
                 _logger.LogInformation("Exiting GetAllBooks method with {Count} books fetched.", mappedBooks.Count());
-                return mappedBooks;
+
+                return new PaginatedResult<BookGetModel>
+                {
+                    TotalItems = paginatedBooks.TotalItems,
+                    Items = mappedBooks,
+                    TotalPages = paginatedBooks.TotalPages,
+                    CurrentPage = paginatedBooks.CurrentPage,
+                    HasPreviousPage = paginatedBooks.HasPreviousPage,
+                    HasNextPage = paginatedBooks.HasNextPage,
+                    FirstPage = paginatedBooks.FirstPage,
+                    LastPage = paginatedBooks.LastPage
+                };
             }
             catch (Exception ex)
             {
@@ -51,6 +77,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
                 throw new Exception("An error occurred while trying to fetch books.", ex);
             }
         }
+
         public async Task<BookGetModel> GetBookById(int id)
         {
             _logger.LogInformation($"Fetching book with ID {id} from the database.");

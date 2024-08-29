@@ -19,9 +19,9 @@ namespace BookInventory.APIAccessLayer.Controllers
 
         [HttpGet("all")]
         [Authorize(Policy = "Role_Read")]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll([FromQuery] int page, [FromQuery] int size)
         {
-            var roles = await _service.GetRoles();
+            var roles = await _service.GetRoles(page, size);
             return Ok(roles);
         }
 

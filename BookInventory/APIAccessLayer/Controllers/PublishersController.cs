@@ -23,12 +23,12 @@ namespace PublisherInventory.APIAccessLayer.Controllers
 
         [HttpGet("getAllPublishers")]
         [Authorize(Policy = "Publisher_Read")]
-        public async Task<IActionResult> GetAllPublishers()
+        public async Task<IActionResult> GetAllPublishers([FromQuery] int page, [FromQuery] int size)
         {
             try
             {
                 _logger.LogInformation("API call to get all publishers started.");
-                var publishers = await _service.GetPublishers();
+                var publishers = await _service.GetPublishers(page, size);
                 _logger.LogInformation("Successfully retrieved all publishers.");
                 return Ok(publishers);
             }
