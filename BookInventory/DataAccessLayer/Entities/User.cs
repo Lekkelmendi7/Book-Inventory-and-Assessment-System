@@ -8,6 +8,6 @@
         public byte[] PasswordSalt { get; set; } = new byte[0];
         public virtual IEnumerable<RoleUser> RoleUsers { get; set; }
         public string? PasswordResetToken { get; set; }
-        public DateTime? ResetPasswordExpires { get; set; }
+        public DateTime? ResetTokenExpires { get; set; }
     }
 }

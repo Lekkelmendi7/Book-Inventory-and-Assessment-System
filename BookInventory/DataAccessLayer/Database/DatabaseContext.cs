@@ -45,23 +45,25 @@ namespace BookInventory.DataAccess.Database
                 .HasOne(_ => _.User)
                 .WithMany(_ => _.RoleUsers)
                 .HasForeignKey(_ => _.UserId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<RoleUser>()
                 .HasOne(_ => _.Role)
                 .WithMany(_ => _.RoleUsers)
                 .HasForeignKey(_ => _.RoleId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<RolePermission>()
                 .HasOne(_ => _.Permission)
                 .WithMany(_ => _.RolePermissions)
-                .HasForeignKey(_ => _.PermissionId);
+                .HasForeignKey(_ => _.PermissionId)
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<RolePermission>()
                 .HasOne(_ => _.Role)
                 .WithMany(_ => _.RolePermissions)
-                .HasForeignKey(_ => _.RoleId);
+                .HasForeignKey(_ => _.RoleId)
+                .OnDelete(DeleteBehavior.Cascade);
 
         }
 

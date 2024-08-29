@@ -296,7 +296,7 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
             {
                 var resetToken = GeneratePasswordResetToken(user);
                 user.PasswordResetToken = resetToken;
-                user.ResetPasswordExpires = DateTime.Now.AddHours(1); // Token expiration time
+                user.ResetTokenExpires = DateTime.Now.AddHours(1); // Token expiration time
                 await _context.SaveChangesAsync();
 
                 // Send the reset token to the user through a secure channel (e.g., SMS)
@@ -316,7 +316,7 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
             var user = await _context.Users.FirstOrDefaultAsync(u => u.PasswordResetToken == request.Token);
             var response = new ServiceResponse<string>();
 
-            if (user == null || user.ResetPasswordExpires < DateTime.Now)
+            if (user == null || user.ResetTokenExpires < DateTime.Now)
             {
                 response.Success = false;
                 response.Message = "Invalid token!";
@@ -327,7 +327,7 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.AuthService
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
             user.PasswordResetToken = null;
-            user.PasswordResetToken = null;
+            user.ResetTokenExpires = null;
 
             await _context.SaveChangesAsync();
 

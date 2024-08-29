@@ -7,6 +7,7 @@ using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
 
 namespace PublisherInventory.APIAccessLayer.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PublishersController : ControllerBase

@@ -686,3 +686,1097 @@ WHERE [a].[Id] = @__id_0
 2024-08-28 11:22:47.451 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 119.041ms
 2024-08-28 11:22:47.548 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
 2024-08-28 11:22:47.813 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 264.7617ms
+2024-08-28 14:14:48.708 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:14:49.237 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:14:49.238 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:14:49.241 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:14:49.242 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:14:49.243 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:14:50.337 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:14:51.415 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 1090.2417ms
+2024-08-28 14:14:51.469 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:14:51.478 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:14:51.478 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:14:51.491 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 13.1708ms
+2024-08-28 14:14:51.509 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 49.9572ms
+2024-08-28 14:14:51.573 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.5521ms
+2024-08-28 14:14:51.690 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:14:51.967 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 276.9724ms
+2024-08-28 14:15:13.555 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/register - application/json-patch+json 70
+2024-08-28 14:16:23.879 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:16:24.146 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:16:24.147 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:16:24.150 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:16:24.152 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:16:24.153 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:16:24.755 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:16:25.076 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 324.3301ms
+2024-08-28 14:16:25.107 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:16:25.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:16:25.115 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:16:25.130 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 20.7304ms
+2024-08-28 14:16:25.138 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 31.7139ms
+2024-08-28 14:16:25.202 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 86.3493ms
+2024-08-28 14:16:25.257 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:16:25.456 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 199.1066ms
+2024-08-28 14:16:50.788 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/register - application/json-patch+json 61
+2024-08-28 14:16:50.895 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-08-28 14:16:50.931 +02:00 [INF] Route matched with {action = "Register", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Register(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserRegistrationModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:16:55.259 +02:00 [INF] Executed DbCommand (140ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE LOWER([u].[Username]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-08-28 14:16:55.488 +02:00 [INF] Executed DbCommand (31ms) [Parameters=[@p0='?' (Size = 8000) (DbType = Binary), @p1='?' (Size = 4000), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([PasswordHash], [PasswordResetToken], [PasswordSalt], [ResetPasswordExpires], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-08-28 14:16:55.529 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:16:55.572 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory) in 4635.4243ms
+2024-08-28 14:16:55.576 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-08-28 14:16:55.586 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/register - 200 38 application/json; charset=utf-8 4797.8552ms
+2024-08-28 14:17:07.449 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:17:07.462 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:17:07.470 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:17:07.668 +02:00 [INF] Executed DbCommand (51ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetPasswordExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetPasswordExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:17:07.774 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:17:07.815 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:17:07.818 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 342.5205ms
+2024-08-28 14:17:07.819 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:17:07.820 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 371.3666ms
+2024-08-28 14:18:26.023 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:18:26.287 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:18:26.289 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:18:26.291 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:18:26.293 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:18:26.294 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:18:26.688 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:18:27.019 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 330.4846ms
+2024-08-28 14:18:27.047 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:18:27.052 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:18:27.047 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:18:27.074 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 26.9389ms
+2024-08-28 14:18:27.113 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 65.5851ms
+2024-08-28 14:18:27.149 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.1366ms
+2024-08-28 14:18:27.212 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:18:27.434 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 222.4129ms
+2024-08-28 14:18:59.749 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 55
+2024-08-28 14:18:59.833 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:18:59.857 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:19:01.944 +02:00 [INF] Executed DbCommand (65ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetPasswordExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetPasswordExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:19:02.131 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:19:02.177 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:19:02.210 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 2346.8297ms
+2024-08-28 14:19:02.213 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:19:02.223 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 2475.2865ms
+2024-08-28 14:21:37.545 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Roles - application/json-patch+json 80
+2024-08-28 14:21:37.613 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (Role_Create)
+2024-08-28 14:21:37.618 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-08-28 14:21:37.620 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Roles - 403 0 null 76.0529ms
+2024-08-28 14:38:06.633 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:38:07.266 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:38:07.269 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:38:07.274 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:38:07.276 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:38:07.278 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:38:07.684 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:38:08.040 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 363.4968ms
+2024-08-28 14:38:08.083 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:38:08.084 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:38:08.086 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:38:08.100 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 16.7274ms
+2024-08-28 14:38:08.115 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 28.4426ms
+2024-08-28 14:38:08.180 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 96.1818ms
+2024-08-28 14:38:08.286 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:38:08.516 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 230.048ms
+2024-08-28 14:38:23.934 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:38:24.080 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:38:24.085 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:38:24.086 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 151.6359ms
+2024-08-28 14:38:58.052 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 62
+2024-08-28 14:38:58.062 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:38:58.064 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:38:58.065 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 17.8062ms
+2024-08-28 14:39:05.847 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 62
+2024-08-28 14:39:05.862 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:39:05.866 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:39:05.868 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 20.7044ms
+2024-08-28 14:39:09.899 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:39:09.902 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:39:09.912 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:39:09.914 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 15.0062ms
+2024-08-28 14:40:10.022 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:40:10.027 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:40:10.030 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:40:10.031 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 9.3166ms
+2024-08-28 14:40:13.883 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:40:13.914 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:40:13.915 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:40:13.916 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 33.2112ms
+2024-08-28 14:40:31.520 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 60
+2024-08-28 14:40:31.551 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:40:31.554 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:40:31.557 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 37.4843ms
+2024-08-28 14:40:35.569 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 60
+2024-08-28 14:40:35.573 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:40:35.574 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:40:35.576 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 7.5508ms
+2024-08-28 14:40:45.528 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 60
+2024-08-28 14:40:45.532 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:40:45.533 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:40:45.535 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 401 0 null 6.9785ms
+2024-08-28 14:43:31.106 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:31.139 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:31.141 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:31.142 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 35.2306ms
+2024-08-28 14:43:35.684 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:35.688 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:35.690 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:35.692 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 7.8952ms
+2024-08-28 14:43:36.330 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:36.336 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:36.341 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:36.344 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 14.0258ms
+2024-08-28 14:43:36.633 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:36.637 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:36.642 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:36.653 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 19.3478ms
+2024-08-28 14:43:36.790 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:36.795 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:36.798 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:36.801 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 11.445ms
+2024-08-28 14:43:36.940 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:36.945 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:36.952 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:36.955 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 15.4771ms
+2024-08-28 14:43:37.088 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.093 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.094 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.096 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 7.8217ms
+2024-08-28 14:43:37.234 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.238 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.239 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.240 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 6.7315ms
+2024-08-28 14:43:37.375 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.380 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.381 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.384 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 8.8691ms
+2024-08-28 14:43:37.505 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.509 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.511 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.514 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 9.2348ms
+2024-08-28 14:43:37.623 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.643 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.648 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.651 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 27.5235ms
+2024-08-28 14:43:37.750 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.754 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.756 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.758 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 7.8661ms
+2024-08-28 14:43:37.878 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:37.884 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:37.886 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:37.888 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 10.2996ms
+2024-08-28 14:43:37.998 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - null 0
+2024-08-28 14:43:38.004 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:38.006 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:38.008 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmend1 - 401 0 null 10.0602ms
+2024-08-28 14:43:46.220 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:46.224 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:46.228 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:46.230 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 10.049ms
+2024-08-28 14:43:46.838 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:46.843 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:46.847 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:46.851 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 13.3723ms
+2024-08-28 14:43:47.171 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:47.176 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:47.179 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:47.181 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 10.0847ms
+2024-08-28 14:43:47.323 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:47.327 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:47.333 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:47.337 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 14.7515ms
+2024-08-28 14:43:47.475 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:47.480 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:47.484 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:47.486 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 11.2112ms
+2024-08-28 14:43:47.610 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - null 0
+2024-08-28 14:43:47.621 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2024-08-28 14:43:47.622 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-08-28 14:43:47.625 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/forgot-password?username=lek.kelmendi1 - 401 0 null 14.2089ms
+2024-08-28 14:44:02.748 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:44:03.004 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:44:03.005 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:44:03.007 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:44:03.009 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:44:03.010 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:44:03.756 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:44:04.084 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 337.8795ms
+2024-08-28 14:44:04.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:44:04.109 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:44:04.110 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:44:04.121 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 11.8205ms
+2024-08-28 14:44:04.128 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 18.3084ms
+2024-08-28 14:44:04.163 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 53.3987ms
+2024-08-28 14:44:04.239 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:44:04.444 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 204.7623ms
+2024-08-28 14:44:23.810 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:44:23.915 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:44:23.962 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:44:26.256 +02:00 [INF] Executed DbCommand (80ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetPasswordExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetPasswordExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:44:26.415 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:44:26.462 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:44:26.498 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 2527.487ms
+2024-08-28 14:44:26.502 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:44:26.510 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 2699.9583ms
+2024-08-28 14:44:41.975 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:44:42.001 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:44:42.005 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:44:42.029 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetPasswordExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetPasswordExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:44:42.044 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:44:42.052 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:44:42.055 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 46.9313ms
+2024-08-28 14:44:42.057 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:44:42.059 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 84.3246ms
+2024-08-28 14:45:05.199 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Roles - application/json-patch+json 81
+2024-08-28 14:45:05.220 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:45:05.226 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRole(BookInventory.BusinessLogicAcessLayer.Models.RoleModel.RoleCreateModel) on controller BookInventory.APIAccessLayer.Controllers.RolesController (BookInventory).
+2024-08-28 14:45:05.477 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'BookInventory.DataAccess.Database.DatabaseContext'.
+System.InvalidOperationException: The value of 'RolePermission.PermissionId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+System.InvalidOperationException: The value of 'RolePermission.PermissionId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-28 14:45:05.709 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory) in 476.4272ms
+2024-08-28 14:45:05.713 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:45:05.718 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: The value of 'RolePermission.PermissionId' is unknown when attempting to save changes. This is because the property is also part of a foreign key for which the principal entity in the relationship is not known.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.PrepareToSave()
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.GetEntriesToSave(Boolean cascadeChanges)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookInventory.BusinessLogicAcessLayer.Services.RoleService.RoleService.CreateRole(RoleCreateModel role) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\BusinessLogicAcessLayer\Services\RoleService\RoleService.cs:line 45
+   at BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole(RoleCreateModel model) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\APIAccessLayer\Controllers\RolesController.cs:line 46
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-28 14:45:05.772 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Roles - 500 null text/plain; charset=utf-8 572.34ms
+2024-08-28 14:45:28.990 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:45:28.995 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:45:29.004 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:45:29.132 +02:00 [INF] Executed DbCommand (39ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:45:29.213 +02:00 [ERR] Failed executing DbCommand (36ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:45:29.232 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'BookInventory.DataAccess.Database.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RolePermissions_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a71910da-e5f3-4b18-b126-580fdb94324c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RolePermissions_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a71910da-e5f3-4b18-b126-580fdb94324c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-08-28 14:45:29.438 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 428.2211ms
+2024-08-28 14:45:29.440 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:45:29.442 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RolePermissions_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a71910da-e5f3-4b18-b126-580fdb94324c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookInventory.BusinessLogicAcessLayer.Services.PermissionService.PermissionService.CreatePermisssion(PermissionCreateModel permission) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\BusinessLogicAcessLayer\Services\PermissionService\PermissionService.cs:line 47
+   at BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission(PermissionCreateModel model) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\APIAccessLayer\Controllers\PermissionsController.cs:line 33
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-28 14:45:29.467 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 500 null text/plain; charset=utf-8 476.9513ms
+2024-08-28 14:45:50.520 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Roles - application/json-patch+json 81
+2024-08-28 14:45:50.554 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:45:50.556 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRole(BookInventory.BusinessLogicAcessLayer.Models.RoleModel.RoleCreateModel) on controller BookInventory.APIAccessLayer.Controllers.RolesController (BookInventory).
+2024-08-28 14:45:50.586 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:45:50.604 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@p1='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p1, @p2);
+2024-08-28 14:45:50.619 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.RoleModel.RoleCreateModel'.
+2024-08-28 14:45:50.623 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory) in 65.1101ms
+2024-08-28 14:45:50.626 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:45:50.627 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Roles - 200 52 application/json; charset=utf-8 107.377ms
+2024-08-28 14:46:37.304 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Roles - application/json-patch+json 80
+2024-08-28 14:46:37.308 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:46:37.310 +02:00 [INF] Route matched with {action = "CreateRole", controller = "Roles"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateRole(BookInventory.BusinessLogicAcessLayer.Models.RoleModel.RoleCreateModel) on controller BookInventory.APIAccessLayer.Controllers.RolesController (BookInventory).
+2024-08-28 14:46:37.336 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Roles] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:46:37.344 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p1='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p1, @p2);
+2024-08-28 14:46:37.351 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.RoleModel.RoleCreateModel'.
+2024-08-28 14:46:37.353 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory) in 38.0864ms
+2024-08-28 14:46:37.365 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.RolesController.CreateRole (BookInventory)'
+2024-08-28 14:46:37.367 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Roles - 200 51 application/json; charset=utf-8 64.0045ms
+2024-08-28 14:46:45.393 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/api/Publishers/getAllPublishers - null null
+2024-08-28 14:46:45.472 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (Publisher_Read)
+2024-08-28 14:46:45.478 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-08-28 14:46:45.481 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/api/Publishers/getAllPublishers - 403 0 null 88.1182ms
+2024-08-28 14:46:59.808 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:46:59.812 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:46:59.826 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:46:59.848 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:46:59.856 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:46:59.859 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:46:59.862 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 23.6998ms
+2024-08-28 14:46:59.866 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:46:59.869 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 61.2059ms
+2024-08-28 14:47:05.095 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:47:05.104 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:05.106 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:05.124 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:05.134 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:05.137 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:05.138 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 28.9328ms
+2024-08-28 14:47:05.140 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:05.141 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 34 application/json; charset=utf-8 46.6315ms
+2024-08-28 14:47:09.549 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:47:09.553 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:09.558 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:09.573 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:09.586 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:09.589 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:09.590 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 26.5938ms
+2024-08-28 14:47:09.591 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:09.598 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 48.6318ms
+2024-08-28 14:47:23.020 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:47:23.023 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:23.025 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:23.040 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:23.055 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:23.058 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:23.063 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 34.5843ms
+2024-08-28 14:47:23.067 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:23.069 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 49.3916ms
+2024-08-28 14:47:30.824 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:47:30.829 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:30.832 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:30.846 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:30.852 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:30.855 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:30.857 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 20.9313ms
+2024-08-28 14:47:30.858 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:30.860 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 35.7019ms
+2024-08-28 14:47:41.367 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 55
+2024-08-28 14:47:41.371 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:41.373 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:41.388 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:41.401 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:41.405 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:41.406 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 28.3761ms
+2024-08-28 14:47:41.408 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:41.416 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 38 application/json; charset=utf-8 50.1357ms
+2024-08-28 14:47:54.716 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 56
+2024-08-28 14:47:54.720 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:54.721 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:54.736 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:54.741 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:54.748 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:54.750 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 25.8049ms
+2024-08-28 14:47:54.751 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:54.753 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 39 application/json; charset=utf-8 36.6564ms
+2024-08-28 14:47:59.217 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 56
+2024-08-28 14:47:59.221 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:59.224 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:47:59.246 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:47:59.253 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:47:59.256 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:47:59.257 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 24.0014ms
+2024-08-28 14:47:59.262 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:47:59.265 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 39 application/json; charset=utf-8 48.532ms
+2024-08-28 14:48:05.499 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 58
+2024-08-28 14:48:05.504 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:05.506 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:48:05.521 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:48:05.533 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:48:05.537 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:48:05.539 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 29.5432ms
+2024-08-28 14:48:05.540 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:05.547 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 41 application/json; charset=utf-8 48.6358ms
+2024-08-28 14:48:11.866 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/api/Permissions/all - null null
+2024-08-28 14:48:11.873 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (Permission_Read)
+2024-08-28 14:48:11.876 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-08-28 14:48:11.878 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/api/Permissions/all - 403 0 null 12.3139ms
+2024-08-28 14:48:22.192 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/api/Auths/users - null null
+2024-08-28 14:48:22.197 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (User_Read)
+2024-08-28 14:48:22.199 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2024-08-28 14:48:22.201 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/api/Auths/users - 403 0 null 9.5081ms
+2024-08-28 14:48:41.649 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 58
+2024-08-28 14:48:41.653 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:41.657 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:48:41.668 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:48:41.681 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:48:41.686 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:48:41.688 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 27.6897ms
+2024-08-28 14:48:41.689 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:41.696 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 41 application/json; charset=utf-8 46.9241ms
+2024-08-28 14:48:48.617 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:48:48.622 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:48.626 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:48:48.638 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:48:48.650 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:48:48.653 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:48:48.655 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 25.2907ms
+2024-08-28 14:48:48.656 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:48.662 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 44.5208ms
+2024-08-28 14:48:53.682 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:48:53.685 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:53.687 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:48:53.707 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:48:53.715 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:48:53.718 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:48:53.719 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 27.7833ms
+2024-08-28 14:48:53.721 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:53.722 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 34 application/json; charset=utf-8 40.49ms
+2024-08-28 14:48:58.912 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:48:58.916 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:58.918 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:48:58.932 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:48:58.938 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:48:58.947 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:48:58.950 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 28.9316ms
+2024-08-28 14:48:58.951 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:48:58.952 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 34 application/json; charset=utf-8 40.5051ms
+2024-08-28 14:49:05.987 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:49:05.990 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:05.995 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:49:06.006 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:49:06.021 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:49:06.031 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:49:06.033 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 33.3637ms
+2024-08-28 14:49:06.036 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:06.038 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 51.899ms
+2024-08-28 14:49:10.884 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:49:10.890 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:10.895 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:49:10.905 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:49:10.915 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:49:10.921 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:49:10.925 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 24.4868ms
+2024-08-28 14:49:10.929 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:10.930 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 46.0125ms
+2024-08-28 14:49:57.161 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 59
+2024-08-28 14:49:57.165 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:57.167 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:49:57.180 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:49:57.187 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:49:57.192 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:49:57.196 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 25.0161ms
+2024-08-28 14:49:57.206 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:49:57.210 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 42 application/json; charset=utf-8 49.0688ms
+2024-08-28 14:50:03.983 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 57
+2024-08-28 14:50:03.988 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:03.990 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:04.001 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:04.013 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:04.019 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:04.021 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 26.7601ms
+2024-08-28 14:50:04.029 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:04.031 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 40 application/json; charset=utf-8 47.4779ms
+2024-08-28 14:50:08.973 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 59
+2024-08-28 14:50:08.976 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:08.979 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:08.988 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:08.998 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:09.002 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:09.003 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 21.0235ms
+2024-08-28 14:50:09.010 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:09.013 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 42 application/json; charset=utf-8 40.0925ms
+2024-08-28 14:50:13.857 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 57
+2024-08-28 14:50:13.862 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:13.864 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:13.876 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:13.882 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:13.884 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:13.886 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 17.7973ms
+2024-08-28 14:50:13.887 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:13.896 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 40 application/json; charset=utf-8 39.6877ms
+2024-08-28 14:50:24.638 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:50:24.643 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:24.645 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:24.659 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:24.667 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:24.671 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:24.674 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 25.4014ms
+2024-08-28 14:50:24.677 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:24.679 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 34 application/json; charset=utf-8 40.7655ms
+2024-08-28 14:50:28.557 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 51
+2024-08-28 14:50:28.561 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:28.584 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:28.604 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:28.617 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:28.621 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:28.627 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 28.7646ms
+2024-08-28 14:50:28.629 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:28.632 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 34 application/json; charset=utf-8 74.5216ms
+2024-08-28 14:50:36.918 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Permissions - application/json-patch+json 53
+2024-08-28 14:50:36.922 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:36.928 +02:00 [INF] Route matched with {action = "CreatePermission", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreatePermission(BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-08-28 14:50:36.938 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Permissions] ([Name])
+OUTPUT INSERTED.[Id]
+VALUES (@p0);
+2024-08-28 14:50:36.947 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RolePermissions] ([PermissionId], [RoleId])
+VALUES (@p0, @p1);
+2024-08-28 14:50:36.949 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionCreateModel'.
+2024-08-28 14:50:36.950 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory) in 17.0038ms
+2024-08-28 14:50:36.953 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.CreatePermission (BookInventory)'
+2024-08-28 14:50:36.955 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Permissions - 200 36 application/json; charset=utf-8 36.1819ms
+2024-08-28 14:51:25.487 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:51:25.519 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:51:25.523 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:51:25.543 +02:00 [INF] Executed DbCommand (14ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetPasswordExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetPasswordExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:51:25.568 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:51:25.572 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:51:25.574 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 48.2327ms
+2024-08-28 14:51:25.584 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:51:25.585 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 97.4398ms
+2024-08-28 14:55:15.955 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-08-28 14:55:16.028 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-08-28 14:55:16.032 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-08-28 14:55:16.034 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-08-28 14:55:16.071 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-08-28 14:55:16.091 +02:00 [INF] Applying migration '20240828125502_RolesPermissionsUsers'.
+2024-08-28 14:55:16.496 +02:00 [INF] Executed DbCommand (351ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+EXEC sp_rename N'[Users].[ResetPasswordExpires]', N'ResetTokenExpires', N'COLUMN';
+2024-08-28 14:55:16.500 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20240828125502_RolesPermissionsUsers', N'8.0.8');
+2024-08-28 14:55:24.720 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:55:24.996 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:55:24.997 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:55:25.000 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:55:25.001 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:55:25.002 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:55:25.907 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:55:26.283 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 378.182ms
+2024-08-28 14:55:26.305 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:55:26.305 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:55:26.306 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:55:26.311 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 5.6105ms
+2024-08-28 14:55:26.334 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 29.0682ms
+2024-08-28 14:55:26.385 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.8211ms
+2024-08-28 14:55:26.445 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:55:26.657 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 211.6896ms
+2024-08-28 14:55:56.522 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 60
+2024-08-28 14:55:56.617 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:55:56.639 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:55:58.506 +02:00 [INF] Executed DbCommand (64ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:55:58.612 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:55:58.652 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 2006.8606ms
+2024-08-28 14:55:58.656 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:55:58.669 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 400 57 application/json; charset=utf-8 2147.6187ms
+2024-08-28 14:56:03.127 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7126/api/Auths/login - application/json-patch+json 61
+2024-08-28 14:56:03.139 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:56:03.140 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-08-28 14:56:03.178 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-08-28 14:56:03.247 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-08-28 14:56:03.282 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-08-28 14:56:03.285 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 142.334ms
+2024-08-28 14:56:03.287 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-08-28 14:56:03.288 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7126/api/Auths/login - 200 290 application/json; charset=utf-8 161.1483ms
+2024-08-28 14:58:17.899 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-28 14:58:18.163 +02:00 [INF] Now listening on: https://localhost:7126
+2024-08-28 14:58:18.165 +02:00 [INF] Now listening on: http://localhost:5019
+2024-08-28 14:58:18.168 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-28 14:58:18.169 +02:00 [INF] Hosting environment: Development
+2024-08-28 14:58:18.170 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-08-28 14:58:18.506 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-08-28 14:58:18.849 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 348.1224ms
+2024-08-28 14:58:18.875 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-08-28 14:58:18.875 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-08-28 14:58:18.879 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-08-28 14:58:18.886 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 11.4099ms
+2024-08-28 14:58:18.902 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 27.0354ms
+2024-08-28 14:58:18.952 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 73.4918ms
+2024-08-28 14:58:19.019 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-08-28 14:58:19.237 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 218.2169ms

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Logging;
 
 namespace BookInventory.APIAccessLayer.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase

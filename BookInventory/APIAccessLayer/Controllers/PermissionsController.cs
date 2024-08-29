@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookInventory.APIAccessLayer.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("api/[controller]")]
     public class PermissionsController : ControllerBase
