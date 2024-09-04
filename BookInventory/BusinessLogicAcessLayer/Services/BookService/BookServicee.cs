@@ -1,9 +1,11 @@
 ﻿using AutoMapper;
 using BookInventory.BusinessLogicAcessLayer.Helpers;
 using BookInventory.BusinessLogicAcessLayer.Models;
+using BookInventory.BusinessLogicAcessLayer.Models.BookModels;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.BookModels;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookInventory.LogicAcessLayer.Services.BookService
@@ -147,5 +149,114 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             return true;
         }
 
+        public async Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int publicationYear)
+        {
+
+            _logger.LogInformation("Fetching books filtered by publication year from the database.");
+
+            // Query to filter books by the specified publication year
+            var filteredBooks = await _context.Books
+                .Include(b => b.Author)
+                .Where(b => b.PublicationYear == publicationYear)
+                .ToListAsync();
+
+            if (filteredBooks == null)
+            {
+                _logger.LogWarning("Book with that publication year was not found!");
+                throw new KeyNotFoundException("Book with that publication year not found!");
+            }
+
+            // Map the results
+            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
+
+            _logger.LogInformation("Exiting GetBooksByPublicationYear method with {Count} books fetched.", mappedBooks.Count());
+
+            return mappedBooks;
+        }
+
+        public async Task<IEnumerable<BookGetModel>> GetBooksByLanguage(string language)
+        {
+            _logger.LogInformation("Fetching all books by language!");
+            var filteredBooks = await _context.Books
+                .Include(x => x.Author)
+                .Where(b => b.Language.Equals(language))
+                .ToListAsync();
+
+            if (filteredBooks == null)
+            {
+                _logger.LogWarning("Book/s with that language was not found!");
+                throw new KeyNotFoundException("Book/s with that language was not found!");
+            }
+
+            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
+            _logger.LogInformation("All books by language fetched!");
+            return mappedBooks;
+        }
+
+        public async Task<IEnumerable<BookGetModel>> SelectBooksByGenres(string[] genres)
+        {
+            var filteredBooks = await _context.Books
+                .Include(x => x.Author)
+                .Where(x => genres.Any(genre => x.Genres.Contains(genre)))
+                .ToListAsync();
+
+            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
+            return mappedBooks;
+        }
+
+        public async Task<IEnumerable<BookGetModel>> SearchBook(string book)
+        {
+            if (string.IsNullOrWhiteSpace(book))
+            {
+                return Enumerable.Empty<BookGetModel>();
+            }
+
+
+            book = book.ToLower();
+
+            var searchedBooks = await _context.Books
+                .Include(x => x.Author)
+                .Where(b => b.Title.ToLower().Contains(book))
+                .ToListAsync();
+
+            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(searchedBooks);
+            return mappedBooks;
+        }
+
+        public async Task<IEnumerable<BookGetModel>> GetBooksByAuthorName(string authorName)
+        {
+            if(string.IsNullOrWhiteSpace(authorName))
+            {
+                _logger.LogWarning("Author name cant be null or empty!");
+                throw new ArgumentException("Author name cant be null or empty!");
+            }
+
+            _logger.LogInformation("Fetching books by author name");
+
+            var author = await _context.Authors
+                .FirstOrDefaultAsync(a => a.Name.ToLower().Contains(authorName.ToLower())); 
+
+            if(author == null)
+            {
+                _logger.LogWarning($"No author found with name: {authorName}");
+                throw new KeyNotFoundException($"No author found with name: {authorName}");
+            }
+
+            var books = await _context.Books
+                .Include(b => b.Author)
+                .Where(b => b.AuthorId == author.Id)
+                .ToListAsync();
+
+            if(books.Count == 0)
+            {
+                _logger.LogWarning($"No books found for author: {authorName}");
+                throw new KeyNotFoundException($"No books found for author: {authorName}");
+            }
+
+            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            return mappedBooks; 
+        }
     }
+
 }
+

@@ -1,0 +1,1495 @@
+2024-09-04 08:08:02.092 +02:00 [INF] User profile is available. Using 'C:\Users\lkelmendi.PC-PR05\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-09-04 08:08:02.872 +02:00 [INF] Now listening on: https://localhost:7126
+2024-09-04 08:08:02.874 +02:00 [INF] Now listening on: http://localhost:5019
+2024-09-04 08:08:02.877 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-09-04 08:08:02.878 +02:00 [INF] Hosting environment: Development
+2024-09-04 08:08:02.879 +02:00 [INF] Content root path: C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory
+2024-09-04 08:08:05.095 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.html - null null
+2024-09-04 08:08:05.689 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.html - 200 null text/html;charset=utf-8 605.768ms
+2024-09-04 08:08:05.785 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/index.js - null null
+2024-09-04 08:08:05.807 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - null null
+2024-09-04 08:08:05.807 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/_vs/browserLink - null null
+2024-09-04 08:08:05.821 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/index.js - 200 null application/javascript;charset=utf-8 36.0753ms
+2024-09-04 08:08:05.843 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_framework/aspnetcore-browser-refresh.js - 200 13762 application/javascript; charset=utf-8 35.9637ms
+2024-09-04 08:08:05.922 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/_vs/browserLink - 200 null text/javascript; charset=UTF-8 115.0989ms
+2024-09-04 08:08:06.032 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - null null
+2024-09-04 08:08:06.295 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7126/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 263.7461ms
+2024-09-04 08:09:03.746 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/login - application/json 64
+2024-09-04 08:09:03.844 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:09:03.902 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:09:06.240 +02:00 [INF] Executed DbCommand (91ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:09:06.475 +02:00 [INF] Executed DbCommand (38ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-09-04 08:09:06.541 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:09:06.578 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 2670.3288ms
+2024-09-04 08:09:06.581 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:09:06.591 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/login - 200 798 application/json; charset=utf-8 2845.1987ms
+2024-09-04 08:09:36.107 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - null null
+2024-09-04 08:09:36.133 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'IDX10820: Invalid character found in Base64UrlEncoding. Character: '32', Encoding: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.')
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode(String input, Int32 offset, Int32 length, Byte[] output)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(String rawString, Int32 startIndex, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-09-04 08:09:36.183 +02:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-09-04 08:09:36.191 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (User_Read)
+2024-09-04 08:09:36.200 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-04 08:09:36.202 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - 401 0 null 94.6711ms
+2024-09-04 08:09:44.171 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - null null
+2024-09-04 08:09:44.180 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'IDX10820: Invalid character found in Base64UrlEncoding. Character: '32', Encoding: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.')
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode(String input, Int32 offset, Int32 length, Byte[] output)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(String rawString, Int32 startIndex, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-09-04 08:09:44.187 +02:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-09-04 08:09:44.190 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (User_Read)
+2024-09-04 08:09:44.191 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-04 08:09:44.192 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - 401 0 null 21.02ms
+2024-09-04 08:09:54.015 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - null null
+2024-09-04 08:09:54.067 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:09:54.075 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:09:54.149 +02:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:09:54.158 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 08:09:54.161 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 08:09:54.216 +02:00 [INF] Executed DbCommand (41ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:09:54.240 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:09:54.258 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 179.5163ms
+2024-09-04 08:09:54.260 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:09:54.261 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - 200 1156 application/json; charset=utf-8 245.6929ms
+2024-09-04 08:39:03.287 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/1 - null null
+2024-09-04 08:39:03.292 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory)'
+2024-09-04 08:39:03.298 +02:00 [INF] Route matched with {action = "GetUserById", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:39:03.406 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:39:03.414 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel'.
+2024-09-04 08:39:03.417 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory) in 116.4626ms
+2024-09-04 08:39:03.418 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory)'
+2024-09-04 08:39:03.420 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/1 - 200 101 application/json; charset=utf-8 132.2637ms
+2024-09-04 08:39:21.053 +02:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7126/api/auths/:id - null null
+2024-09-04 08:39:21.064 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory)'
+2024-09-04 08:39:21.079 +02:00 [INF] Route matched with {action = "DeleteUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:39:21.102 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 08:39:21.129 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory) in 43.7469ms
+2024-09-04 08:39:21.132 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory)'
+2024-09-04 08:39:21.134 +02:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7126/api/auths/:id - 400 242 application/problem+json; charset=utf-8 80.6513ms
+2024-09-04 08:44:10.808 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/register - application/json 65
+2024-09-04 08:44:10.812 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-09-04 08:44:10.815 +02:00 [INF] Route matched with {action = "Register", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Register(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserRegistrationModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:44:10.860 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE LOWER([u].[Username]) = @__ToLower_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-09-04 08:44:10.992 +02:00 [INF] Executed DbCommand (27ms) [Parameters=[@p0='?' (Size = 8000) (DbType = Binary), @p1='?' (Size = 4000), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Users] ([PasswordHash], [PasswordResetToken], [PasswordSalt], [ResetTokenExpires], [Username])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-09-04 08:44:11.020 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.Int32, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:44:11.024 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory) in 205.5669ms
+2024-09-04 08:44:11.027 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-09-04 08:44:11.029 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/register - 200 39 application/json; charset=utf-8 220.3363ms
+2024-09-04 08:44:27.023 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/login - application/json 65
+2024-09-04 08:44:27.026 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:44:27.027 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:44:27.041 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:44:27.050 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-09-04 08:44:27.054 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:44:27.055 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 25.7362ms
+2024-09-04 08:44:27.057 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:44:27.059 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/login - 200 294 application/json; charset=utf-8 35.5617ms
+2024-09-04 08:45:19.742 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/change-password - application/json 120
+2024-09-04 08:45:19.758 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ChangePasswordd (BookInventory)'
+2024-09-04 08:45:19.764 +02:00 [INF] Route matched with {action = "ChangePasswordd", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ChangePasswordd(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.PasswordChangeModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:45:19.794 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+FROM [Users] AS [u]
+WHERE LOWER([u].[Username]) = @__ToLower_0
+2024-09-04 08:45:19.818 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (Size = 8000) (DbType = Binary), @p1='?' (Size = 4000), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (DbType = DateTime2), @p4='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [PasswordHash] = @p0, [PasswordResetToken] = @p1, [PasswordSalt] = @p2, [ResetTokenExpires] = @p3, [Username] = @p4
+OUTPUT 1
+WHERE [Id] = @p5;
+2024-09-04 08:45:19.823 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:45:19.825 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.ChangePasswordd (BookInventory) in 57.2018ms
+2024-09-04 08:45:19.826 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ChangePasswordd (BookInventory)'
+2024-09-04 08:45:19.828 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/change-password - 200 68 application/json; charset=utf-8 88.2141ms
+2024-09-04 08:45:43.156 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/forgot-password?username=fjolle.kurva666 - null 0
+2024-09-04 08:45:43.172 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ForgotPassword (BookInventory)'
+2024-09-04 08:45:43.179 +02:00 [INF] Route matched with {action = "ForgotPassword", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.String]]] ForgotPassword(System.String) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:45:43.198 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0
+2024-09-04 08:45:43.209 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (Size = 4000), @p1='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [PasswordResetToken] = @p0, [ResetTokenExpires] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+2024-09-04 08:45:43.214 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:45:43.216 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.ForgotPassword (BookInventory) in 32.9173ms
+2024-09-04 08:45:43.217 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ForgotPassword (BookInventory)'
+2024-09-04 08:45:43.218 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/forgot-password?username=fjolle.kurva666 - 200 291 application/json; charset=utf-8 62.8151ms
+2024-09-04 08:46:09.654 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/reset-password - application/json 292
+2024-09-04 08:46:09.669 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ResetPassword (BookInventory)'
+2024-09-04 08:46:09.674 +02:00 [INF] Route matched with {action = "ResetPassword", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.String]]] ResetPassword(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.PasswordResetModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:46:09.692 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__request_Token_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[PasswordResetToken] = @__request_Token_0
+2024-09-04 08:46:09.702 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (Size = 8000) (DbType = Binary), @p1='?' (Size = 4000), @p2='?' (Size = 8000) (DbType = Binary), @p3='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [PasswordHash] = @p0, [PasswordResetToken] = @p1, [PasswordSalt] = @p2, [ResetTokenExpires] = @p3
+OUTPUT 1
+WHERE [Id] = @p4;
+2024-09-04 08:46:09.706 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:46:09.708 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.ResetPassword (BookInventory) in 30.2706ms
+2024-09-04 08:46:09.709 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.ResetPassword (BookInventory)'
+2024-09-04 08:46:09.710 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/reset-password - 200 69 application/json; charset=utf-8 56.3275ms
+2024-09-04 08:46:56.760 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/login - application/json 64
+2024-09-04 08:46:56.773 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:46:56.774 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:46:56.796 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:46:56.802 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-09-04 08:46:56.806 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:46:56.807 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 31.2068ms
+2024-09-04 08:46:56.809 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:46:56.811 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/login - 200 294 application/json; charset=utf-8 51.186ms
+2024-09-04 08:47:13.502 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/login - application/json 64
+2024-09-04 08:47:13.507 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:47:13.508 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:47:13.519 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:47:13.531 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-09-04 08:47:13.536 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:47:13.539 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 24.3626ms
+2024-09-04 08:47:13.542 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:47:13.547 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/login - 200 798 application/json; charset=utf-8 43.1955ms
+2024-09-04 08:47:28.228 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/register - null 0
+2024-09-04 08:47:28.233 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-09-04 08:47:28.234 +02:00 [INF] Route matched with {action = "Register", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Register(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserRegistrationModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:47:28.239 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2024-09-04 08:47:28.242 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory) in 5.5566ms
+2024-09-04 08:47:28.244 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Register (BookInventory)'
+2024-09-04 08:47:28.246 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/register - 415 176 application/problem+json; charset=utf-8 18.1094ms
+2024-09-04 08:48:13.580 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/:id - application/json 69
+2024-09-04 08:48:13.588 +02:00 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> System.ArgumentException: IDX14102: Unable to decode the header '[PII of type 'Microsoft.IdentityModel.Logging.SecurityArtifact' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]' as Base64Url encoded string.
+ ---> System.ArgumentOutOfRangeException: Specified argument was out of the range of valid values. (Parameter 'IDX10820: Invalid character found in Base64UrlEncoding. Character: '32', Encoding: '[PII of type 'System.String' is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.')
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode(String input, Int32 offset, Int32 length, Byte[] output)
+   at Microsoft.IdentityModel.Tokens.Base64UrlEncoding.Decode[T](String input, Int32 offset, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.CreateClaimSet(String rawString, Int32 startIndex, Int32 length, Func`3 action)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-09-04 08:48:13.598 +02:00 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-09-04 08:48:13.599 +02:00 [INF] Authorization failed. These requirements were not met:
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (User_Edit)
+2024-09-04 08:48:13.600 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-04 08:48:13.601 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/:id - 401 0 null 21.0141ms
+2024-09-04 08:48:21.719 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/:id - application/json 69
+2024-09-04 08:48:21.724 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:48:21.729 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserUpdateModel, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:48:21.743 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 08:48:21.747 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory) in 14.6279ms
+2024-09-04 08:48:21.750 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:48:21.751 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/:id - 400 242 application/problem+json; charset=utf-8 32.2052ms
+2024-09-04 08:48:29.831 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - null null
+2024-09-04 08:48:29.835 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:48:29.836 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:48:29.848 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:48:29.865 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:48:29.870 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:48:29.872 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 33.9096ms
+2024-09-04 08:48:29.874 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:48:29.875 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - 200 1155 application/json; charset=utf-8 44.6445ms
+2024-09-04 08:48:39.054 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - null null
+2024-09-04 08:48:39.058 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:48:39.059 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:48:39.064 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:48:39.068 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:48:39.073 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:48:39.075 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 13.2784ms
+2024-09-04 08:48:39.077 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:48:39.078 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - 200 1206 application/json; charset=utf-8 24.186ms
+2024-09-04 08:48:57.940 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/11 - application/json 69
+2024-09-04 08:48:57.945 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:48:57.947 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserUpdateModel, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:48:57.981 +02:00 [INF] Executed DbCommand (25ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:48:57.997 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [r].[UserId], [r].[RoleId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [RoleUsers] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id], [r].[UserId]
+2024-09-04 08:48:58.072 +02:00 [ERR] Failed executing DbCommand (53ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RoleUsers] ([RoleId], [UserId])
+VALUES (@p0, @p1),
+(@p2, @p3);
+2024-09-04 08:48:58.094 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'BookInventory.DataAccess.Database.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-04 08:48:58.313 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory) in 360.9085ms
+2024-09-04 08:48:58.316 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:48:58.321 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookInventory.BusinessLogicAcessLayer.Services.AuthService.AuthServicee.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\BusinessLogicAcessLayer\Services\AuthService\AuthServicee.cs:line 269
+   at BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\APIAccessLayer\Controllers\AuthsController.cs:line 124
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-09-04 08:48:58.382 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/11 - 500 null text/plain; charset=utf-8 442.3132ms
+2024-09-04 08:49:41.323 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/11 - application/json 67
+2024-09-04 08:49:41.336 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:41.337 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserUpdateModel, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:49:41.364 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:49:41.372 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [r].[UserId], [r].[RoleId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [RoleUsers] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id], [r].[UserId]
+2024-09-04 08:49:41.384 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RoleUsers] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2024-09-04 08:49:41.389 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'BookInventory.DataAccess.Database.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-04 08:49:41.518 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory) in 178.2851ms
+2024-09-04 08:49:41.520 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:41.522 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookInventory.BusinessLogicAcessLayer.Services.AuthService.AuthServicee.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\BusinessLogicAcessLayer\Services\AuthService\AuthServicee.cs:line 269
+   at BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\APIAccessLayer\Controllers\AuthsController.cs:line 124
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-09-04 08:49:41.549 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/11 - 500 null text/plain; charset=utf-8 227.1837ms
+2024-09-04 08:49:42.780 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/11 - application/json 67
+2024-09-04 08:49:42.784 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:42.785 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserUpdateModel, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:49:42.791 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:49:42.802 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [r].[UserId], [r].[RoleId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [RoleUsers] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id], [r].[UserId]
+2024-09-04 08:49:42.811 +02:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RoleUsers] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2024-09-04 08:49:42.816 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'BookInventory.DataAccess.Database.DatabaseContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-09-04 08:49:42.930 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory) in 142.6962ms
+2024-09-04 08:49:42.933 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:42.936 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the FOREIGN KEY constraint "FK_RoleUsers_Roles_RoleId". The conflict occurred in database "BookInventory", table "dbo.Roles", column 'Id'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__211_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a63ff574-e3e2-40c2-8f64-9208c0056b24
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at BookInventory.BusinessLogicAcessLayer.Services.AuthService.AuthServicee.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\BusinessLogicAcessLayer\Services\AuthService\AuthServicee.cs:line 269
+   at BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser(UserUpdateModel user, Int32 id) in C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\APIAccessLayer\Controllers\AuthsController.cs:line 124
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-09-04 08:49:42.964 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/11 - 500 null text/plain; charset=utf-8 183.6426ms
+2024-09-04 08:49:53.010 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/auths/11 - application/json 67
+2024-09-04 08:49:53.012 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:53.013 +02:00 [INF] Route matched with {action = "UpdateUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateUser(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserUpdateModel, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:49:53.018 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:49:53.026 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [r].[UserId], [r].[RoleId]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [RoleUsers] AS [r] ON [t].[Id] = [r].[UserId]
+ORDER BY [t].[Id], [r].[UserId]
+2024-09-04 08:49:53.030 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [RoleUsers] ([RoleId], [UserId])
+VALUES (@p0, @p1);
+2024-09-04 08:49:53.036 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-09-04 08:49:53.037 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory) in 22.2059ms
+2024-09-04 08:49:53.038 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.UpdateUser (BookInventory)'
+2024-09-04 08:49:53.040 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/auths/11 - 204 null null 29.62ms
+2024-09-04 08:50:00.955 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - null null
+2024-09-04 08:50:00.963 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:50:00.965 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:50:00.971 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:50:00.984 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:50:00.989 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:50:00.991 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 22.3023ms
+2024-09-04 08:50:00.995 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:50:00.996 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - 200 1262 application/json; charset=utf-8 40.531ms
+2024-09-04 08:50:15.688 +02:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7126/api/auths/11 - null null
+2024-09-04 08:50:15.693 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory)'
+2024-09-04 08:50:15.695 +02:00 [INF] Route matched with {action = "DeleteUser", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteUser(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:50:15.741 +02:00 [INF] Executed DbCommand (37ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:50:15.798 +02:00 [INF] Executed DbCommand (23ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32), @p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [RoleUsers]
+OUTPUT 1
+WHERE [RoleId] = @p0 AND [UserId] = @p1;
+DELETE FROM [Users]
+OUTPUT 1
+WHERE [Id] = @p2;
+2024-09-04 08:50:15.818 +02:00 [INF] Executing StatusCodeResult, setting HTTP status code 204
+2024-09-04 08:50:15.820 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory) in 120.4365ms
+2024-09-04 08:50:15.821 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.DeleteUser (BookInventory)'
+2024-09-04 08:50:15.822 +02:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7126/api/auths/11 - 204 null null 134.8987ms
+2024-09-04 08:50:20.052 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - null null
+2024-09-04 08:50:20.062 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:50:20.065 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:50:20.070 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:50:20.085 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:50:20.089 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:50:20.092 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 24.3284ms
+2024-09-04 08:50:20.094 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:50:20.095 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - 200 1156 application/json; charset=utf-8 43.4358ms
+2024-09-04 08:50:51.976 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/1 - null null
+2024-09-04 08:50:51.980 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory)'
+2024-09-04 08:50:51.981 +02:00 [INF] Route matched with {action = "GetUserById", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserById(Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:50:51.994 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE [u].[Id] = @__id_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:50:51.999 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel'.
+2024-09-04 08:50:52.001 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory) in 18.2108ms
+2024-09-04 08:50:52.003 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUserById (BookInventory)'
+2024-09-04 08:50:52.004 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/1 - 200 101 application/json; charset=utf-8 28.313ms
+2024-09-04 08:51:15.740 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - null null
+2024-09-04 08:51:15.747 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:51:15.748 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:51:15.771 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:51:15.791 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:51:15.795 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:51:15.797 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 45.999ms
+2024-09-04 08:51:15.807 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:51:15.808 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=15 - 200 1156 application/json; charset=utf-8 68.122ms
+2024-09-04 08:51:32.794 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - null null
+2024-09-04 08:51:32.799 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:51:32.800 +02:00 [INF] Route matched with {action = "GetUsers", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsers(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:51:32.804 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Users] AS [u]
+2024-09-04 08:51:32.808 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:51:32.814 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:51:32.817 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory) in 14.3102ms
+2024-09-04 08:51:32.819 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.GetUsers (BookInventory)'
+2024-09-04 08:51:32.821 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/auths/users?page=1&size=10 - 200 1156 application/json; charset=utf-8 26.8681ms
+2024-09-04 08:53:46.214 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/auths/login - application/json 64
+2024-09-04 08:53:46.219 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:53:46.220 +02:00 [INF] Route matched with {action = "Login", controller = "Auths"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[BookInventory.DataAccessLayer.Entities.ServiceResponse`1[System.Int32]]] Login(BookInventory.BusinessLogicAcessLayer.Models.AccountModels.UserLoginModel) on controller BookInventory.APIAccessLayer.Controllers.AuthsController (BookInventory).
+2024-09-04 08:53:46.234 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[PasswordHash], [t].[PasswordResetToken], [t].[PasswordSalt], [t].[ResetTokenExpires], [t].[Username], [t0].[UserId], [t0].[RoleId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT TOP(1) [u].[Id], [u].[PasswordHash], [u].[PasswordResetToken], [u].[PasswordSalt], [u].[ResetTokenExpires], [u].[Username]
+    FROM [Users] AS [u]
+    WHERE LOWER([u].[Username]) = @__ToLower_0
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[UserId], [r].[RoleId], [r0].[Id], [r0].[Name]
+    FROM [RoleUsers] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[UserId]
+ORDER BY [t].[Id], [t0].[UserId], [t0].[RoleId]
+2024-09-04 08:53:46.244 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__roleIds_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[RoleId], [r].[PermissionId], [p].[Id], [p].[Name]
+FROM [RolePermissions] AS [r]
+INNER JOIN [Permissions] AS [p] ON [r].[PermissionId] = [p].[Id]
+WHERE [r].[RoleId] IN (
+    SELECT [r0].[value]
+    FROM OPENJSON(@__roleIds_0) WITH ([value] int '$') AS [r0]
+)
+2024-09-04 08:53:46.248 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.DataAccessLayer.Entities.ServiceResponse`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2024-09-04 08:53:46.250 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory) in 26.7181ms
+2024-09-04 08:53:46.253 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.AuthsController.Login (BookInventory)'
+2024-09-04 08:53:46.255 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/auths/login - 200 798 application/json; charset=utf-8 40.6386ms
+2024-09-04 08:53:56.121 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/searchBook?searchByName=Spiderman - null null
+2024-09-04 08:53:56.128 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory)'
+2024-09-04 08:53:56.133 +02:00 [INF] Route matched with {action = "SearchBookByName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBookByName(System.String, System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:53:56.138 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 08:53:56.140 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory) in 3.4218ms
+2024-09-04 08:53:56.142 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory)'
+2024-09-04 08:53:56.143 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/searchBook?searchByName=Spiderman - 400 242 application/problem+json; charset=utf-8 22.415ms
+2024-09-04 08:54:12.946 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/searchBook?searchByName=Spiderman&sort=asc - null null
+2024-09-04 08:54:12.953 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory)'
+2024-09-04 08:54:12.955 +02:00 [INF] Route matched with {action = "SearchBookByName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] SearchBookByName(System.String, System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:54:12.967 +02:00 [INF] API call to search books by name: Spiderman
+2024-09-04 08:54:13.003 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@__book_0_contains='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE LOWER([b].[Title]) LIKE @__book_0_contains ESCAPE N'\'
+2024-09-04 08:54:13.054 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:54:13.064 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory) in 105.3141ms
+2024-09-04 08:54:13.068 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.SearchBookByName (BookInventory)'
+2024-09-04 08:54:13.071 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/searchBook?searchByName=Spiderman&sort=asc - 200 362 application/json; charset=utf-8 125.085ms
+2024-09-04 08:54:52.111 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20 - null null
+2024-09-04 08:54:52.123 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:54:52.126 +02:00 [INF] Route matched with {action = "GetBooksByAuthorName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByAuthorName(System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:54:52.131 +02:00 [INF] API call to get books by author name: Alxander 
+2024-09-04 08:54:52.135 +02:00 [INF] Fetching books by author name
+2024-09-04 08:54:52.159 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[@__ToLower_0_contains='?' (Size = 70)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Authors] AS [a]
+WHERE LOWER([a].[Name]) LIKE @__ToLower_0_contains ESCAPE N'\'
+2024-09-04 08:54:52.162 +02:00 [WRN] No author found with name: Alxander 
+2024-09-04 08:54:52.265 +02:00 [WRN] No author found with name: Alxander 
+2024-09-04 08:54:52.269 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-09-04 08:54:52.272 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory) in 143.2483ms
+2024-09-04 08:54:52.274 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:54:52.276 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20 - 404 null text/plain; charset=utf-8 166.2021ms
+2024-09-04 08:55:00.892 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20Chapman - null null
+2024-09-04 08:55:00.897 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:00.899 +02:00 [INF] Route matched with {action = "GetBooksByAuthorName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByAuthorName(System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:55:00.902 +02:00 [INF] API call to get books by author name: Alxander Chapman
+2024-09-04 08:55:00.902 +02:00 [INF] Fetching books by author name
+2024-09-04 08:55:00.907 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToLower_0_contains='?' (Size = 70)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Authors] AS [a]
+WHERE LOWER([a].[Name]) LIKE @__ToLower_0_contains ESCAPE N'\'
+2024-09-04 08:55:00.920 +02:00 [WRN] No author found with name: Alxander Chapman
+2024-09-04 08:55:00.985 +02:00 [WRN] No author found with name: Alxander Chapman
+2024-09-04 08:55:00.988 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-09-04 08:55:00.989 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory) in 88.2138ms
+2024-09-04 08:55:00.992 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:00.994 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20Chapman - 404 null text/plain; charset=utf-8 101.4932ms
+2024-09-04 08:55:02.650 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20Chapman - null null
+2024-09-04 08:55:02.655 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:02.656 +02:00 [INF] Route matched with {action = "GetBooksByAuthorName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByAuthorName(System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:55:02.659 +02:00 [INF] API call to get books by author name: Alxander Chapman
+2024-09-04 08:55:02.659 +02:00 [INF] Fetching books by author name
+2024-09-04 08:55:02.663 +02:00 [INF] Executed DbCommand (2ms) [Parameters=[@__ToLower_0_contains='?' (Size = 70)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Authors] AS [a]
+WHERE LOWER([a].[Name]) LIKE @__ToLower_0_contains ESCAPE N'\'
+2024-09-04 08:55:02.666 +02:00 [WRN] No author found with name: Alxander Chapman
+2024-09-04 08:55:02.731 +02:00 [WRN] No author found with name: Alxander Chapman
+2024-09-04 08:55:02.733 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-09-04 08:55:02.736 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory) in 77.9918ms
+2024-09-04 08:55:02.739 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:02.741 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alxander%20Chapman - 404 null text/plain; charset=utf-8 91.7195ms
+2024-09-04 08:55:17.599 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alexander%20Chapman - null null
+2024-09-04 08:55:17.606 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:17.607 +02:00 [INF] Route matched with {action = "GetBooksByAuthorName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByAuthorName(System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:55:17.609 +02:00 [INF] API call to get books by author name: Alexander Chapman
+2024-09-04 08:55:17.610 +02:00 [INF] Fetching books by author name
+2024-09-04 08:55:17.613 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__ToLower_0_contains='?' (Size = 70)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Authors] AS [a]
+WHERE LOWER([a].[Name]) LIKE @__ToLower_0_contains ESCAPE N'\'
+2024-09-04 08:55:17.626 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__author_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE [b].[AuthorId] = @__author_Id_0
+2024-09-04 08:55:17.632 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:55:17.635 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory) in 25.9197ms
+2024-09-04 08:55:17.637 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:17.639 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=Alexander%20Chapman - 200 362 application/json; charset=utf-8 40.5197ms
+2024-09-04 08:55:28.502 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=John%20Doe - null null
+2024-09-04 08:55:28.509 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:28.610 +02:00 [INF] Route matched with {action = "GetBooksByAuthorName", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByAuthorName(System.String) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:55:28.621 +02:00 [INF] API call to get books by author name: John Doe
+2024-09-04 08:55:28.625 +02:00 [INF] Fetching books by author name
+2024-09-04 08:55:28.634 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__ToLower_0_contains='?' (Size = 70)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Authors] AS [a]
+WHERE LOWER([a].[Name]) LIKE @__ToLower_0_contains ESCAPE N'\'
+2024-09-04 08:55:28.644 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__author_Id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE [b].[AuthorId] = @__author_Id_0
+2024-09-04 08:55:28.657 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:55:28.664 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory) in 43.2082ms
+2024-09-04 08:55:28.677 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByAuthorName (BookInventory)'
+2024-09-04 08:55:28.678 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByAuthorName?authorName=John%20Doe - 200 685 application/json; charset=utf-8 176.5117ms
+2024-09-04 08:56:12.730 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Action,%20Drama - null null
+2024-09-04 08:56:12.746 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Action,%20Drama - 404 0 null 16.0262ms
+2024-09-04 08:56:12.753 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 08:56:21.991 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Action - null null
+2024-09-04 08:56:21.996 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Action - 404 0 null 4.6673ms
+2024-09-04 08:56:22.002 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 08:56:31.417 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page&size - null null
+2024-09-04 08:56:31.420 +02:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+ClaimsAuthorizationRequirement:Claim.Type=permissions and Claim.Value is one of the following values: (Book_Read)
+2024-09-04 08:56:31.422 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2024-09-04 08:56:31.423 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page&size - 401 0 null 6.2464ms
+2024-09-04 08:56:33.873 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page&size - null null
+2024-09-04 08:56:33.904 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 08:56:33.925 +02:00 [INF] Route matched with {action = "GetAllBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:56:33.927 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 08:56:33.929 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory) in 3.103ms
+2024-09-04 08:56:33.933 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 08:56:33.935 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page&size - 400 275 application/problem+json; charset=utf-8 61.5215ms
+2024-09-04 08:56:43.665 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - null null
+2024-09-04 08:56:43.669 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 08:56:43.670 +02:00 [INF] Route matched with {action = "GetAllBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 08:56:43.673 +02:00 [INF] API call to get all books started.
+2024-09-04 08:56:43.674 +02:00 [INF] Fetching books from the database with pagination.
+2024-09-04 08:56:43.696 +02:00 [INF] Executed DbCommand (19ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2024-09-04 08:56:43.702 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 08:56:43.703 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 08:56:43.718 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Edition], [t].[Format], [t].[Genres], [t].[Language], [t].[PageCount], [t].[Price], [t].[PublicationYear], [t].[Stock], [t].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM (
+    SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title]
+    FROM [Books] AS [b]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Authors] AS [a] ON [t].[AuthorId] = [a].[Id]
+2024-09-04 08:56:43.723 +02:00 [INF] Exiting GetAllBooks method with 3 books fetched.
+2024-09-04 08:56:43.724 +02:00 [INF] API call to get all books completed successfully!
+2024-09-04 08:56:43.724 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 08:56:43.727 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory) in 55.4809ms
+2024-09-04 08:56:43.729 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 08:56:43.730 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - 200 1173 application/json; charset=utf-8 64.6677ms
+2024-09-04 08:57:07.858 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - null null
+2024-09-04 08:57:07.868 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - 404 0 null 10.5499ms
+2024-09-04 08:57:07.871 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 08:57:08.942 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - null null
+2024-09-04 08:57:08.949 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - 404 0 null 7.2735ms
+2024-09-04 08:57:08.954 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 08:57:10.116 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - null null
+2024-09-04 08:57:10.133 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=[Action] - 404 0 null 16.1793ms
+2024-09-04 08:57:10.136 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 08:57:17.407 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Drama - null null
+2024-09-04 08:57:17.412 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres=Drama - 404 0 null 5.2301ms
+2024-09-04 08:57:17.418 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 09:02:39.613 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres[]=[Drama] - null null
+2024-09-04 09:02:39.619 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres[]=[Drama] - 404 0 null 5.5003ms
+2024-09-04 09:02:39.623 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 09:02:40.774 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres[]=[Drama] - null null
+2024-09-04 09:02:40.779 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBoooksByGenres?genres[]=[Drama] - 404 0 null 5.5393ms
+2024-09-04 09:02:40.790 +02:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7126/api/books/getBoooksByGenres, Response status code: 404
+2024-09-04 09:02:52.689 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Drama] - null null
+2024-09-04 09:02:52.695 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:02:52.703 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:02:52.712 +02:00 [WRN] No genres provided in the request.
+2024-09-04 09:02:52.715 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-09-04 09:02:52.717 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 10.8091ms
+2024-09-04 09:02:52.719 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:02:52.721 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Drama] - 400 null text/plain; charset=utf-8 32.1197ms
+2024-09-04 09:03:02.901 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Drama - null null
+2024-09-04 09:03:02.910 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:02.912 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:02.918 +02:00 [INF] API call to get books by genres: Drama
+2024-09-04 09:03:02.982 +02:00 [INF] Executed DbCommand (30ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:03:02.985 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:03:02.988 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 72.1056ms
+2024-09-04 09:03:02.990 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:02.995 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Drama - 200 685 application/json; charset=utf-8 93.9511ms
+2024-09-04 09:03:10.868 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Drama,Action - null null
+2024-09-04 09:03:10.874 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:10.875 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:10.878 +02:00 [INF] API call to get books by genres: Drama,Action
+2024-09-04 09:03:10.889 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:03:10.894 +02:00 [WRN] No books found for the provided genres: Drama,Action
+2024-09-04 09:03:10.896 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:10.897 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 19.6869ms
+2024-09-04 09:03:10.900 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:10.901 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Drama,Action - 404 null text/plain; charset=utf-8 32.9622ms
+2024-09-04 09:03:20.681 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action - null null
+2024-09-04 09:03:20.684 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:20.685 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:20.689 +02:00 [INF] API call to get books by genres: Action
+2024-09-04 09:03:20.698 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:03:20.703 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:03:20.707 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 19.1295ms
+2024-09-04 09:03:20.710 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:20.712 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action - 200 362 application/json; charset=utf-8 30.996ms
+2024-09-04 09:03:28.415 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action,%20Novel - null null
+2024-09-04 09:03:28.418 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:28.420 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:28.423 +02:00 [INF] API call to get books by genres: Action, Novel
+2024-09-04 09:03:28.431 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:03:28.435 +02:00 [WRN] No books found for the provided genres: Action, Novel
+2024-09-04 09:03:28.437 +02:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:28.439 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 15.7419ms
+2024-09-04 09:03:28.441 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:28.443 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action,%20Novel - 404 null text/plain; charset=utf-8 27.7534ms
+2024-09-04 09:03:33.249 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=Action,%20Novel - null null
+2024-09-04 09:03:33.259 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:33.261 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:33.265 +02:00 [WRN] No genres provided in the request.
+2024-09-04 09:03:33.266 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:33.268 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 3.7864ms
+2024-09-04 09:03:33.272 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:33.274 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=Action,%20Novel - 400 null text/plain; charset=utf-8 24.7212ms
+2024-09-04 09:03:39.917 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - null null
+2024-09-04 09:03:39.922 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:39.923 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:39.925 +02:00 [WRN] No genres provided in the request.
+2024-09-04 09:03:39.927 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:39.929 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 4.0651ms
+2024-09-04 09:03:39.935 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:39.937 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - 400 null text/plain; charset=utf-8 20.0271ms
+2024-09-04 09:03:40.929 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - null null
+2024-09-04 09:03:40.933 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:40.935 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:40.938 +02:00 [WRN] No genres provided in the request.
+2024-09-04 09:03:40.940 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:40.941 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 2.7511ms
+2024-09-04 09:03:40.943 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:40.944 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - 400 null text/plain; charset=utf-8 14.8146ms
+2024-09-04 09:03:41.858 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - null null
+2024-09-04 09:03:41.863 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:41.864 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:03:41.867 +02:00 [WRN] No genres provided in the request.
+2024-09-04 09:03:41.868 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-09-04 09:03:41.870 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 3.7307ms
+2024-09-04 09:03:41.872 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:03:41.873 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres[]=[Action,%20Novel] - 400 null text/plain; charset=utf-8 15.0291ms
+2024-09-04 09:05:02.954 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action&genres=Drama - null null
+2024-09-04 09:05:02.959 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:02.960 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:05:02.964 +02:00 [INF] API call to get books by genres: Action, Drama
+2024-09-04 09:05:02.972 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:05:02.976 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:05:02.978 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 15.2054ms
+2024-09-04 09:05:02.979 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:02.980 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action&genres=Drama - 200 1046 application/json; charset=utf-8 26.0199ms
+2024-09-04 09:05:43.350 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action&genres=Noire - null null
+2024-09-04 09:05:43.359 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:43.361 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:05:43.364 +02:00 [INF] API call to get books by genres: Action, Noire
+2024-09-04 09:05:43.376 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:05:43.387 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:05:43.388 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 24.7707ms
+2024-09-04 09:05:43.391 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:43.392 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action&genres=Noire - 200 703 application/json; charset=utf-8 41.4396ms
+2024-09-04 09:05:57.293 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action - null null
+2024-09-04 09:05:57.297 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:57.299 +02:00 [INF] Route matched with {action = "GetBooksByGenres", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByGenres(System.String[]) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:05:57.302 +02:00 [INF] API call to get books by genres: Action
+2024-09-04 09:05:57.316 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[@__genres_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE EXISTS (
+    SELECT 1
+    FROM OPENJSON(@__genres_0) WITH ([value] nvarchar(max) '$') AS [g]
+    WHERE [g].[value] IN (
+        SELECT [g0].[value]
+        FROM OPENJSON([b].[Genres]) WITH ([value] nvarchar(max) '$') AS [g0]
+    ))
+2024-09-04 09:05:57.321 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:05:57.323 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory) in 21.273ms
+2024-09-04 09:05:57.325 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByGenres (BookInventory)'
+2024-09-04 09:05:57.327 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByGenres?genres=Action - 200 362 application/json; charset=utf-8 34.1735ms
+2024-09-04 09:06:28.100 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getBooksByPublicationYear/2015 - null null
+2024-09-04 09:06:28.107 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByPublicationYear (BookInventory)'
+2024-09-04 09:06:28.112 +02:00 [INF] Route matched with {action = "GetBooksByPublicationYear", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetBooksByPublicationYear(Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:06:28.115 +02:00 [INF] API call to get books by publication year: 2015.
+2024-09-04 09:06:28.117 +02:00 [INF] Fetching books filtered by publication year from the database.
+2024-09-04 09:06:28.132 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[@__publicationYear_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE [b].[PublicationYear] = @__publicationYear_0
+2024-09-04 09:06:28.135 +02:00 [INF] Exiting GetBooksByPublicationYear method with 2 books fetched.
+2024-09-04 09:06:28.136 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:06:28.138 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByPublicationYear (BookInventory) in 24.1523ms
+2024-09-04 09:06:28.140 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetBooksByPublicationYear (BookInventory)'
+2024-09-04 09:06:28.141 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getBooksByPublicationYear/2015 - 200 705 application/json; charset=utf-8 40.5499ms
+2024-09-04 09:07:36.098 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - null null
+2024-09-04 09:07:36.114 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 09:07:36.115 +02:00 [INF] Route matched with {action = "GetAllBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:07:36.118 +02:00 [INF] API call to get all books started.
+2024-09-04 09:07:36.119 +02:00 [INF] Fetching books from the database with pagination.
+2024-09-04 09:07:36.128 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2024-09-04 09:07:36.137 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Edition], [t].[Format], [t].[Genres], [t].[Language], [t].[PageCount], [t].[Price], [t].[PublicationYear], [t].[Stock], [t].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM (
+    SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title]
+    FROM [Books] AS [b]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Authors] AS [a] ON [t].[AuthorId] = [a].[Id]
+2024-09-04 09:07:36.143 +02:00 [INF] Exiting GetAllBooks method with 3 books fetched.
+2024-09-04 09:07:36.144 +02:00 [INF] API call to get all books completed successfully!
+2024-09-04 09:07:36.145 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:07:36.147 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory) in 28.777ms
+2024-09-04 09:07:36.149 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 09:07:36.151 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - 200 1173 application/json; charset=utf-8 52.6813ms
+2024-09-04 09:09:57.561 +02:00 [INF] Request starting HTTP/1.1 POST https://localhost:7126/api/books/addBook - application/json 249
+2024-09-04 09:09:57.567 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.AddBook (BookInventory)'
+2024-09-04 09:09:57.572 +02:00 [INF] Route matched with {action = "AddBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] AddBook(BookInventory.LogicAcessLayer.Models.BookModels.BookCreateModel) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:09:57.589 +02:00 [INF] API call to add a new book.
+2024-09-04 09:09:57.591 +02:00 [INF] Creating a new book in the database.
+2024-09-04 09:09:57.625 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 30), @p2='?' (Size = 20), @p3='?' (Size = 4000), @p4='?' (Size = 40), @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Books] ([AuthorId], [Edition], [Format], [Genres], [Language], [PageCount], [Price], [PublicationYear], [Stock], [Title])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-09-04 09:09:57.632 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-04 09:09:57.633 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.AddBook (BookInventory) in 56.3275ms
+2024-09-04 09:09:57.635 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.AddBook (BookInventory)'
+2024-09-04 09:09:57.636 +02:00 [INF] Request finished HTTP/1.1 POST https://localhost:7126/api/books/addBook - 200 null text/plain; charset=utf-8 74.8711ms
+2024-09-04 09:10:11.914 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - null null
+2024-09-04 09:10:11.918 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 09:10:11.921 +02:00 [INF] Route matched with {action = "GetAllBooks", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllBooks(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:10:11.935 +02:00 [INF] API call to get all books started.
+2024-09-04 09:10:11.941 +02:00 [INF] Fetching books from the database with pagination.
+2024-09-04 09:10:11.967 +02:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Books] AS [b]
+2024-09-04 09:10:11.987 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[AuthorId], [t].[Edition], [t].[Format], [t].[Genres], [t].[Language], [t].[PageCount], [t].[Price], [t].[PublicationYear], [t].[Stock], [t].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM (
+    SELECT [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title]
+    FROM [Books] AS [b]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+INNER JOIN [Authors] AS [a] ON [t].[AuthorId] = [a].[Id]
+2024-09-04 09:10:11.990 +02:00 [INF] Exiting GetAllBooks method with 4 books fetched.
+2024-09-04 09:10:11.991 +02:00 [INF] API call to get all books completed successfully!
+2024-09-04 09:10:11.992 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:10:11.994 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory) in 59.4ms
+2024-09-04 09:10:11.995 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetAllBooks (BookInventory)'
+2024-09-04 09:10:11.996 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getAllBooks?page=1&size=5 - 200 1511 application/json; charset=utf-8 82.0299ms
+2024-09-04 09:10:27.844 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/:id - null null
+2024-09-04 09:10:27.847 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:10:27.852 +02:00 [INF] Route matched with {action = "GetSingleBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSingleBook(Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:10:27.855 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 09:10:27.857 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory) in 2.4643ms
+2024-09-04 09:10:27.860 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:10:27.862 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/:id - 400 242 application/problem+json; charset=utf-8 18.1316ms
+2024-09-04 09:10:34.158 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/6 - null null
+2024-09-04 09:10:34.174 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:10:34.176 +02:00 [INF] Route matched with {action = "GetSingleBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSingleBook(Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:10:34.179 +02:00 [INF] API call to get book with ID 6.
+2024-09-04 09:10:34.181 +02:00 [INF] Fetching book with ID 6 from the database.
+2024-09-04 09:10:34.194 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE [b].[Id] = @__id_0
+2024-09-04 09:10:34.202 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel'.
+2024-09-04 09:10:34.204 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory) in 25.732ms
+2024-09-04 09:10:34.205 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:10:34.207 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/6 - 200 337 application/json; charset=utf-8 48.9796ms
+2024-09-04 09:11:27.448 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/books/updateBook/:id - application/json 269
+2024-09-04 09:11:27.457 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory)'
+2024-09-04 09:11:27.461 +02:00 [INF] Route matched with {action = "UpdateBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookInventory.LogicAcessLayer.Models.BookModels.BookUpdateModel) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:11:27.469 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2024-09-04 09:11:27.471 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory) in 7.8889ms
+2024-09-04 09:11:27.479 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory)'
+2024-09-04 09:11:27.480 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/books/updateBook/:id - 400 242 application/problem+json; charset=utf-8 31.8377ms
+2024-09-04 09:11:34.648 +02:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7126/api/books/updateBook/6 - application/json 269
+2024-09-04 09:11:34.662 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory)'
+2024-09-04 09:11:34.663 +02:00 [INF] Route matched with {action = "UpdateBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] UpdateBook(Int32, BookInventory.LogicAcessLayer.Models.BookModels.BookUpdateModel) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:11:34.667 +02:00 [INF] API call to update book with ID 6.
+2024-09-04 09:11:34.669 +02:00 [INF] Updating book with ID 6.
+2024-09-04 09:11:34.691 +02:00 [INF] Executed DbCommand (16ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title]
+FROM [Books] AS [b]
+WHERE [b].[Id] = @__id_0
+2024-09-04 09:11:34.709 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[@p10='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 30), @p2='?' (Size = 20), @p3='?' (Size = 4000), @p4='?' (Size = 40), @p5='?' (DbType = Int32), @p6='?' (DbType = Double), @p7='?' (DbType = Int32), @p8='?' (DbType = Int32), @p9='?' (Size = 50)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Books] SET [AuthorId] = @p0, [Edition] = @p1, [Format] = @p2, [Genres] = @p3, [Language] = @p4, [PageCount] = @p5, [Price] = @p6, [PublicationYear] = @p7, [Stock] = @p8, [Title] = @p9
+OUTPUT 1
+WHERE [Id] = @p10;
+2024-09-04 09:11:34.713 +02:00 [INF] Book with ID 6 updated successfully.
+2024-09-04 09:11:34.714 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-09-04 09:11:34.715 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory) in 49.1879ms
+2024-09-04 09:11:34.718 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.UpdateBook (BookInventory)'
+2024-09-04 09:11:34.720 +02:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7126/api/books/updateBook/6 - 200 null text/plain; charset=utf-8 73.1883ms
+2024-09-04 09:11:39.691 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/6 - null null
+2024-09-04 09:11:39.696 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:11:39.697 +02:00 [INF] Route matched with {action = "GetSingleBook", controller = "Books"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetSingleBook(Int32) on controller BookInventory.APIAccessLayer.Controllers.BooksController (BookInventory).
+2024-09-04 09:11:39.700 +02:00 [INF] API call to get book with ID 6.
+2024-09-04 09:11:39.702 +02:00 [INF] Fetching book with ID 6 from the database.
+2024-09-04 09:11:39.709 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [b].[Id], [b].[AuthorId], [b].[Edition], [b].[Format], [b].[Genres], [b].[Language], [b].[PageCount], [b].[Price], [b].[PublicationYear], [b].[Stock], [b].[Title], [a].[Id], [a].[DateOfBirth], [a].[EmailAddress], [a].[ImageUrl], [a].[Name], [a].[Nationality]
+FROM [Books] AS [b]
+INNER JOIN [Authors] AS [a] ON [b].[AuthorId] = [a].[Id]
+WHERE [b].[Id] = @__id_0
+2024-09-04 09:11:39.712 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.LogicAcessLayer.Models.BookModels.BookGetModel'.
+2024-09-04 09:11:39.713 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory) in 13.0034ms
+2024-09-04 09:11:39.714 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.BooksController.GetSingleBook (BookInventory)'
+2024-09-04 09:11:39.715 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/books/getSingleBook/6 - 200 355 application/json; charset=utf-8 24.1547ms
+2024-09-04 09:13:29.916 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/permissions/all?page=1&size=5 - null null
+2024-09-04 09:13:29.921 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory)'
+2024-09-04 09:13:29.926 +02:00 [INF] Route matched with {action = "GetPermissions", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPermissions(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-09-04 09:13:29.937 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Permissions] AS [p]
+2024-09-04 09:13:29.943 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 09:13:29.944 +02:00 [WRN] The query uses a row limiting operator ('Skip'/'Take') without an 'OrderBy' operator. This may lead to unpredictable results. If the 'Distinct' operator is used after 'OrderBy', then make sure to use the 'OrderBy' operator after 'Distinct' as the ordering would otherwise get erased.
+2024-09-04 09:13:29.965 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t0].[RoleId], [t0].[PermissionId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [p].[Id], [p].[Name]
+    FROM [Permissions] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[RoleId], [r].[PermissionId], [r0].[Id], [r0].[Name]
+    FROM [RolePermissions] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[PermissionId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[PermissionId]
+2024-09-04 09:13:29.973 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:13:29.978 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory) in 49.7112ms
+2024-09-04 09:13:29.980 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory)'
+2024-09-04 09:13:29.982 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/permissions/all?page=1&size=5 - 200 999 application/json; charset=utf-8 66.2671ms
+2024-09-04 09:13:44.334 +02:00 [INF] Request starting HTTP/1.1 GET https://localhost:7126/api/permissions/all?page=3&size=5 - null null
+2024-09-04 09:13:44.339 +02:00 [INF] Executing endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory)'
+2024-09-04 09:13:44.341 +02:00 [INF] Route matched with {action = "GetPermissions", controller = "Permissions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetPermissions(Int32, Int32) on controller BookInventory.APIAccessLayer.Controllers.PermissionsController (BookInventory).
+2024-09-04 09:13:44.345 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM [Permissions] AS [p]
+2024-09-04 09:13:44.362 +02:00 [INF] Executed DbCommand (15ms) [Parameters=[@__p_0='?' (DbType = Int32), @__p_1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name], [t0].[RoleId], [t0].[PermissionId], [t0].[Id], [t0].[Name]
+FROM (
+    SELECT [p].[Id], [p].[Name]
+    FROM [Permissions] AS [p]
+    ORDER BY (SELECT 1)
+    OFFSET @__p_0 ROWS FETCH NEXT @__p_1 ROWS ONLY
+) AS [t]
+LEFT JOIN (
+    SELECT [r].[RoleId], [r].[PermissionId], [r0].[Id], [r0].[Name]
+    FROM [RolePermissions] AS [r]
+    INNER JOIN [Roles] AS [r0] ON [r].[RoleId] = [r0].[Id]
+) AS [t0] ON [t].[Id] = [t0].[PermissionId]
+ORDER BY [t].[Id], [t0].[RoleId], [t0].[PermissionId]
+2024-09-04 09:13:44.367 +02:00 [INF] Executing OkObjectResult, writing value of type 'BookInventory.BusinessLogicAcessLayer.Helpers.PaginatedResult`1[[BookInventory.BusinessLogicAcessLayer.Models.PermissionModels.PermissionGetModel, BookInventory, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-09-04 09:13:44.369 +02:00 [INF] Executed action BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory) in 26.8899ms
+2024-09-04 09:13:44.371 +02:00 [INF] Executed endpoint 'BookInventory.APIAccessLayer.Controllers.PermissionsController.GetPermissions (BookInventory)'
+2024-09-04 09:13:44.373 +02:00 [INF] Request finished HTTP/1.1 GET https://localhost:7126/api/permissions/all?page=3&size=5 - 200 613 application/json; charset=utf-8 39.6822ms

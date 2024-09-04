@@ -1,4 +1,5 @@
 ﻿using BookInventory.DataAccess.Entities;
+using BookInventory.LogicAcessLayer.Models.AuthorModels;
 using BookInventory.LogicAcessLayer.Models.BookModels;
 using BookInventory.LogicAcessLayer.Services.BookService;
 using Microsoft.AspNetCore.Authorization;
@@ -138,6 +139,142 @@ namespace BookInventory.APIAccessLayer.Controllers
                 return StatusCode(500, "An unexpected error occurred.");
             }
         }
+
+        [HttpGet("getBooksByPublicationYear/{publicationYear}")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> GetBooksByPublicationYear(int publicationYear)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to get books by publication year: {publicationYear}.");
+                var books = await _service.GetBooksByPublicationYear(publicationYear);
+                return Ok(books);
+            }
+            catch(KeyNotFoundException ex)
+            {
+                _logger.LogWarning($"Book/s with that publication year, not found!");
+                return NotFound(ex.Message );   
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching books by publication year.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpGet("getBooksByLanguage/{language}")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> GetBooksByLanguage(string language)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to get books by language!");
+                var books = await _service.GetBooksByLanguage(language);
+                return Ok(books);
+            }catch(KeyNotFoundException ex)
+            {
+                _logger.LogWarning($"Book/s with that language, not found!");
+                return NotFound(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching books by publication year.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpGet("getBooksByGenres")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> GetBooksByGenres([FromQuery] string[] genres)
+        {
+            try
+            {
+                if (genres == null || genres.Length == 0)
+                {
+                    _logger.LogWarning("No genres provided in the request.");
+                    return BadRequest("Genres are required.");
+                }
+
+                _logger.LogInformation($"API call to get books by genres: {string.Join(", ", genres)}");
+                var books = await _service.SelectBooksByGenres(genres);
+
+                if (books == null || !books.Any())
+                {
+                    _logger.LogWarning($"No books found for the provided genres: {string.Join(", ", genres)}");
+                    return NotFound("No books found for the provided genres.");
+                }
+
+                return Ok(books);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _logger.LogWarning($"Books with selected genres not found: {ex.Message}");
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching books by genres.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpGet("searchBook")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> SearchBookByName([FromQuery] string searchByName, [FromQuery] string sort)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to search books by name: {searchByName}");
+                var books = await _service.SearchBook(searchByName);
+                if(books == null)
+                {
+                    throw new KeyNotFoundException("Book that you were looking for was not found!");
+                }
+
+                return Ok(books);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while searching for books by name.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+
+        [HttpGet("getBooksByAuthorName")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> GetBooksByAuthorName(string authorName)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to get books by author name: {authorName}");
+                var books = await _service.GetBooksByAuthorName(authorName);
+
+                if (books == null || !books.Any())
+                {
+                    _logger.LogWarning($"No books found for author: {authorName}");
+                    return NotFound($"No books found for author: {authorName}");
+                }
+
+                return Ok(books);
+            }
+            catch (ArgumentException ex)
+            {
+                _logger.LogWarning($"Invalid author name provided: {ex.Message}");
+                return BadRequest(ex.Message);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _logger.LogWarning(ex.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching books by author name.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
 
     }
 }
