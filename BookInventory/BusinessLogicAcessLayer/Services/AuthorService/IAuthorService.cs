@@ -12,5 +12,7 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
         Task CreateAuthor(AuthorCreateModel authorCreateModel);
         Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel);
         Task<bool> DeleteAuthor(int id);
+        Task <IEnumerable<AuthorGetModel>> GetAuthorsByNationality(string nationality);
+        
     }
 }

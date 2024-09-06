@@ -17,7 +17,7 @@ namespace BookInventory.LogicAcessLayer.Models.AuthorModels
         [Required]
         [EmailAddress]
         public string EmailAddress { get; set; } = null!;
-        public string ImageUrl { get; set; } = null!;
+        public IFormFile ImageUrl { get; set; } = null!;
         [Required]
         public PublisherCreateModel Publisher { get; set; }
     }

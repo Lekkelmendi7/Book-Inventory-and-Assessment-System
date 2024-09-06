@@ -150,5 +150,33 @@ namespace BookInventory.APIAccessLayer.Controllers
                 return StatusCode(500, "An unexpected error occurred.");
             }
         }
+
+        [HttpGet("getAuthorsByNationality")]
+        [Authorize(Policy = "Author_Read")]
+        public async Task<IActionResult> GetAuthorsByNationality([FromQuery] string nationality)
+        {
+            try
+            {
+                var filteredAuthors = await _service.GetAuthorsByNationality(nationality);
+
+                if (!filteredAuthors.Any())
+                {
+                    return NotFound($"No authors found with nationality: {nationality}");
+                }
+
+                return Ok(filteredAuthors);
+            }
+            catch (KeyNotFoundException ex)
+            {
+                _logger.LogWarning(ex.Message);
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An error occurred while fetching authors by nationality.");
+                return StatusCode(500, "An error occurred while fetching authors by nationality.");
+            }
+        }
+
     }
 }

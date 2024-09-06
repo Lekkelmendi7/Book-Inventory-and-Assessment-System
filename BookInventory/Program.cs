@@ -1,5 +1,6 @@
 using BookInventory.BusinessLogicAcessLayer.Configurations;
 using BookInventory.DataAccess.Database;
+using BookInventory.DataAccessLayer.Database;
 using BookInventory.LogicAcessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -53,6 +54,7 @@ builder.Services.AddSwaggerGen(c =>
     c.OperationFilter<SecurityRequirementsOperationFilter>();
 });
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddSingleton<MongoDbService>();
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
            .AddJwtBearer(options =>
            {
@@ -68,6 +70,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 // Configure policies and register policy services using PolicyConfiguration
 PolicyConfiguration.ConfigurePolicies(builder.Services);
+
+builder.Services.AddHttpContextAccessor();
 
 // Register IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
@@ -85,6 +89,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+app.UseStaticFiles();
 app.UseAuthorization();
 
 app.MapControllers();

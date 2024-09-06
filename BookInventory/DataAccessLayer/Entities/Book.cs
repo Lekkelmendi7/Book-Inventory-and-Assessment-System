@@ -30,6 +30,8 @@ namespace BookInventory.DataAccess.Entities
         [Required]
         [MaxLength(20)]
         public string Format { get; set; } = null!;
+
+        public string BookPhoto = "NoPhoto.png";
         public int AuthorId { get; set; }
         public Author Author { get; set; } = null!;
 

@@ -243,7 +243,7 @@ namespace BookInventory.APIAccessLayer.Controllers
 
         [HttpGet("getBooksByAuthorName")]
         [Authorize(Policy = "Book_Read")]
-        public async Task<IActionResult> GetBooksByAuthorName(string authorName)
+        public async Task<IActionResult> GetBooksByAuthorName([FromQuery] string authorName)
         {
             try
             {

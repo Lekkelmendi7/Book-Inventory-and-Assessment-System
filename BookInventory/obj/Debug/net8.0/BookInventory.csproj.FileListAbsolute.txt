@@ -155,3 +155,17 @@ C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.Console.dll
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.Debug.dll
 C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Serilog.Sinks.File.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\BookInventory.staticwebassets.runtime.json
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\AWSSDK.Core.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\AWSSDK.SecurityToken.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\DnsClient.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\MongoDB.Bson.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\MongoDB.Driver.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\MongoDB.Driver.Core.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\MongoDB.Libmongocrypt.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\SharpCompress.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\Snappier.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\runtimes\linux\native\libmongocrypt.so
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\runtimes\osx\native\libmongocrypt.dylib
+C:\Users\lkelmendi.PC-PR05\Desktop\BookInventory\BookInventory\bin\Debug\net8.0\runtimes\win\native\mongocrypt.dll

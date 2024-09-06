@@ -1,0 +1,25 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\wwwroot\\authors\\fc386181-5551-485d-84b8-b7d398a7bd01.jfif",
+      "PackagePath": "staticwebassets\\authors\\fc386181-5551-485d-84b8-b7d398a7bd01.jfif"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BookInventory.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BookInventory.props",
+      "PackagePath": "build\\BookInventory.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BookInventory.props",
+      "PackagePath": "buildMultiTargeting\\BookInventory.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BookInventory.props",
+      "PackagePath": "buildTransitive\\BookInventory.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

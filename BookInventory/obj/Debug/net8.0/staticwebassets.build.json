@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "OWkcO436PtleOdTvgvkBoKhHzIRUKiTyB5ujAVwCgLU=",
+  "Hash": "/3hNkGtGZs0fo9dkjEZnnHbsBzm+MEar3VwtI8MyJbg=",
   "Source": "BookInventory",
   "BasePath": "_content/BookInventory",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "BookInventory\\wwwroot",
+      "Source": "BookInventory",
+      "ContentRoot": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\wwwroot\\",
+      "BasePath": "_content/BookInventory",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\wwwroot\\authors\\fc386181-5551-485d-84b8-b7d398a7bd01.jfif",
+      "SourceId": "BookInventory",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\wwwroot\\",
+      "BasePath": "_content/BookInventory",
+      "RelativePath": "authors/fc386181-5551-485d-84b8-b7d398a7bd01.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\authors\\fc386181-5551-485d-84b8-b7d398a7bd01.jfif"
+    }
+  ]
 }

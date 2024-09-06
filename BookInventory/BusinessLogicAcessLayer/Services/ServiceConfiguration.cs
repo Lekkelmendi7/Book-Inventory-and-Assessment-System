@@ -1,5 +1,7 @@
 ﻿using BookInventory.BusinessLogicAcessLayer.Services.AuthService;
+using BookInventory.BusinessLogicAcessLayer.Services.FileService;
 using BookInventory.BusinessLogicAcessLayer.Services.PermissionService;
+using BookInventory.BusinessLogicAcessLayer.Services.PhotoService;
 using BookInventory.BusinessLogicAcessLayer.Services.PublisherService;
 using BookInventory.BusinessLogicAcessLayer.Services.RoleService;
 using BookInventory.LogicAcessLayer.Services.AuthorService;
@@ -18,6 +20,8 @@ namespace BookInventory.LogicAcessLayer.Services
             services.AddScoped<IAuthService, AuthServicee>();
             services.AddScoped<IPermissionService, PermissionService>();
             services.AddScoped<IRoleService, RoleService>();
+            services.AddScoped<IFileStorageService, FileStorageService>();
+            services.AddScoped<IPhotoService, PhotoService>();
         }
     }
 }
