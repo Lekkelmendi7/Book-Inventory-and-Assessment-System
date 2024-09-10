@@ -2,11 +2,18 @@
 using BookInventory.BusinessLogicAcessLayer.Helpers;
 using BookInventory.BusinessLogicAcessLayer.Models;
 using BookInventory.BusinessLogicAcessLayer.Models.BookModels;
+using BookInventory.BusinessLogicAcessLayer.Services.PhotoService;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
+using BookInventory.DataAccessLayer.Entities;
 using BookInventory.LogicAcessLayer.Models.BookModels;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BookInventory.LogicAcessLayer.Services.BookService
 {
@@ -14,52 +21,36 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
     {
         private readonly DatabaseContext _context;
         private readonly IMapper _mapper;
+        private readonly IPhotoService _photoService;
         private readonly ILogger<BookServicee> _logger;
 
-        public BookServicee(DatabaseContext context, IMapper mapper, ILogger<BookServicee> logger)
+        public BookServicee(DatabaseContext context, IMapper mapper, ILogger<BookServicee> logger, IPhotoService photoService)
         {
             _context = context;
             _mapper = mapper;
             _logger = logger;
+            _photoService = photoService;
         }
-
-        /*   public async Task<IEnumerable<BookGetModel>> GetAllBooks()
-           {
-               try
-               {
-                   _logger.LogInformation("Fetching all books from the database.");
-                   var books = await _context.Books.Include(a => a.Author).ToListAsync();
-                   var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
-                   return mappedBooks;
-               } catch(Exception ex)
-               {
-                   _logger.LogError(ex, "An error occurred while trying to fetch books.");
-                   throw new Exception("An error occuredd while trying to fetch books.", ex);
-               }
-           }
-         */
 
         public async Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size)
         {
-            if (size > PaginationModel.MaxPageSize)
-            {
-                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
-            }
+            size = Math.Min(size, PaginationModel.MaxPageSize);
 
             try
             {
-                _logger.LogInformation("Fetching books from the database with pagination.");
+                _logger.LogInformation("Fetching books with pagination: page {Page}, size {Size}.", page, size);
 
-                // Define the query
                 var queryable = _context.Books.Include(b => b.Author).AsQueryable();
-
-                // Apply pagination
                 var paginatedBooks = queryable.Paginate(page, size);
-
-                // Map the results
                 var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(paginatedBooks.Items);
 
-                _logger.LogInformation("Exiting GetAllBooks method with {Count} books fetched.", mappedBooks.Count());
+                foreach (var book in mappedBooks)
+                {
+                    book.BookPhoto = await _photoService.GetBookPhotoById(book.Id); // Get photo name
+                    book.BookPhotoUrl = await _photoService.GetBookPhotoUrl(book.Id); // Get photo URL
+                }
+
+                _logger.LogInformation("Fetched {Count} books successfully.", mappedBooks.Count());
 
                 return new PaginatedResult<BookGetModel>
                 {
@@ -75,188 +66,201 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occurred while trying to fetch books.");
-                throw new Exception("An error occurred while trying to fetch books.", ex);
+                _logger.LogError(ex, "Error fetching books.");
+                throw new Exception("Error fetching books.", ex);
             }
         }
 
         public async Task<BookGetModel> GetBookById(int id)
         {
-            _logger.LogInformation($"Fetching book with ID {id} from the database.");
-            var book = await _context.Books.Include(a => a.Author).FirstOrDefaultAsync(x => x.Id == id);
-            if(book == null)
+            _logger.LogInformation("Fetching book with ID {Id}.", id);
+
+            var book = await _context.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.Id == id);
+            if (book == null)
             {
-                _logger.LogWarning($"Book with ID {id} not found.");
-                throw new KeyNotFoundException($"Book with ID {id} not found!");
+                _logger.LogWarning("Book with ID {Id} not found.", id);
+                throw new KeyNotFoundException($"Book with ID {id} not found.");
             }
-            var mappedBook = _mapper.Map<BookGetModel>(book);
-            return mappedBook;
+
+            var bookModel = _mapper.Map<BookGetModel>(book);
+            bookModel.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
+            bookModel.BookPhotoUrl = await _photoService.GetBookPhotoUrl(book.Id);
+
+            return bookModel;
         }
-        public async Task CreateBook(BookCreateModel bookModel)
+
+        public async Task CreateBook(BookCreateModel bookModel, string? newPhotoUrl = null, string? initialPhoto = null)
         {
             try
             {
-                _logger.LogInformation("Creating a new book in the database.");
+                _logger.LogInformation("Creating a new book.");
 
-                // Use AutoMapper to map from BookCreateModel to Book entity
                 var bookEntity = _mapper.Map<Book>(bookModel);
+                bookEntity.BookPhoto = string.IsNullOrWhiteSpace(initialPhoto) ? "NoPhoto.png" : initialPhoto;
 
                 _context.Books.Add(bookEntity);
                 await _context.SaveChangesAsync();
+
+                if (!string.IsNullOrWhiteSpace(initialPhoto))
+                {
+                    await _photoService.AddBookPhoto(bookEntity.Id, newPhotoUrl, initialPhoto);
+                }
+
+                _logger.LogInformation("Book with ID {Id} created successfully.", bookEntity.Id);
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error occurred while trying to create a book.");
-                throw new Exception("Error while trying to create a book", ex);
+                _logger.LogError(ex, "Error creating book.");
+                throw new Exception("Error creating book.", ex);
             }
         }
 
-        public async Task UpdateBook(int id, BookUpdateModel bookModel)
+        public async Task UpdateBook(int id, BookUpdateModel bookModel, string? newPhotoUrl = null, string? newPhotoName = null)
         {
-            _logger.LogInformation($"Updating book with ID {id}.");
-            var bookEntity = await _context.Books.FirstOrDefaultAsync(_ => _.Id == id);
+            _logger.LogInformation("Updating book with ID {Id}.", id);
 
+            var bookEntity = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
             if (bookEntity == null)
             {
-                _logger.LogWarning($"Book with ID {id} not found.");
-                throw new KeyNotFoundException($"Book with ID {id} not found!");
+                _logger.LogWarning("Book with ID {Id} not found.", id);
+                throw new KeyNotFoundException($"Book with ID {id} not found.");
             }
 
-            // Use AutoMapper to map the updated fields from BookUpdateModel to the existing Book entity
             _mapper.Map(bookModel, bookEntity);
+
+            if (!string.IsNullOrWhiteSpace(newPhotoName))
+            {
+                await _photoService.UpdateBookPhoto(id, newPhotoUrl ,newPhotoName);
+            }
 
             _context.Books.Update(bookEntity);
             await _context.SaveChangesAsync();
 
-            _logger.LogInformation($"Book with ID {id} updated successfully.");
+            _logger.LogInformation("Book with ID {Id} updated successfully.", id);
         }
 
 
-        public async Task<bool> DeleteBook(int id)
+        public async Task<bool> DeleteBook(int bookId)
         {
-            _logger.LogInformation($"Deleting book with ID {id}.");
-            var book = await _context.Books.FindAsync(id);
-
-            if (book == null)
+            try
             {
-                _logger.LogWarning($"Book with ID {id} not found.");
-                throw new KeyNotFoundException($"Book with ID {id} not found!");
-            }
+                _logger.LogInformation("Deleting book with ID {Id}.", bookId);
 
-            _context.Books.Remove(book);
-            await _context.SaveChangesAsync();
-            _logger.LogInformation($"Book with ID {id} deleted successfully.");
-            return true;
+                // Gjej librin nëse ekziston
+                var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
+                if (book == null)
+                {
+                    _logger.LogWarning("Book with ID {Id} not found.", bookId);
+                    return false; // Libri nuk u gjet
+                }
+
+                // Fshi foton e librit nëse ekziston
+                await _photoService.DeleteBookPhotoByBookIdAsync(bookId);
+
+                // Fshi librin nga baza e të dhënave
+                _context.Books.Remove(book);
+                await _context.SaveChangesAsync(); // Sigurohu që të dhënat të ruhen
+
+                _logger.LogInformation("Book with ID {Id} and its photo deleted successfully.", bookId);
+                return true; // Libri dhe fotot janë fshirë me sukses
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error deleting book with ID {Id}.", bookId);
+                throw new Exception("Error deleting book.", ex);
+            }
         }
+
 
         public async Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int publicationYear)
         {
+            _logger.LogInformation("Fetching books published in year {Year}.", publicationYear);
 
-            _logger.LogInformation("Fetching books filtered by publication year from the database.");
-
-            // Query to filter books by the specified publication year
-            var filteredBooks = await _context.Books
-                .Include(b => b.Author)
+            var books = await _context.Books
                 .Where(b => b.PublicationYear == publicationYear)
+                .Include(b => b.Author)
                 .ToListAsync();
 
-            if (filteredBooks == null)
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            foreach (var book in bookModels)
             {
-                _logger.LogWarning("Book with that publication year was not found!");
-                throw new KeyNotFoundException("Book with that publication year not found!");
+                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
             }
 
-            // Map the results
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
-
-            _logger.LogInformation("Exiting GetBooksByPublicationYear method with {Count} books fetched.", mappedBooks.Count());
-
-            return mappedBooks;
+            return bookModels;
         }
 
         public async Task<IEnumerable<BookGetModel>> GetBooksByLanguage(string language)
         {
-            _logger.LogInformation("Fetching all books by language!");
-            var filteredBooks = await _context.Books
-                .Include(x => x.Author)
-                .Where(b => b.Language.Equals(language))
+            _logger.LogInformation("Fetching books in language {Language}.", language);
+
+            var books = await _context.Books
+                .Where(b => b.Language == language)
+                .Include(b => b.Author)
                 .ToListAsync();
 
-            if (filteredBooks == null)
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            foreach (var book in bookModels)
             {
-                _logger.LogWarning("Book/s with that language was not found!");
-                throw new KeyNotFoundException("Book/s with that language was not found!");
+                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
             }
 
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
-            _logger.LogInformation("All books by language fetched!");
-            return mappedBooks;
+            return bookModels;
         }
 
         public async Task<IEnumerable<BookGetModel>> SelectBooksByGenres(string[] genres)
         {
-            var filteredBooks = await _context.Books
-                .Include(x => x.Author)
-                .Where(x => genres.Any(genre => x.Genres.Contains(genre)))
+            _logger.LogInformation("Fetching books with genres {Genres}.", string.Join(", ", genres));
+
+            var books = await _context.Books
+                .Where(b => b.Genres.Any(g => genres.Contains(g)))
+                .Include(b => b.Author)
                 .ToListAsync();
 
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(filteredBooks);
-            return mappedBooks;
-        }
-
-        public async Task<IEnumerable<BookGetModel>> SearchBook(string book)
-        {
-            if (string.IsNullOrWhiteSpace(book))
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            foreach (var book in bookModels)
             {
-                return Enumerable.Empty<BookGetModel>();
+                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
             }
 
+            return bookModels;
+        }
 
-            book = book.ToLower();
+        public async Task<IEnumerable<BookGetModel>> SearchBook(string searchTerm)
+        {
+            _logger.LogInformation("Searching for books with term {Term}.", searchTerm);
 
-            var searchedBooks = await _context.Books
-                .Include(x => x.Author)
-                .Where(b => b.Title.ToLower().Contains(book))
+            var books = await _context.Books
+                .Where(b => b.Title.Contains(searchTerm) || b.Author.Name.Contains(searchTerm))
+                .Include(b => b.Author)
                 .ToListAsync();
 
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(searchedBooks);
-            return mappedBooks;
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            foreach (var bookModel in bookModels)
+            {
+                bookModel.BookPhoto = await _photoService.GetBookPhotoById(bookModel.Id);
+            }
+
+            return bookModels;
         }
+
 
         public async Task<IEnumerable<BookGetModel>> GetBooksByAuthorName(string authorName)
         {
-            if(string.IsNullOrWhiteSpace(authorName))
-            {
-                _logger.LogWarning("Author name cant be null or empty!");
-                throw new ArgumentException("Author name cant be null or empty!");
-            }
-
-            _logger.LogInformation("Fetching books by author name");
-
-            var author = await _context.Authors
-                .FirstOrDefaultAsync(a => a.Name.ToLower().Contains(authorName.ToLower())); 
-
-            if(author == null)
-            {
-                _logger.LogWarning($"No author found with name: {authorName}");
-                throw new KeyNotFoundException($"No author found with name: {authorName}");
-            }
+            _logger.LogInformation("Fetching books by author {AuthorName}.", authorName);
 
             var books = await _context.Books
+                .Where(b => b.Author.Name == authorName)
                 .Include(b => b.Author)
-                .Where(b => b.AuthorId == author.Id)
                 .ToListAsync();
 
-            if(books.Count == 0)
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+            foreach (var book in bookModels)
             {
-                _logger.LogWarning($"No books found for author: {authorName}");
-                throw new KeyNotFoundException($"No books found for author: {authorName}");
+                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
             }
 
-            var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(books);
-            return mappedBooks; 
+            return bookModels;
         }
     }
-
 }
-

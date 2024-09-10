@@ -30,6 +30,10 @@ namespace BookInventory.LogicAcessLayer.Models.BookModels
         [MaxLength(20)]
         public string Format { get; set; } = null!;
         [Required]
+        public string BookPhoto = "NoPhoto.png";
+        [Required]
+        public string BookPhotoUrl = "NoUrl";
+        [Required]
         [Range(1, int.MaxValue, ErrorMessage = "Author Id not correct!")]
         public int AuthorId { get; set; }
     }

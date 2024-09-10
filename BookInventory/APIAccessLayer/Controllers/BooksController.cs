@@ -1,4 +1,5 @@
-﻿using BookInventory.DataAccess.Entities;
+﻿using BookInventory.BusinessLogicAcessLayer.Services.PhotoService;
+using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.AuthorModels;
 using BookInventory.LogicAcessLayer.Models.BookModels;
 using BookInventory.LogicAcessLayer.Services.BookService;
@@ -7,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace BookInventory.APIAccessLayer.Controllers
 {
@@ -17,29 +21,15 @@ namespace BookInventory.APIAccessLayer.Controllers
     {
         private readonly IBookService _service;
         private readonly ILogger<BooksController> _logger;
+        private readonly IPhotoService _photoService;
 
-        public BooksController(IBookService service, ILogger<BooksController> logger)
+        public BooksController(IBookService service, ILogger<BooksController> logger, IPhotoService photoService)
         {
             _service = service;
             _logger = logger;
+            _photoService = photoService;
         }
 
-
-        /* [HttpGet("getAllBooks")]
-         public async Task<IActionResult> GetAllBooks()
-         {
-             try
-             {
-                 _logger.LogInformation("API call to get all books.");
-                 var books = await _service.GetAllBooks();
-                 return Ok(books);
-             }
-             catch (Exception ex)
-             {
-                 _logger.LogError(ex, "Error occurred while fetching all books.");
-                 return BadRequest(ex.Message);
-             }
-         }*/
         [HttpGet("getAllBooks")]
         [Authorize(Policy = "Book_Read")]
         public async Task<IActionResult> GetAllBooks([FromQuery] int page, [FromQuery] int size)
@@ -66,12 +56,11 @@ namespace BookInventory.APIAccessLayer.Controllers
             {
                 _logger.LogInformation($"API call to get book with ID {id}.");
                 var book = await _service.GetBookById(id);
+                if (book == null)
+                {
+                    return NotFound($"Book with ID {id} not found.");
+                }
                 return Ok(book);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                _logger.LogWarning($"Book with ID {id} not found.");
-                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
@@ -82,7 +71,7 @@ namespace BookInventory.APIAccessLayer.Controllers
 
         [HttpPost("addBook")]
         [Authorize(Policy = "Book_Create")]
-        public async Task<IActionResult> AddBook(BookCreateModel model)
+        public async Task<IActionResult> AddBook([FromBody] BookCreateModel model)
         {
             try
             {
@@ -96,9 +85,10 @@ namespace BookInventory.APIAccessLayer.Controllers
                 return StatusCode(500, "An unexpected error occurred.");
             }
         }
+
         [HttpPut("updateBook/{id}")]
         [Authorize(Policy = "Book_Edit")]
-        public async Task<IActionResult> UpdateBook(int id, BookUpdateModel model)
+        public async Task<IActionResult> UpdateBook(int id, [FromBody] BookUpdateModel model)
         {
             try
             {
@@ -126,12 +116,11 @@ namespace BookInventory.APIAccessLayer.Controllers
             {
                 _logger.LogInformation($"API call to delete book with ID {id}.");
                 var isDeleted = await _service.DeleteBook(id);
+                if (!isDeleted)
+                {
+                    return NotFound($"Book with ID {id} not found.");
+                }
                 return Ok("Book deleted successfully!");
-            }
-            catch (KeyNotFoundException ex)
-            {
-                _logger.LogWarning($"Book with ID {id} not found.");
-                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
@@ -148,12 +137,11 @@ namespace BookInventory.APIAccessLayer.Controllers
             {
                 _logger.LogInformation($"API call to get books by publication year: {publicationYear}.");
                 var books = await _service.GetBooksByPublicationYear(publicationYear);
+                if (books == null || !books.Any())
+                {
+                    return NotFound($"No books found for publication year {publicationYear}.");
+                }
                 return Ok(books);
-            }
-            catch(KeyNotFoundException ex)
-            {
-                _logger.LogWarning($"Book/s with that publication year, not found!");
-                return NotFound(ex.Message );   
             }
             catch (Exception ex)
             {
@@ -168,17 +156,17 @@ namespace BookInventory.APIAccessLayer.Controllers
         {
             try
             {
-                _logger.LogInformation($"API call to get books by language!");
+                _logger.LogInformation($"API call to get books by language: {language}.");
                 var books = await _service.GetBooksByLanguage(language);
+                if (books == null || !books.Any())
+                {
+                    return NotFound($"No books found for language {language}.");
+                }
                 return Ok(books);
-            }catch(KeyNotFoundException ex)
-            {
-                _logger.LogWarning($"Book/s with that language, not found!");
-                return NotFound(ex.Message);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                _logger.LogError(ex, "An unexpected error occurred while fetching books by publication year.");
+                _logger.LogError(ex, "An unexpected error occurred while fetching books by language.");
                 return StatusCode(500, "An unexpected error occurred.");
             }
         }
@@ -195,21 +183,13 @@ namespace BookInventory.APIAccessLayer.Controllers
                     return BadRequest("Genres are required.");
                 }
 
-                _logger.LogInformation($"API call to get books by genres: {string.Join(", ", genres)}");
+                _logger.LogInformation($"API call to get books by genres: {string.Join(", ", genres)}.");
                 var books = await _service.SelectBooksByGenres(genres);
-
                 if (books == null || !books.Any())
                 {
-                    _logger.LogWarning($"No books found for the provided genres: {string.Join(", ", genres)}");
-                    return NotFound("No books found for the provided genres.");
+                    return NotFound($"No books found for genres: {string.Join(", ", genres)}.");
                 }
-
                 return Ok(books);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                _logger.LogWarning($"Books with selected genres not found: {ex.Message}");
-                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
@@ -224,22 +204,20 @@ namespace BookInventory.APIAccessLayer.Controllers
         {
             try
             {
-                _logger.LogInformation($"API call to search books by name: {searchByName}");
+                _logger.LogInformation($"API call to search books by name: {searchByName}.");
                 var books = await _service.SearchBook(searchByName);
-                if(books == null)
+                if (books == null || !books.Any())
                 {
-                    throw new KeyNotFoundException("Book that you were looking for was not found!");
+                    return NotFound($"No books found for name: {searchByName}.");
                 }
-
                 return Ok(books);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.LogError(ex, "An unexpected error occurred while searching for books by name.");
                 return StatusCode(500, "An unexpected error occurred.");
             }
         }
-
 
         [HttpGet("getBooksByAuthorName")]
         [Authorize(Policy = "Book_Read")]
@@ -247,26 +225,13 @@ namespace BookInventory.APIAccessLayer.Controllers
         {
             try
             {
-                _logger.LogInformation($"API call to get books by author name: {authorName}");
+                _logger.LogInformation($"API call to get books by author name: {authorName}.");
                 var books = await _service.GetBooksByAuthorName(authorName);
-
                 if (books == null || !books.Any())
                 {
-                    _logger.LogWarning($"No books found for author: {authorName}");
-                    return NotFound($"No books found for author: {authorName}");
+                    return NotFound($"No books found for author: {authorName}.");
                 }
-
                 return Ok(books);
-            }
-            catch (ArgumentException ex)
-            {
-                _logger.LogWarning($"Invalid author name provided: {ex.Message}");
-                return BadRequest(ex.Message);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                _logger.LogWarning(ex.Message);
-                return NotFound(ex.Message);
             }
             catch (Exception ex)
             {
@@ -275,6 +240,66 @@ namespace BookInventory.APIAccessLayer.Controllers
             }
         }
 
+        #region Photo Management
 
+        [HttpGet("getBookPhoto/{bookId}")]
+        [Authorize(Policy = "Book_Read")]
+        public async Task<IActionResult> GetBookPhoto(int bookId)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to get photo for book with ID {bookId}.");
+                var photo = await _photoService.GetBookPhotoById(bookId);
+                if (photo == null)
+                {
+                    return NotFound($"Photo not found for book with ID {bookId}.");
+                }
+                return Ok(photo);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while fetching the book photo.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpPost("addBookPhoto")]
+        [Authorize(Policy = "Book_Create")]
+        public async Task<IActionResult> AddBookPhoto([FromQuery] int bookId, [FromQuery] string urlPhoto, [FromQuery] string photoName)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to add photo {photoName} for book with ID {bookId}.");
+                await _photoService.AddBookPhoto(bookId, urlPhoto, photoName);
+                return Ok("Photo added successfully!");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while adding a book photo.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+        [HttpPut("updateBookPhoto/{bookId}")]
+        [Authorize(Policy = "Book_Edit")]
+        public async Task<IActionResult> UpdateBookPhoto(int bookId, [FromQuery]string urlPhoto, [FromQuery] string photoName)
+        {
+            try
+            {
+                _logger.LogInformation($"API call to update photo for book with ID {bookId} to {photoName}.");
+                await _photoService.UpdateBookPhoto(bookId, urlPhoto, photoName);
+                return Ok("Photo updated successfully!");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "An unexpected error occurred while updating the book photo.");
+                return StatusCode(500, "An unexpected error occurred.");
+            }
+        }
+
+      
+
+
+        #endregion
     }
 }

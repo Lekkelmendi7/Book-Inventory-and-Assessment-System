@@ -37,6 +37,34 @@ namespace BookInventory.APIAccessLayer.Controllers
             return Ok(photo); // Return 200 OK with the photo
         }
 
+        // GET: api/photo/book/{bookId}
+        [HttpGet("book/{bookId}")]
+        public async Task<IActionResult> GetBookPhotoUrl(int bookId)
+        {
+            var photoUrl = await _photoService.GetBookPhotoUrl(bookId);
+
+            if (photoUrl == null)
+            {
+                return NotFound($"No photo found for book with ID {bookId}");
+            }
+
+            return Ok(photoUrl); // Return 200 OK with the photo URL
+        }
+
+        // GET: api/photo/book/{bookId}/name
+        [HttpGet("book/{bookId}/name")]
+        public async Task<IActionResult> GetBookPhotoById(int bookId)
+        {
+            var photoName = await _photoService.GetBookPhotoById(bookId);
+
+            if (photoName == null)
+            {
+                return NotFound($"No photo name found for book with ID {bookId}");
+            }
+
+            return Ok(photoName); // Return 200 OK with the photo name
+        }
+
         // POST: api/photo
         [HttpPost]
         public async Task<IActionResult> AddPhoto([FromBody] BookPhoto bookPhoto)
@@ -50,6 +78,26 @@ namespace BookInventory.APIAccessLayer.Controllers
             {
                 var createdPhoto = await _photoService.AddAsync(bookPhoto);
                 return CreatedAtAction(nameof(GetPhotoById), new { id = createdPhoto.Id }, createdPhoto); // Return 201 Created with the new photo
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}"); // Return 500 on exception
+            }
+        }
+
+        // POST: api/photo/book/{bookId}
+        [HttpPost("book/{bookId}")]
+        public async Task<IActionResult> AddBookPhoto(int bookId, [FromBody] BookPhoto bookPhoto)
+        {
+            if (bookPhoto == null)
+            {
+                return BadRequest("Invalid photo data."); // Return 400 if the input is null
+            }
+
+            try
+            {
+                await _photoService.AddBookPhoto(bookId, bookPhoto.PhotoUrl, bookPhoto.PhotosName);
+                return CreatedAtAction(nameof(GetBookPhotoUrl), new { bookId }, bookPhoto); // Return 201 Created with the book photo
             }
             catch (Exception ex)
             {
@@ -83,6 +131,26 @@ namespace BookInventory.APIAccessLayer.Controllers
             }
         }
 
+        // PUT: api/photo/book/{bookId}
+        [HttpPut("book/{bookId}")]
+        public async Task<IActionResult> UpdateBookPhoto(int bookId, [FromBody] BookPhoto bookPhoto)
+        {
+            if (bookPhoto == null || string.IsNullOrWhiteSpace(bookPhoto.PhotoUrl) || string.IsNullOrWhiteSpace(bookPhoto.PhotosName))
+            {
+                return BadRequest("Invalid book photo data."); // Return 400 if the input is invalid
+            }
+
+            try
+            {
+                await _photoService.UpdateBookPhoto(bookId, bookPhoto.PhotoUrl, bookPhoto.PhotosName);
+                return Ok("Book photo updated successfully."); // Return 200 OK if the update is successful
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}"); // Return 500 on exception
+            }
+        }
+
         // DELETE: api/photo/{id}
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePhoto(string id)
@@ -108,5 +176,21 @@ namespace BookInventory.APIAccessLayer.Controllers
                 return StatusCode(500, $"Internal server error: {ex.Message}"); // Return 500 on exception
             }
         }
+
+        [HttpDelete("book/{bookId}")]
+        public async Task<IActionResult> DeleteBookPhotoByBookIdAsync(int bookId)
+        {
+            try
+            {
+                var deleteResult = _photoService.DeleteBookPhotoByBookIdAsync(bookId);
+
+                return NoContent(); // Return 204 No Content if the deletion is successful
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Internal server error: {ex.Message}"); // Return 500 on exception
+            }
+        }
+
     }
 }

@@ -15,7 +15,9 @@ namespace BookInventory.LogicAcessLayer.Models.BookModels
         public double Price { get; set; }
         public int Stock { get; set; }
         public string Edition { get; set; } 
-        public string Format { get; set; } 
+        public string Format { get; set; }
+        public string BookPhoto = "NoPhoto.png";
+        public string BookPhotoUrl = "NoUrl";
         public virtual AuthorGetModel Author { get; set; }
     }
 }
