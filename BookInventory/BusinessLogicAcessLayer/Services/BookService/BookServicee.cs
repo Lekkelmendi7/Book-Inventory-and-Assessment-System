@@ -32,7 +32,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             _photoService = photoService;
         }
 
-        public async Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size)
+        public async Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size, string? sortBy, string? sortOrder)
         {
             size = Math.Min(size, PaginationModel.MaxPageSize);
 
@@ -41,6 +41,41 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
                 _logger.LogInformation("Fetching books with pagination: page {Page}, size {Size}.", page, size);
 
                 var queryable = _context.Books.Include(b => b.Author).AsQueryable();
+                
+                if(!string.IsNullOrWhiteSpace(sortBy))
+                {
+                    switch(sortBy)
+                    {
+                        case "title":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Title) : queryable.OrderBy(a => a.Title);
+                            break;
+                        case "publicationYear":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.PublicationYear) : queryable.OrderBy(a => a.PublicationYear);
+                            break;
+                        case "language":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Language) : queryable.OrderBy(a => a.Language);
+                            break;
+                        case "price":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Price) : queryable.OrderBy(a => a.Price);
+                            break;
+                        case "pageCount":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.PageCount) : queryable.OrderBy(a => a.PageCount);
+                            break;
+                        case "stock":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Stock) : queryable.OrderBy(a => a.Stock);
+                            break;
+                        case "edition":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Edition) : queryable.OrderBy(a => a.Edition);
+                            break;
+                        case "format":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Format) : queryable.OrderBy(a => a.Format);
+                            break;
+                        default:
+                            queryable = queryable.OrderBy(a => a.Title); // Default sorting
+                            break;
+                    }
+                }
+                
                 var paginatedBooks = queryable.Paginate(page, size);
                 var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(paginatedBooks.Items);
 

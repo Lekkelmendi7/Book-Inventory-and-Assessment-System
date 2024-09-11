@@ -9,7 +9,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 {
     public interface IBookService
     {
-        Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size);
+        Task<PaginatedResult<BookGetModel>> GetAllBooks(int page, int size, string? stringBy, string? sortOrder);
         Task<BookGetModel> GetBookById(int id);
         Task CreateBook(BookCreateModel bookModel, string? newPhotoUrl = null, string? initialPhoto = null);
         Task UpdateBook(int id, BookUpdateModel bookModel, string? newPhotoUrl = null, string? newPhotoName = null);

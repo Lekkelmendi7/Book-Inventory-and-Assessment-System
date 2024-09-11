@@ -7,7 +7,7 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
 {
     public interface IAuthorService
     {
-        Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size);
+        Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size, string? sortBy, string? sortOrder);
         Task<AuthorGetModel> GetAuthorById(int id);
         Task CreateAuthor(AuthorCreateModel authorCreateModel);
         Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel);

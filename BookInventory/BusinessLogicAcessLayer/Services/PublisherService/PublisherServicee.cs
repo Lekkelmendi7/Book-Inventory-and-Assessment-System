@@ -5,7 +5,9 @@ using BookInventory.BusinessLogicAcessLayer.Models.PulisherModels;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
 {
@@ -21,7 +23,7 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
         }
 
 
-        public async Task<PaginatedResult<PublisherGetModel>> GetPublishers(int page, int size)
+        public async Task<PaginatedResult<PublisherGetModel>> GetPublishers(int page, int size, string? sortBy, string? sortOrder)
         {
             if (size > PaginationModel.MaxPageSize)
             {
@@ -37,6 +39,22 @@ namespace BookInventory.BusinessLogicAcessLayer.Services.PublisherService
                     .Include(p => p.Author)
                     .AsQueryable();
 
+                if (!string.IsNullOrWhiteSpace(sortBy))
+                {
+                    switch (sortBy.ToLower())
+                    {
+                        case "name":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Name) : queryable.OrderBy(a => a.Name);
+                            break;
+                        default:
+                            queryable = queryable.OrderBy(a => a.Name); // Default sorting
+                            break;
+                    }
+                }
+                else
+                {
+                    queryable = queryable.OrderBy(a => a.Name); // Default sorting if no sortBy is provided
+                }
                 // Apply pagination
                 var paginatedPublishers = queryable.Paginate(page, size);
 

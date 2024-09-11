@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\apiaccesslayer\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\apiaccesslayer\\controllers\\publisherscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\apiaccesslayer\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\apiaccesslayer\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\bookservice\\bookservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\bookservice\\bookservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\apiaccesslayer\\controllers\\permissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\apiaccesslayer\\controllers\\permissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\bookservice\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\bookservice\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\permissionservice\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\permissionservice\\permissionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\photoservice\\photoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\photoservice\\photoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\photoservice\\iphotoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\photoservice\\iphotoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\authservice\\authservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\authservice\\authservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\apiaccesslayer\\controllers\\photoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\apiaccesslayer\\controllers\\photoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\publisherservice\\publisherservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\publisherservice\\publisherservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\publisherservice\\ipublisherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\publisherservice\\ipublisherservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\bookservice\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\bookservice\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\dataaccesslayer\\entities\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\dataaccesslayer\\entities\\publisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\authorservice\\authorservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\authorservice\\authorservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\businesslogicacesslayer\\services\\bookservice\\bookservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\businesslogicacesslayer\\services\\bookservice\\bookservicee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|c:\\users\\lkelmendi.pc-pr05\\desktop\\bookinventory\\bookinventory\\dataaccesslayer\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C972524A-D730-4BE3-801B-F9053BC63FDE}|BookInventory\\BookInventory.csproj|solutionrelative:bookinventory\\dataaccesslayer\\entities\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,45 +62,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IBookService.cs",
-              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
-              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
-              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
-              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABUAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "PublishersController.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\PublishersController.cs",
+              "RelativeDocumentMoniker": "BookInventory\\APIAccessLayer\\Controllers\\PublishersController.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\PublishersController.cs",
+              "RelativeToolTip": "BookInventory\\APIAccessLayer\\Controllers\\PublishersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T07:53:18.263Z",
+              "WhenOpened": "2024-09-11T07:22:08.219Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "AuthorServicee.cs",
-              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
-              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
-              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
-              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAA7AAAA",
+              "DocumentIndex": 2,
+              "Title": "PermissionsController.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\PermissionsController.cs",
+              "RelativeDocumentMoniker": "BookInventory\\APIAccessLayer\\Controllers\\PermissionsController.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\PermissionsController.cs",
+              "RelativeToolTip": "BookInventory\\APIAccessLayer\\Controllers\\PermissionsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T06:41:29.524Z",
+              "WhenOpened": "2024-09-11T07:21:46.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PermissionService.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PermissionService\\PermissionService.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\PermissionService\\PermissionService.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PermissionService\\PermissionService.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\PermissionService\\PermissionService.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAAAowEAAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:21:44.451Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "IPhotoService.cs",
-              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\IPhotoService.cs",
-              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\IPhotoService.cs",
-              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\IPhotoService.cs",
-              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\IPhotoService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAzAAAA",
+              "Title": "AuthServicee.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthService\\AuthServicee.cs",
+              "ViewState": "AQIAAE0AAAAAAAAAAAASwFUAAABVAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-10T06:33:18.224Z",
+              "WhenOpened": "2024-09-11T07:21:32.455Z",
               "EditorCaption": ""
             },
             {
@@ -87,48 +124,113 @@
               "RelativeDocumentMoniker": "BookInventory\\APIAccessLayer\\Controllers\\PhotosController.cs",
               "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\PhotosController.cs",
               "RelativeToolTip": "BookInventory\\APIAccessLayer\\Controllers\\PhotosController.cs",
-              "ViewState": "AQIAAKAAAAAAAAAAAAAgwLgAAABWAAAA",
+              "ViewState": "AQIAAJsAAAAAAAAAAIA6wLQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T13:47:50.12Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BooksController.cs",
-              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
-              "RelativeDocumentMoniker": "BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
-              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
-              "RelativeToolTip": "BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
-              "ViewState": "AQIAAH4AAAAAAAAAAAAmwHIAAAAGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T13:47:47.943Z",
+              "WhenOpened": "2024-09-11T07:21:26.467Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "BookInventory\\APIAccessLayer\\Controllers\\BooksController.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:21:01.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IPublisherService.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\IPublisherService.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\IPublisherService.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\IPublisherService.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\IPublisherService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:18:41.942Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Publisher.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\DataAccessLayer\\Entities\\Publisher.cs",
+              "RelativeDocumentMoniker": "BookInventory\\DataAccessLayer\\Entities\\Publisher.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\DataAccessLayer\\Entities\\Publisher.cs",
+              "RelativeToolTip": "BookInventory\\DataAccessLayer\\Entities\\Publisher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:17:19.944Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PublisherServicee.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\PublisherServicee.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\PublisherServicee.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\PublisherServicee.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\PublisherService\\PublisherServicee.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAA3wC8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:16:54.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\DataAccessLayer\\Entities\\Book.cs",
+              "RelativeDocumentMoniker": "BookInventory\\DataAccessLayer\\Entities\\Book.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\DataAccessLayer\\Entities\\Book.cs",
+              "RelativeToolTip": "BookInventory\\DataAccessLayer\\Entities\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:08:50.563Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthorServicee.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\AuthorService\\AuthorServicee.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAA5wD8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T07:06:46.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "BookServicee.cs",
               "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\BookServicee.cs",
               "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\BookServicee.cs",
               "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\BookServicee.cs",
               "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\BookServicee.cs",
-              "ViewState": "AQIAAIYAAAAAAAAAAAAAwI4AAAAqAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAgwDoAAACIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T13:44:37.086Z",
+              "WhenOpened": "2024-09-11T07:06:26.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PhotoService.cs",
-              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\PhotoService.cs",
-              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\PhotoService.cs",
-              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\PhotoService.cs",
-              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\PhotoService\\PhotoService.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAAmwEUAAABYAAAA",
+              "DocumentIndex": 8,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
+              "RelativeDocumentMoniker": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
+              "ToolTip": "C:\\Users\\lkelmendi.PC-PR05\\Desktop\\BookInventory\\BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
+              "RelativeToolTip": "BookInventory\\BusinessLogicAcessLayer\\Services\\BookService\\IBookService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-09T13:44:28.096Z",
+              "WhenOpened": "2024-09-11T07:05:35.36Z",
               "EditorCaption": ""
             }
           ]

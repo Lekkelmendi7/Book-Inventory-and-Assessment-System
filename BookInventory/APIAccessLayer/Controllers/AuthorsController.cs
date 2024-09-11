@@ -31,15 +31,16 @@ namespace BookInventory.APIAccessLayer.Controllers
         /// 
         [HttpGet("getAllAuthors")]
         [Authorize(Policy = "Author_Read")]
-        public async Task<IActionResult> GetAllAuthors([FromQuery] int page, [FromQuery] int size)
+        public async Task<IActionResult> GetAllAuthors([FromQuery] int page, [FromQuery] int size, [FromQuery] string? sortBy, [FromQuery] string? sortOrder = "asc")
         {
             try
             {
                 _logger.LogInformation("Displaying all authors!");
-                var authors = await _service.GetAllAuthors(page, size);
+                var authors = await _service.GetAllAuthors(page, size, sortBy, sortOrder);
                 _logger.LogInformation("All authors displayed!");
                 return Ok(authors);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 _logger.LogError("Error while trying to fetch all authors!");
                 return BadRequest(ex.Message);

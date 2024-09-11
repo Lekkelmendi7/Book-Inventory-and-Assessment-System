@@ -5,7 +5,9 @@ using BookInventory.BusinessLogicAcessLayer.Services.FileService;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
 using BookInventory.LogicAcessLayer.Models.AuthorModels;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Globalization;
 
 namespace BookInventory.LogicAcessLayer.Services.AuthorService
 {
@@ -23,7 +25,7 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
             _fileStorageService = fileStorageService;
         }
 
-        public async Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size)
+        public async Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size, string? sortBy, string? sortOrder)
         {
             if (size > PaginationModel.MaxPageSize)
             {
@@ -36,6 +38,30 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
 
                 // Define the query
                 var queryable = _context.Authors.Include(a => a.Publisher).AsQueryable();
+
+
+                if (!string.IsNullOrWhiteSpace(sortBy))
+                {
+                    switch (sortBy.ToLower())
+                    {
+                        case "name":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Name) : queryable.OrderBy(a => a.Name);
+                            break;
+                        case "dateofbirth":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.DateOfBirth) : queryable.OrderBy(a => a.DateOfBirth);
+                            break;
+                        case "nationality":
+                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Nationality) : queryable.OrderBy(a => a.Nationality);
+                            break;
+                        default:
+                            queryable = queryable.OrderBy(a => a.Name); // Default sorting
+                            break;
+                    }
+                }
+                else
+                {
+                    queryable = queryable.OrderBy(a => a.Name); // Default sorting if no sortBy is provided
+                }
 
                 // Apply pagination
                 var paginatedAuthors = queryable.Paginate(page, size);
