@@ -207,12 +207,12 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
         }
 
 
-        public async Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int publicationYear)
+        public async Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int? publicationYear)
         {
             _logger.LogInformation("Fetching books published in year {Year}.", publicationYear);
 
             var books = await _context.Books
-                .Where(b => b.PublicationYear == publicationYear)
+                .Where(b => publicationYear == null || b.PublicationYear == publicationYear)
                 .Include(b => b.Author)
                 .ToListAsync();
 

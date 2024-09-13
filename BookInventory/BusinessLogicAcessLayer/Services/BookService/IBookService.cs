@@ -14,7 +14,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
         Task CreateBook(BookCreateModel bookModel, string? newPhotoUrl = null, string? initialPhoto = null);
         Task UpdateBook(int id, BookUpdateModel bookModel, string? newPhotoUrl = null, string? newPhotoName = null);
         Task<bool> DeleteBook(int id);
-        Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int publicationYear);
+        Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int? publicationYear);
         Task<IEnumerable<BookGetModel>> GetBooksByLanguage(string language);
         Task<IEnumerable<BookGetModel>> SelectBooksByGenres(string[] genres);
         Task<IEnumerable<BookGetModel>> SearchBook(string book);

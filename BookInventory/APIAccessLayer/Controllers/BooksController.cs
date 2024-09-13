@@ -129,9 +129,10 @@ namespace BookInventory.APIAccessLayer.Controllers
             }
         }
 
-        [HttpGet("getBooksByPublicationYear/{publicationYear}")]
-        [Authorize(Policy = "Book_Read")]
-        public async Task<IActionResult> GetBooksByPublicationYear(int publicationYear)
+        [HttpGet("getBooksByPublicationYear")]
+        //[Authorize(Policy = "Book_Read")]
+        [AllowAnonymous]
+        public async Task<IActionResult> GetBooksByPublicationYear([FromQuery] int? publicationYear)
         {
             try
             {
@@ -139,7 +140,7 @@ namespace BookInventory.APIAccessLayer.Controllers
                 var books = await _service.GetBooksByPublicationYear(publicationYear);
                 if (books == null || !books.Any())
                 {
-                    return NotFound($"No books found for publication year {publicationYear}.");
+                    return Ok(books);
                 }
                 return Ok(books);
             }
