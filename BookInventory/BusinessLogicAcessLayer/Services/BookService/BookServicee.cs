@@ -5,11 +5,10 @@ using BookInventory.BusinessLogicAcessLayer.Models.BookModels;
 using BookInventory.BusinessLogicAcessLayer.Services.PhotoService;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccess.Entities;
-using BookInventory.DataAccessLayer.Entities;
+using BookInventory.DataAccessLayer.Repository.BookRepository;
 using BookInventory.LogicAcessLayer.Models.BookModels;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,14 +18,14 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 {
     public class BookServicee : IBookService
     {
-        private readonly DatabaseContext _context;
+        private readonly IBookRepository _bookRepository;
         private readonly IMapper _mapper;
         private readonly IPhotoService _photoService;
         private readonly ILogger<BookServicee> _logger;
 
-        public BookServicee(DatabaseContext context, IMapper mapper, ILogger<BookServicee> logger, IPhotoService photoService)
+        public BookServicee(IBookRepository bookRepository, IMapper mapper, ILogger<BookServicee> logger, IPhotoService photoService)
         {
-            _context = context;
+            _bookRepository = bookRepository;
             _mapper = mapper;
             _logger = logger;
             _photoService = photoService;
@@ -40,53 +39,22 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             {
                 _logger.LogInformation("Fetching books with pagination: page {Page}, size {Size}.", page, size);
 
-                var queryable = _context.Books.Include(b => b.Author).AsQueryable();
-                
-                if(!string.IsNullOrWhiteSpace(sortBy))
-                {
-                    switch(sortBy)
-                    {
-                        case "title":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Title) : queryable.OrderBy(a => a.Title);
-                            break;
-                        case "publicationYear":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.PublicationYear) : queryable.OrderBy(a => a.PublicationYear);
-                            break;
-                        case "language":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Language) : queryable.OrderBy(a => a.Language);
-                            break;
-                        case "price":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Price) : queryable.OrderBy(a => a.Price);
-                            break;
-                        case "pageCount":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.PageCount) : queryable.OrderBy(a => a.PageCount);
-                            break;
-                        case "stock":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Stock) : queryable.OrderBy(a => a.Stock);
-                            break;
-                        case "edition":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Edition) : queryable.OrderBy(a => a.Edition);
-                            break;
-                        case "format":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Format) : queryable.OrderBy(a => a.Format);
-                            break;
-                        default:
-                            queryable = queryable.OrderBy(a => a.Title); // Default sorting
-                            break;
-                    }
-                }
-                
-                var paginatedBooks = queryable.Paginate(page, size);
+                // Call the repository method to get paginated and sorted results
+                var paginatedBooks = await _bookRepository.GetAllBooks(page, size, sortBy, sortOrder);
+
+                // Map the result using AutoMapper
                 var mappedBooks = _mapper.Map<IEnumerable<BookGetModel>>(paginatedBooks.Items);
 
+                // Fetch book photo URLs if needed
                 foreach (var book in mappedBooks)
                 {
-                    book.BookPhoto = await _photoService.GetBookPhotoById(book.Id); // Get photo name
-                    book.BookPhotoUrl = await _photoService.GetBookPhotoUrl(book.Id); // Get photo URL
+                    book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
+                    book.BookPhotoUrl = await _photoService.GetBookPhotoUrl(book.Id);
                 }
 
                 _logger.LogInformation("Fetched {Count} books successfully.", mappedBooks.Count());
 
+                // Return paginated result
                 return new PaginatedResult<BookGetModel>
                 {
                     TotalItems = paginatedBooks.TotalItems,
@@ -110,7 +78,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
         {
             _logger.LogInformation("Fetching book with ID {Id}.", id);
 
-            var book = await _context.Books.Include(b => b.Author).FirstOrDefaultAsync(b => b.Id == id);
+            var book = await _bookRepository.GetBookById(id);
             if (book == null)
             {
                 _logger.LogWarning("Book with ID {Id} not found.", id);
@@ -133,8 +101,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
                 var bookEntity = _mapper.Map<Book>(bookModel);
                 bookEntity.BookPhoto = string.IsNullOrWhiteSpace(initialPhoto) ? "NoPhoto.png" : initialPhoto;
 
-                _context.Books.Add(bookEntity);
-                await _context.SaveChangesAsync();
+                await _bookRepository.AddBook(bookEntity);
 
                 if (!string.IsNullOrWhiteSpace(initialPhoto))
                 {
@@ -154,7 +121,7 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
         {
             _logger.LogInformation("Updating book with ID {Id}.", id);
 
-            var bookEntity = await _context.Books.FirstOrDefaultAsync(b => b.Id == id);
+            var bookEntity = await _bookRepository.GetBookById(id);
             if (bookEntity == null)
             {
                 _logger.LogWarning("Book with ID {Id} not found.", id);
@@ -165,15 +132,13 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 
             if (!string.IsNullOrWhiteSpace(newPhotoName))
             {
-                await _photoService.UpdateBookPhoto(id, newPhotoUrl ,newPhotoName);
+                await _photoService.UpdateBookPhoto(id, newPhotoUrl, newPhotoName);
             }
 
-            _context.Books.Update(bookEntity);
-            await _context.SaveChangesAsync();
+            await _bookRepository.UpdateBook(bookEntity);
 
             _logger.LogInformation("Book with ID {Id} updated successfully.", id);
         }
-
 
         public async Task<bool> DeleteBook(int bookId)
         {
@@ -181,23 +146,18 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             {
                 _logger.LogInformation("Deleting book with ID {Id}.", bookId);
 
-                // Gjej librin nëse ekziston
-                var book = await _context.Books.FirstOrDefaultAsync(b => b.Id == bookId);
+                var book = await _bookRepository.GetBookById(bookId);
                 if (book == null)
                 {
                     _logger.LogWarning("Book with ID {Id} not found.", bookId);
-                    return false; // Libri nuk u gjet
+                    return false;
                 }
 
-                // Fshi foton e librit nëse ekziston
                 await _photoService.DeleteBookPhotoByBookIdAsync(bookId);
-
-                // Fshi librin nga baza e të dhënave
-                _context.Books.Remove(book);
-                await _context.SaveChangesAsync(); // Sigurohu që të dhënat të ruhen
+                await _bookRepository.DeleteBook(book);
 
                 _logger.LogInformation("Book with ID {Id} and its photo deleted successfully.", bookId);
-                return true; // Libri dhe fotot janë fshirë me sukses
+                return true;
             }
             catch (Exception ex)
             {
@@ -206,16 +166,11 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             }
         }
 
-
         public async Task<IEnumerable<BookGetModel>> GetBooksByPublicationYear(int? publicationYear)
         {
             _logger.LogInformation("Fetching books published in year {Year}.", publicationYear);
 
-            var books = await _context.Books
-                .Where(b => publicationYear == null || b.PublicationYear == publicationYear)
-                .Include(b => b.Author)
-                .ToListAsync();
-
+            var books = await _bookRepository.GetBooksByPublicationYearAsync(publicationYear);
             var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
             foreach (var book in bookModels)
             {
@@ -227,13 +182,22 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
 
         public async Task<IEnumerable<BookGetModel>> GetBooksByLanguage(string language)
         {
-            _logger.LogInformation("Fetching books in language {Language}.", language);
+            var books = await _bookRepository.GetBooksByLanguageAsync(language);
+            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
 
-            var books = await _context.Books
-                .Where(b => b.Language == language)
-                .Include(b => b.Author)
-                .ToListAsync();
+            foreach (var book in bookModels)
+            {
+                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
+            }
 
+            return bookModels;
+        }
+
+        public async Task<IEnumerable<BookGetModel>> GetBooksByAuthor(string author)
+        {
+            _logger.LogInformation("Fetching books by author {Author}.", author);
+
+            var books = await _bookRepository.GetBooksByAuthorNameAsync(author);
             var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
             foreach (var book in bookModels)
             {
@@ -243,59 +207,61 @@ namespace BookInventory.LogicAcessLayer.Services.BookService
             return bookModels;
         }
 
-        public async Task<IEnumerable<BookGetModel>> SelectBooksByGenres(string[] genres)
+        public async Task<IEnumerable<BookGetModel>> SearchBook(string book)
         {
-            _logger.LogInformation("Fetching books with genres {Genres}.", string.Join(", ", genres));
-
-            var books = await _context.Books
-                .Where(b => b.Genres.Any(g => genres.Contains(g)))
-                .Include(b => b.Author)
-                .ToListAsync();
-
-            var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
-            foreach (var book in bookModels)
-            {
-                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
-            }
-
-            return bookModels;
-        }
-
-        public async Task<IEnumerable<BookGetModel>> SearchBook(string searchTerm)
-        {
-            _logger.LogInformation("Searching for books with term {Term}.", searchTerm);
-
-            var books = await _context.Books
-                .Where(b => b.Title.Contains(searchTerm) || b.Author.Name.Contains(searchTerm))
-                .Include(b => b.Author)
-                .ToListAsync();
-
+            var books = await _bookRepository.SearchBooksAsync(book);
             var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
             foreach (var bookModel in bookModels)
             {
                 bookModel.BookPhoto = await _photoService.GetBookPhotoById(bookModel.Id);
             }
-
             return bookModels;
         }
-
 
         public async Task<IEnumerable<BookGetModel>> GetBooksByAuthorName(string authorName)
         {
-            _logger.LogInformation("Fetching books by author {AuthorName}.", authorName);
-
-            var books = await _context.Books
-                .Where(b => b.Author.Name == authorName)
-                .Include(b => b.Author)
-                .ToListAsync();
-
+            var books = await _bookRepository.GetBooksByAuthorNameAsync(authorName);
             var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
-            foreach (var book in bookModels)
+            foreach (var bookModel in bookModels)
             {
-                book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
+                bookModel.BookPhoto = await _photoService.GetBookPhotoById(bookModel.Id);
             }
-
             return bookModels;
         }
+
+        public async Task<IEnumerable<BookGetModel>> SelectBooksByGenres(string[] genres)
+        {
+            _logger.LogInformation("Fetching books by genres: {Genres}.", string.Join(", ", genres));
+
+            try
+            {
+                // Fetch books from the repository
+                var books = await _bookRepository.SelectBooksByGenresAsync(genres);
+                if (books == null || !books.Any())
+                {
+                    _logger.LogInformation("No books found for genres: {Genres}.", string.Join(", ", genres));
+                    return Enumerable.Empty<BookGetModel>();
+                }
+
+                // Map the book entities to book models
+                var bookModels = _mapper.Map<IEnumerable<BookGetModel>>(books);
+
+                // Fetch book photos and assign to book models
+                foreach (var book in bookModels)
+                {
+                    book.BookPhoto = await _photoService.GetBookPhotoById(book.Id);
+                }
+
+                _logger.LogInformation("Fetched {Count} books successfully for genres: {Genres}.", bookModels.Count(), string.Join(", ", genres));
+
+                return bookModels;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching books by genres: {Genres}.", string.Join(", ", genres));
+                throw; // Re-throw the exception to let the caller handle it or propagate it
+            }
+        }
+
     }
 }

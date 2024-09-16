@@ -1,6 +1,7 @@
 using BookInventory.BusinessLogicAcessLayer.Configurations;
 using BookInventory.DataAccess.Database;
 using BookInventory.DataAccessLayer.Database;
+using BookInventory.DataAccessLayer.Repository;
 using BookInventory.LogicAcessLayer.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -14,10 +15,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 
 Log.Logger = new LoggerConfiguration()
-    .MinimumLevel.Information() 
-    .WriteTo.Console()     
+    .MinimumLevel.Information()
+    .WriteTo.Console()
     .WriteTo.File("logs/log.txt", rollingInterval: RollingInterval.Day,
-        restrictedToMinimumLevel: LogEventLevel.Information) 
+        restrictedToMinimumLevel: LogEventLevel.Information)
     .CreateLogger();
 
 
@@ -77,6 +78,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.ConfigureServices();
+builder.Services.ConfigureRepositorys();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();

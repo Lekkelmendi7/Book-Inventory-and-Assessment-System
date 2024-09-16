@@ -125,6 +125,10 @@
               "target": "Package",
               "version": "[6.7.0, )"
             },
+            "System.Linq.Dynamic.Core": {
+              "target": "Package",
+              "version": "[1.4.5, )"
+            },
             "System.Runtime.Serialization.Json": {
               "target": "Package",
               "version": "[4.3.0, )"

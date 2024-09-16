@@ -1,76 +1,53 @@
-﻿using AutoMapper;
-using BookInventory.BusinessLogicAcessLayer.Helpers;
-using BookInventory.BusinessLogicAcessLayer.Models;
-using BookInventory.BusinessLogicAcessLayer.Services.FileService;
-using BookInventory.DataAccess.Database;
-using BookInventory.DataAccess.Entities;
-using BookInventory.LogicAcessLayer.Models.AuthorModels;
+﻿using AuthorInventory.DataAccessLayer.Repository.AuthorRepository;
+using AutoMapper;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Globalization;
 
-namespace BookInventory.LogicAcessLayer.Services.AuthorService
+using BookInventory.LogicAcessLayer.Models.AuthorModels;
+using BookInventory.LogicAcessLayer.Services.AuthorService;
+using BookInventory.DataAccess.Database;
+using BookInventory.BusinessLogicAcessLayer.Services.FileService;
+using BookInventory.BusinessLogicAcessLayer.Helpers;
+using BookInventory.BusinessLogicAcessLayer.Models;
+using BookInventory.DataAccess.Entities;
+
+namespace AuthorInventory.LogicAcessLayer.Services.AuthorService
 {
     public class AuthorServicee : IAuthorService
     {
         private readonly DatabaseContext _context;
         private readonly IMapper _mapper;
         private readonly IFileStorageService _fileStorageService;
+        private readonly IAuthorRepository _authorRepository;
         private readonly string containerName = "authors";
 
-        public AuthorServicee(DatabaseContext context, IMapper mapper, IFileStorageService fileStorageService)
+        public AuthorServicee(DatabaseContext context, IMapper mapper, IFileStorageService fileStorageService, IAuthorRepository authorRepository)
         {
             _context = context;
             _mapper = mapper;
             _fileStorageService = fileStorageService;
+            _authorRepository = authorRepository;
         }
 
-        public async Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size, string? sortBy, string? sortOrder)
+        
+          public async Task<PaginatedResult<AuthorGetModel>> GetAllAuthors(int page, int size, string? sortBy, string? sortOrder)
         {
-            if (size > PaginationModel.MaxPageSize)
-            {
-                size = PaginationModel.MaxPageSize; // Ensure page size does not exceed max limit
-            }
+            size = Math.Min(size, PaginationModel.MaxPageSize);
 
             try
             {
-                
+               
 
-                // Define the query
-                var queryable = _context.Authors.Include(a => a.Publisher).AsQueryable();
+                // Call the repository method to get paginated and sorted results
+                var paginatedAuthors = await _authorRepository.GetAllAuthors(page, size, sortBy, sortOrder);
 
-
-                if (!string.IsNullOrWhiteSpace(sortBy))
-                {
-                    switch (sortBy.ToLower())
-                    {
-                        case "name":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Name) : queryable.OrderBy(a => a.Name);
-                            break;
-                        case "dateofbirth":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.DateOfBirth) : queryable.OrderBy(a => a.DateOfBirth);
-                            break;
-                        case "nationality":
-                            queryable = sortOrder == "desc" ? queryable.OrderByDescending(a => a.Nationality) : queryable.OrderBy(a => a.Nationality);
-                            break;
-                        default:
-                            queryable = queryable.OrderBy(a => a.Name); // Default sorting
-                            break;
-                    }
-                }
-                else
-                {
-                    queryable = queryable.OrderBy(a => a.Name); // Default sorting if no sortBy is provided
-                }
-
-                // Apply pagination
-                var paginatedAuthors = queryable.Paginate(page, size);
-
-                // Map the results
+                // Map the result using AutoMapper
                 var mappedAuthors = _mapper.Map<IEnumerable<AuthorGetModel>>(paginatedAuthors.Items);
 
-                
+               
 
+                // Return paginated result
                 return new PaginatedResult<AuthorGetModel>
                 {
                     TotalItems = paginatedAuthors.TotalItems,
@@ -85,125 +62,85 @@ namespace BookInventory.LogicAcessLayer.Services.AuthorService
             }
             catch (Exception ex)
             {
-                
-                throw new Exception("An error occurred while trying to fetch authors.", ex);
+                throw new Exception("Error fetching authors.", ex);
             }
         }
+         
+        
 
 
         public async Task<AuthorGetModel> GetAuthorById(int id)
         {
 
-            var author = await _context.Authors.Include(a => a.Publisher).FirstOrDefaultAsync(x => x.Id == id);
 
+            var author = await _authorRepository.GetAuthorById(id);
             if (author == null)
             {
-
-                throw new KeyNotFoundException($"Author with id {id} not found!");
-          
+                throw new KeyNotFoundException($"Author with ID {id} not found.");
             }
 
-            var authorGetModel = new AuthorGetModel
-            {
-                Id = author.Id,
-                Name = author.Name,
-                DateOfBirth = author.DateOfBirth,
-                Nationality = author.Nationality,
-                EmailAddress = author.EmailAddress,
-                ImageUrl = author.ImageUrl,
-            };
+            var authorModel = _mapper.Map<AuthorGetModel>(author);
+     
 
-            return authorGetModel;
+            return authorModel;
         }
 
         public async Task CreateAuthor(AuthorCreateModel authorCreateModel)
         {
-
-            var existingPublisher = await _context.Publishers
-                .Include(a => a.Author)
-                .FirstOrDefaultAsync(a => a.Id == authorCreateModel.Publisher.AuthorId);
-
-            if(existingPublisher != null)
+            try
             {
-               
-                throw new InvalidOperationException("This author already has an associated publisher.");
+                var authorEntity = _mapper.Map<Author>(authorCreateModel);
+                await _authorRepository.AddAuthor(authorEntity);
             }
-
-            var newAuthor = _mapper.Map<Author>(authorCreateModel);
-
-
-            if (authorCreateModel.ImageUrl != null)
+            catch (Exception ex)
             {
-                newAuthor.ImageUrl = await _fileStorageService.SaveFile(containerName, authorCreateModel.ImageUrl);
+                throw new Exception("Error creating author.", ex);
             }
-
-            _context.Authors.Add(newAuthor);
-            await _context.SaveChangesAsync();
 
         }
 
         public async Task UpdateAuthor(int id, AuthorUpdateModel authorUpdateModel)
         {
 
-            var authorModel = _context.Authors.Include(a => a.Publisher).FirstOrDefault(a => a.Id == id);
-            if(authorModel == null)
+            var authorEntity = await _authorRepository.GetAuthorById(id);
+            if (authorEntity == null)
             {
-                throw new InvalidOperationException("Author not found!");
+                throw new KeyNotFoundException($"Author with ID {id} not found.");
             }
 
-            var existingPublisher = await _context.Publishers
-                .Include(c => c.Author)
-                .FirstOrDefaultAsync(a => a.AuthorId == authorUpdateModel.Publisher.AuthorId && a.AuthorId != id);
+            _mapper.Map(authorUpdateModel, authorEntity);
 
-            if(existingPublisher != null)
-            {
-               
-                throw new InvalidOperationException("Another author is associated with this publisher");
-            }
-
-            if(authorUpdateModel.ImageUrl != null)
-            {
-                authorModel.ImageUrl = await _fileStorageService.EditFile(containerName,
-                    authorUpdateModel.ImageUrl, authorModel.ImageUrl);
-            }
-
-
-            _mapper.Map(authorUpdateModel, authorModel);
-            await _context.SaveChangesAsync();
+            await _authorRepository.UpdateAuthor(authorEntity);
         }
 
         public async Task<bool> DeleteAuthor(int id)
         {
-            
-            var author = await _context.Authors.Include(a => a.Publisher).FirstOrDefaultAsync(a => a.Id == id);
-
-
-            if (author == null)
+            try
             {
               
-                throw new KeyNotFoundException($"Author with ID {id} not found.");
-            }
 
-            _context.Authors.Remove(author);
-            await _context.SaveChangesAsync();
-            await _fileStorageService.DeleteFile(author.ImageUrl, containerName);
-            return true;
+                var author = await _authorRepository.GetAuthorById(id);
+                if (author == null)
+                {
+                    return false;
+                }
+
+
+               
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error deleting author.", ex);
+            }
         }
 
         public async Task<IEnumerable<AuthorGetModel>> GetAuthorsByNationality(string nationality)
         {
+            var authors = await _authorRepository.GetAuthorsByNationalityAsync(nationality);
+            var authorModels = _mapper.Map<IEnumerable<AuthorGetModel>>(authors);
 
-
-            var filteredAuthors = await _context.Authors.Include(x => x.Publisher).Where(x => x.Nationality == nationality).ToListAsync();
-           
-            if(!filteredAuthors.Any())
-            {
-              
-                throw new KeyNotFoundException($"No authors found with nationality: {nationality}");
-            }
-
-            var mappedFilteredAuthors = _mapper.Map<IEnumerable<AuthorGetModel>>(filteredAuthors);
-            return mappedFilteredAuthors;
+            return authorModels;
         }
     }
 }

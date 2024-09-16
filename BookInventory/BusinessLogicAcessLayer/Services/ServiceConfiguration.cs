@@ -1,4 +1,5 @@
-﻿using BookInventory.BusinessLogicAcessLayer.Services.AuthService;
+﻿using AuthorInventory.LogicAcessLayer.Services.AuthorService;
+using BookInventory.BusinessLogicAcessLayer.Services.AuthService;
 using BookInventory.BusinessLogicAcessLayer.Services.FileService;
 using BookInventory.BusinessLogicAcessLayer.Services.PermissionService;
 using BookInventory.BusinessLogicAcessLayer.Services.PhotoService;
